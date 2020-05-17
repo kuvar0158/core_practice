@@ -1,0 +1,20 @@
+<script>
+	function foo (name, age=23){
+		this.name = name;
+		this.age = age;
+		console.log(this.age);
+	}
+    foo('mohan');
+
+    // you can achieve this functionality using class 
+
+    class Dog {
+    	constructor(name, age) {
+    		this.name = name;
+		    this.age = age;
+    	}
+    }
+    var dog1 = new Dog('rohit', 32);
+    console.log(dog1);
+</script>
+<h2>please check output in console</h2>

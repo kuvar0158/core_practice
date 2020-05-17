@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	function getEmployee(){
+		return new Promise(function(resolve, reject){
+			resolve();
+		});
+	}
+	console.log(getEmployee());
+
+	getEmployee().then(success, failure);
+
+	function success(){
+		console.log('success');
+	}
+
+	function failure(){
+		console.log('success');
+	}
+</script>
