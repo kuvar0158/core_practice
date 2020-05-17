@@ -1,0 +1,21 @@
+<script type="text/javascript">
+let promiseToCleanTheRoom = new Promise(function(resolve, reject){
+	let isClean = false;
+
+	 if(isClean){
+	 	resolve('Clean');
+	 } else {
+	 	reject('not Clean');
+	 }
+})	
+ 
+
+ promiseToCleanTheRoom.then(function(fromResolve){
+ 	console.log('the room is' +fromResolve)
+ }).catch(function(fromReject){
+ 	console.log('the room is ' +fromReject)
+ })
+</script>
+<!-- javaScript promises explained tutorial by 
+techsith-->
+<!-- video reference link -:https://www.youtube.com/watch?v=s6SH72uAn3Q&list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf -->
