@@ -1,0 +1,37 @@
+<!-- video link here
+https://www.youtube.com/watch?v=tsDG_2-vopk&t=989s
+ -->
+
+<!-- search video on youtube -->
+
+<!-- Part 04 Javascirpt Mini Tutorial Series in Urdu 2018 -->
+<!-- https://www.youtube.com/watch?v=pIlKZywCnWU&list=PL9fcHFJHtFaZ_ERl0vuW6lKIq_QNkbkVy -->
+ <script type="text/javascript">
+ 	function message1(){
+ 		return new Promise(resolve => {
+ 			setTimeout(() =>{
+               resolve("Resolved1!!");
+ 			}, 5000)
+ 		})
+ 	}
+ 	// console.log(message());
+ 	// message().then(function(fromresolve){
+  //       console.log(fromresolve);
+ 	// })
+
+ 	function message2(){
+ 		return new Promise(resolve => {
+ 			setTimeout(() =>{
+               resolve("Resolved2!!");
+ 			}, 2000)
+ 		})
+ 	}
+
+ 	async function resolvePromise() {
+ 		console.log("initilizing!!");
+ 		let m1 = await message1();
+ 		let m2 = await message2();
+ 		console.log(m1, m2);
+ 	}
+ 	resolvePromise();
+ </script>

@@ -1,0 +1,38 @@
+<!-- link
+https://www.youtube.com/watch?v=pIlKZywCnWU&list=PL9fcHFJHtFaZ_ERl0vuW6lKIq_QNkbkVy
+ -->
+ <!--  get data by api examples -->
+ <!DOCTYPE html>
+ <html>
+ <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 	<title></title>
+ </head>
+ <body>
+ 
+ </body>
+ </html>
+ <script type="text/javascript">
+ 	$.get('https://jsonplaceholder.typicode.com/users')
+ 	.done(function(data){
+ 		$.map(data, function(rec){
+ 			if(rec){
+ 				$.get('https://jsonplaceholder.typicode.com/posts?userId='+rec.id)
+ 				.done(function(data){
+                     console.log(data);
+ 				})
+ 				$.get('https://jsonplaceholder.typicode.com/albums?userId='+rec.id)
+ 				.done(function(data){
+                     // console.log(data);
+                     $.map(data, function(rec){
+                     	if(rec){
+                     		$.get('https://jsonplaceholder.typicode.com/albums?albumId='+rec.id)
+                     		.done(function(done){
+                                console.log(data);
+                     		})
+                     	}
+                     })
+ 				})
+ 			}
+ 		});
+ 	});
+ </script>
