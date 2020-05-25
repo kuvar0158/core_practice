@@ -1,0 +1,15 @@
+FIND_IN_SET(needle,haystack);
+
+The FIND_IN_SET function accepts two parameters:
+
+The first parameter needle is the string that you want to find.
+The second parameter haystack is a list of comma-separated strings that to be searched.
+
+$query = DB::table('tags_value')
+         ->whereRaw('FIND_IN_SET(css,Tags)')
+         ->get();
+
+         SELECT FIND_IN_SET('yssyogesh','sonarika,yssyogesh,anil524,admin') as result
+
+
+         https://makitweb.com/search-value-within-comma-separated-values-mysql/
