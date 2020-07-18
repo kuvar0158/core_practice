@@ -14,4 +14,13 @@ $query = DB::table('tags_value')
 
          https://makitweb.com/search-value-within-comma-separated-values-mysql/
 
- now this is latest example here
+ query for filter fromdate to todate
+$query_id = $this->db->query("SELECT * FROM tbl_tasks WHERE taskAssignedTo = '".$userId."' AND taskAssignedDate BETWEEN '".$fromdate."'AND'".$todate."' ORDER BY taskId DESC");
+        
+    	if ($query_id->num_rows() > 0) 
+    	{
+            return $query_id->result();
+        }
+
+        $where = "name='Joe' AND status='boss' OR status='active'";
+$builder->where($where);
