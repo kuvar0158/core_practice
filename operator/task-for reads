@@ -1,0 +1,24 @@
+1-: you have to read like that closest and nearer in jquery
+
+var promocode_id = $(this).closest('.meta').find('.update_status_id').val();
+        var _status = $(this).closest('tr').find('.status > span');
+
+
+2-: proper used of switch statements like that
+
+var opt = $('#promo_code_option');
+        switch(opt.val()){
+            case 'balance':
+                $('#amount').show();
+                $('#minutes').hide();
+                break;
+            case 'dpmsBalance':
+                $('#amount').hide();
+                $('#minutes').show();
+                break;
+            default:
+                $('#amount').hide();
+                $('#minutes').hide();
+        }
+
+        A Non-Technical Explanation of API vs SDK

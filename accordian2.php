@@ -74,3 +74,4 @@
 }
 initAccordion(document.getElementById("accordion"));
 </script>
+

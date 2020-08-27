@@ -96,7 +96,7 @@
 	      }).fail(function (jqXHR) {
 	    console.log('form was not saved')
 	  });
-	  // Prevent form submission here
+	  // Prevent form submission
 	  return false;
 	});
 </script>

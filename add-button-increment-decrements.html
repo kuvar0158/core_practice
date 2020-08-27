@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cart add button for increment/decremen</title>
+</head>
+<body>
+<div class="container">
+	<div id="cart-sec">
+<input type="button" onclick="decrementValue()" value="-" />
+<input type="text" name="quantity" value="1" maxlength="3" max="10" size="1" id="number" />
+<input type="button" onclick="incrementValue()" value="+" />
+</div>
+<a href=""style="display: none;" id="show-add">Add</a>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<100){
+        value++;
+            document.getElementById('number').value = value;
+    }
+}
+function decrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number').value = value;
+    }
+    if(value==1){
+    	document.getElementById('cart-sec').style.display = 'none';
+    	document.getElementById('show-add').style.display = 'block';
+
+    }
+
+}
+// function addButton(){
+// 	// alert();
+// }
+</script>
