@@ -19,7 +19,7 @@ print_r($myjson);
 echo "<p> // Convert JSON to array  String</p>";
 $students = '[{"name":"Jonathan Suh","gender":"male"},{"name":"William Philbin","gender":"male"},{"name":"Allison McKinnery","gender":"female"}]';
 
-$myarray = json_decode($students);
+$myarray = json_encode($students);
 print_r($myarray[1]->name); 
 // if you want to access data from json like that
 
