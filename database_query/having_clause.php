@@ -12,8 +12,8 @@ while($row1 = $result1->fetch_assoc()) {
 ?>
 
 <!--====================== Example - With SELECT Statement ==========================-->
-SELECT *
+<!-- SELECT *
 FROM contacts
 WHERE last_name IS NOT NULL;
 
-This MySQL IS NOT NULL example will return all records from the contacts table where the last_name does not contain a null value.
+This MySQL IS NOT NULL example will return all records from the contacts table where the last_name does not contain a null value. -->

@@ -3,7 +3,8 @@
    ALTER TABLE product
    ADD price DECIMAL(16,2) DEFAULT '0.00' NOT NULL;
 
-
+   ALTER TABLE customers
+   ADD takeTierNextPlan int(11) DEFAULT '0' ;
    <!-- delete table query in mysql -->
 	DROP TABLE table_name;
 

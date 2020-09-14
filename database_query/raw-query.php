@@ -22,3 +22,11 @@ CREATE TABLE `tbl_new_client_meeting` (
   `MeetingCreatedDate` date NOT NULL,
   PRIMARY KEY (Id)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+$sql = 'SELECT * FROM vocetis_answers va JOIN vocetis_incomings vi ON (va.incomingId = vi.incomingId) WHERE vi.hungup = 0 AND ( va.hungup = 0 OR (va.hungup = 1 AND va.hold =1) ) AND nimdaId = :nimdaId ';
+
+
+raw query-:
+SELECT * FROM `admin`  where role in (8,6,9)
+ ORDER BY `id` DESC
+ 
