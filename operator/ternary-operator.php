@@ -28,8 +28,17 @@ $id = $_GET['id'];
 
 reference for more-:details-:https://www.codeproject.com/Questions/725678/whats-query-string-in-php#:~:text=A%20query%20string%20is%20a,It%20is%20not%20language%20specific.
 
+$voted = session()->has('voted') ? true : false;
+
+($rs['recharges_count'] > 0 ? 'y' : 'n'),
 
 
+$empStatus = isset($userPref['employmentStatus'][0]['levelOne']) ? $userPref['employmentStatus'][0]['levelOne'] : '';
+
+
+bool y = (x == 42) ? true : false;
+
+<input id="contractFlag3" <?php echo $userDetail->contract_flag3 == 'y' ? "checked" : "";?> type="checkbox" name="PersonalInfo[UserDetail][contractFlag3]" class="selected_only" value='<?php echo $userDetail->contract_flag3; ?>'>
 
 
 

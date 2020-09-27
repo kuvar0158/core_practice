@@ -71,4 +71,10 @@ print_r($notes['rahul']);
 
 echo "<pre>";
 print_r($notes['rahul']['java']);
+$PersonalInfo['UserPreference']['assignmentType'][0]['levelOne'] = 'rohan';
+
+print_r($PersonalInfo); 
 ?>
+
+
+

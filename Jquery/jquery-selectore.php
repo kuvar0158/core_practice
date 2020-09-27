@@ -22,3 +22,6 @@
 	});
 
 </script>
+<!-- ///Remove primary skill
+    $(document).on('click','.remove_primary_skill',function(e){
+      e.preventDefault(); -->

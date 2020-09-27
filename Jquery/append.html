@@ -1,0 +1,20 @@
+<?php
+ addDatePicker = function(){
+           $('.datepicker').each(function(){
+               $(this).datepicker({
+                   format: 'M dd, yyyy',
+               });
+           });
+       }
+       addDatePicker();
+   });
+
+   <input type="text" class="form-control datepicker" id="endDate'+fieldIndex+'" onChange="return fillAccordianSection(this, \''+fieldIndex+'\', \'date\')" name="PersonalInfo[UserExperience]['+fieldIndex+'][end_date]">'
+
+
+   
+ addSkill = function () {
+           if($('#kt_repeater_1').length > 0){
+              if($("#skillSectionHolder .errorExist").length <= 0){
+                $("#skillSectionHolder").append('<div class="errorExist" style="color: #fd397a;font-weight: 400;font-size: 15px;margin-top: -15px;">Please add skill above.</div>');
+              }
