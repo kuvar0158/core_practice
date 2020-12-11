@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wise App Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .circles svg {
+            width: 15%;
+            height: 15%;
+            text-transform: uppercase;
+        }
+
+        .circles {
+            position: absolute;
+            z-index: 1;
+            left: 85%;
+            width: 100%;
+            top: -50px;
+        }
+
+        #carouselExampleControls .carousel-control-next {
+            right: 39.5%;
+            z-index: 999;
+        }
+
+        #carouselExampleControls .carousel-control-prev {
+            left: inherit;
+            right: 42.5%;
+        }
+
+        .main-navbarmenu {
+            margin: auto;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <nav class="navbar navbar-light navbar-expand-lg homepage" id="navBar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand" id='logo-img'><img src="images/small-logo.png"
+                        class="img-fluid" width="40"></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="ml-auto">
+                        <ul class="navbar-nav" id="Menulist" style='display:none'>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink active" href="index.html"><span>home</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink" href="work-list.html"><span>works</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink" href="about-us.html"><span>about</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink" href="drumbeat.html"><span>drumbeat</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink" href="careers.html"><span>careers</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink" href="team.html"><span>team</span></a>
+                            </li>
+                            <li clas="navbar-item">
+                                <a class="nav-link activelink afterremovedot" href="contact-us.html"><span>get in
+                                        touch</span></a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav" id="mainmenu">
+                            <!-- <li clas="navbar-item">
+                <a href="#" class="nav-link afterremovedot"><img src="images/Rounded_search-2.png" width="20px"></a>
+              </li>-->
+                            <li clas="navbar-item">
+                                <a href="#" class="nav-link afterremovedot"><img src="images/four-dots-withcolor.png"
+                                        width="20px"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--  <section id="headersection" class="animate__animated animate__fadeInRight animate__delay-1s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="imageslinks" id="mainmenu">
+              <li><img src="images/Rounded_search.png" width="20px"></li>
+              <li><img src="images/four-dots-withcolor.png" width="20px"></li>
+            </ul>
+            <ul class="" id="mainmenu">
+              <li class="nav-item active "><a class="nav-link" href="index.html"><span>home</span></a></li>
+              <li class="nav-item">.</li>
+              <li class="nav-item"><a class="nav-link" href="work-list.html"><span>works</span></a></li>
+              <li class="nav-item">.</li>
+              <li class="nav-item"> <a class="nav-link" href="about-us.html"><span>about</span></a></li>
+              <li class="nav-item">.</li>
+              <li class="nav-item"><a class="nav-link" href="careers.html"><span>get in touch</span></a></li>
+            </ul>
+            
+          </div>
+          <div class="col-md-6">
+             <div class="textscrolls clearHeader">
+                  <img src="images/wiseape_text.png" alt="baner" class="w-100 ones"> 
+                  <img src="images/Shape2.png" alt="baner" class="w-100 twos"> 
+             </div>
+          </div> 
+          <div class="col-md-6">
+            <div class="middle-text">
+              <div class="title">
+                Hello. How do you do ?
+              </div>
+              <div class="sub-title">
+                We Help brands become a real and meaningful contributor to our lives.
+              </div>
+              <div class="button-link">
+                <button class="btn btn-primary">SEE HOW </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section id="headersection" class="animate__animated animate__fadeInRight animate__delay-1s">
+
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-md-6 bannerImg">
+                    <!-- <img src="images/banner.png" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+          <div class="middle-text">-->
+
+                    <img src="images/banner.png" class="img-fluid" id="header">
+                </div>
+                <div class="col-md-6 clearHeader">
+                    <div class="middle-text" id="header">
+
+
+                        <div class="title">
+                            Hello. How do you do ?
+                        </div>
+                        <div class="sub-title">
+                            Want your brand to become a real and meaningful contributor to culture?
+                        </div>
+                        <div class="button-link">
+                            <button class="btn button btn-primary seehowbtn" id="button-2"
+                                style="margin-left: inherit;">
+                                <div id="slide"></div>
+                                <a href="about-us.html" style="color: #000;">See how</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="slidersection" class="animate__animated animate__bounce animate__delay-2s">
+        <div id="container">
+            <div id="circle" class="m-hide-svg">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
+                    xml:space="preserve">
+                    <defs>
+                        <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                    </defs>
+                    <circle cx="150" cy="100" r="75" fill="none" />
+                    <g>
+                        <use xlink:href="#circlePath" fill="none" />
+                        <text fill="#7bfc7a">
+                            <textPath xlink:href="#circlePath">we are wiseape. tag line comes here.</textPath>
+                        </text>
+                    </g>
+                </svg>
+                <div class="circleCount slideCount">
+                    <span style="font-size: 44px; !important">1</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-id='01'>
+                            <div class="row">
+                                <div class="col-md-7 video" data-id="01"
+                                    data-video="videos/Engage - Blind Dating Booth.mp4" data-toggle="modal"
+                                    data-target="#myModalPrev"><img class="d-block w-100"
+                                        src="images/Engage Blind Date SS.png" alt="First slide">
+                                    <a href="work-list.html" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            ITC: ENGAGE DEOS | DIGITAL ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #LoveImpormtwo <br />1 Love Booth, 200 Dates
+                                        </div>
+                                        <div class="slider-desc">
+                                            Online swiping is a slippery slope. <br />You know what’s great? Real first
+                                            dates.
+                                        </div>
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/Engage-Lovebooth.html"><span> See how
+                                                </span></a></button>
+                                    </div>
+                                    <a href="work-list.html" class="next-click-btn">Next: #DHListheway | DHL</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item" data-id='02'>
+                            <div class="row">
+                                <div class="col-md-7 video" data-id="03" data-video="videos/DHL_Chant_for_Teams.mp4"
+                                    data-toggle="modal" data-target="#myModalPrev"><img class="d-block w-100"
+                                        src="images/DHL SS.png" alt="First slide">
+                                    <a href="#" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            DHL: FASTEST CROWD SOURCING TEAM CHANT | DIGITAL & ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #DHListheway - <br />
+                                        </div>
+                                        <div class="slider-desc">
+                                            A result of Activation, Radio and Digital to create the fastest crowd
+                                            sourced chant for the
+                                            favourite football league team.
+                                        </div>
+
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/DHL-IsTheWay.html"><span> See how
+                                                </span></a></button>
+                                    </div>
+                                    <a href="#" class="next-click-btn">Next: #EPFOS | ENGAGE DEOS</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item video" data-id='03'
+                            data-video="videos/Engage - Pocket Full Of Stories 2.0.mp4" data-toggle="modal"
+                            data-target="#myModalPrev">
+                            <div class="row">
+                                <div class="col-md-7" data-id="04">
+                                    <img class="d-block w-100" src="images/Engage Pocket FOS SS.png" alt="First slide">
+                                    <a href="#" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            ITC: ENGAGE DEOS | POCKET FULL OF STORIES | DIGITAL ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #EPFOS- <br />
+                                        </div>
+                                        <div class="slider-desc">
+                                            Youth of India especially the ones in a relationship were asked to share
+                                            their micro tales of love
+                                            that has a twist in it. Micro Tale Partners like Scribbled Stories, Scrawled
+                                            Stories & Story
+                                            Mirror were also enabled to source these tales.
+                                        </div>
+
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/Engage-EPFOS.html"><span> See how
+                                                </span></a></button>
+                                    </div>
+                                    <a href="#" class="next-click-btn">Next: #DoYourHomework | AXIS MUTUAL FUNDS </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item video" data-id='04' data-video="videos/Axis - Do Your Home Work.mp4"
+                            data-toggle="modal" data-target="#myModalPrev">
+                            <div class="row">
+                                <div class="col-md-7" data-id="05">
+                                    <img class="d-block w-100" src="images/Axis MF SS.png" alt="First slide">
+                                    <a href="#" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            AXIS MF: MUTUAL FUNDS | DIGITAL & ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #DoYourHomework - <br />
+                                        </div>
+                                        <div class="slider-desc">
+                                            A campaign which began in both the real and the virtual world, it asked the
+                                            parent in you to Do
+                                            Your Homework. A web and a mobile app helping calculate the cost of
+                                            educating children in any
+                                            stream and any country
+                                        </div>
+
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/AxisMF-DoYourHomework.html"><span> See how
+                                                </span></a></button>
+                                    </div>
+                                    <a href="#" class="next-click-btn">Next: #ALotCanHappenInside | Dark Fantasy</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item video" data-id='05'
+                            data-video="videos/Dark Fantasy - Lot Can Happen  Inside.mp4" data-toggle="modal"
+                            data-target="#myModalPrev">
+                            <div class="row">
+                                <div class="col-md-7" data-id="06">
+                                    <img class="d-block w-100" src="images/DF SS.png" alt="First slide">
+                                    <a href="#" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            ITC: Dark Fantasy | DIGITAL ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #LotCanHappenInside - <br />
+                                        </div>
+                                        <div class="slider-desc">
+                                            As a youth brand with immense brand love, we realised that a standard brand
+                                            messaging campaign
+                                            will not uplift everyone’s spirits during the Covid Lockdown.
+                                        </div>
+
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/DarkFantasy-Lotcanhappeninside.html"><span>
+                                                    See how </span></a></button>
+                                    </div>
+                                    <a href="#" class="next-click-btn">Next: #IELTSPrepApp | BRITISH COUNCIL</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item video" data-id='06'
+                            data-video="videos/British Council - IELTS Prep App.mp4" data-toggle="modal"
+                            data-target="#myModalPrev">
+                            <div class="row">
+                                <div class="col-md-7" data-id="01">
+                                    <img class="d-block w-100" src="images/British Council SS.png" alt="First slide">
+                                    <a href="#" class="viewallwork-btn">View All Work</a>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="slider-info">
+                                        <div class="tag-line">
+                                            BRITISH COUNCIL: IELTS PREP APP | DIGITAL ACTIVATION
+                                        </div>
+                                        <div class="slider-title">
+                                            #IELTSPrepApp - <br />
+                                        </div>
+                                        <div class="slider-desc">
+                                            Reach out to the prospective users across globe who are ready to take the
+                                            exams for better
+                                            prospects. As the mobile application was new in the stores it was imperative
+                                            to create awareness
+                                            about the same and at the same time get downloads from the prospective
+                                            users.
+                                        </div>
+                                        <button class="custom-btn btn-3 mt-3"><a
+                                                href="/wiseape/BritishCouncil-IELTSprep.html"><span> See
+                                                    how </span></a></button>
+
+
+                                    </div>
+                                    <a href="#" class="next-click-btn">Next: #LoveImpormtwoe | Engage Deo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section id="articlesSection" class="animate__animated animate__bounce animate__delay-3s">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="articles">
+                    <div class="circles m-hide-svg"
+                        style="position: absolute;left: -35px;width: 100%;font-weight: 600;">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300"
+                            enable-background="new 0 0 300 300" xml:space="preserve" style="width: 20%;">
+                            <defs>
+                                <path id="circlePath"
+                                    d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                            </defs>
+                            <circle cx="150" cy="100" r="75" fill="none" />
+                            <g>
+                                <use xlink:href="#circlePath" fill="none" />
+                                <text fill="#2b50e0" style="font-size: 16px;">
+                                    <textPath xlink:href="#circlePath">we are wiseape. tag line comes here.</textPath>
+                                </text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <h2 class="drumbeattitle">DRUMBEAT</h2>
+
+
+                    <div class="row pt-5 pt-xl-6">
+                        <!-- <div class="col-md-3">
+              <div class="article">
+                <div class="image">
+                  <img src="images/drumbthumb-1.jpg" class="maxwidth">
+                  <div class='cricle'>
+                    <img src="images/arrow-upside.png">
+                  </div>
+                </div>
+                <a href="drumbeat-detail.html" style="text-decoration: none"><h2 class="mt-2">Lorem ipsum doler sit amen</h2></a>
+                <div class="description">
+                  We are driven by the driven and we don't get anything
+                </div>
+                <div class="row font-italic mt-3" style="color: #4671d7;font-size: 18px;">
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      - By siddhant M.
+                    </div>
+                    <div class="mr-2 ml-2">|</div>
+                    <div class="">
+                      05 mins read
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="article">
+                <div class="image">
+                  <img src="images/drumbthumb-1.jpg" class="maxwidth">
+                  <div class='cricle'>
+                    <img src="images/arrow-upside.png">
+
+                  </div>
+                </div>
+                <a href="drumbeat-detail.html" style="text-decoration: none"><h2 class="mt-2">Lorem ipsum doler sit amen</h2></a>
+                <div class="description">
+                  We are driven by the driven and we don't get anything
+                </div>
+                <div class="row font-italic mt-3" style="color: #4671d7;font-size: 18px;">
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      - By siddhant M.
+                    </div>
+                    <div class="mr-2 ml-2">|</div>
+                    <div class="">
+                      05 mins read
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+                        <div class="col-md-6">
+                            <div class="article" style="text-align: center;!important">
+                                <div class="image">
+                                    <img src="images/Drumbeat Vivel.png" class="maxwidth">
+                                    <div class='cricle'>
+
+
+                                        <a href="drumbeat-Vivel.html" style="color: inherit;text-decoration: none;"><img
+                                                src="images/arrow-upside.png"></a>
+
+                                    </div>
+                                </div>
+                                <a href="drumbeat-Vivel.html" style="text-decoration: none">
+                                    <h2 class="mt-2">Vivel – #VoiceOfArt </h2>
+                                </a>
+                                <div class="description">
+                                    What happens when over 500 artists from around the country say #AbSamjhautaNahi on
+                                    World Gender
+                                    Equality Day?
+                                </div>
+                                <div class="row font-italic mt-3" style="color: #4671d7;font-size: 18px;">
+                                    <div class="d-flex align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="article" style="text-align: center;!important">
+                                <div class="image">
+                                    <img src="images/Drumbeats DF.png" class="maxwidth">
+                                    <div class='cricle'>
+
+
+                                        <a href="drumbeat-Dark Fantasy.html"
+                                            style="color: inherit;text-decoration: none;"><img
+                                                src="images/arrow-upside.png"></a>
+
+                                    </div>
+                                </div>
+
+                                <a href="drumbeat-Dark Fantasy.html" style="text-decoration: none">
+                                    <h2 class="mt-2">Dark Fantasy – #LotCanHappenInside</h2>
+                                </a>
+                                <div class="description ml-5">
+                                    Dark Fantasy decided to reach out to its fans stuck in quarantine and help them cope
+                                    with this new
+                                    reality.
+                                </div>
+                                <div class="row font-italic mt-3" style="color: #4671d7;font-size: 18px;">
+                                    <div class="d-flex align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="clear ">
+                        <div class="button mt-4" id="button-2">
+                            <div id="slide"></div>
+                            <a href="drumbeat.html">Vew All Articles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="shrewdnessSection" class="animate__animated animate__fadeInLeft animate__delay-4s">
+        <div class="row">
+            <div class="col-md-6 border-right">
+                <div class="SHREWDNESS-title">
+                    THE<br /> SHREWDNESS
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="shrewdness-desc">
+                    Do you want to inspire positive change? Refuse to think inside the box? Are looking for an
+                    opportunity to take
+                    charge? You’re in the right place.
+                </div>
+            </div>
+        </div>
+        <div class="staffservice">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contentoverlay">
+                            <a href="#" target="_blank">
+                                <!-- <div class="content-overlay"></div> -->
+                                <img class="content-image" src="images/team1.jpg">
+                                <div class="content-details fadeIn-top fadeIn-left">
+                                    <div class="circles g-circles">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+                                            height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
+                                            xml:space="preserve">
+                                            <defs>
+                                                <path id="circlePath"
+                                                    d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                            </defs>
+                                            <circle cx="150" cy="100" r="75" fill="none" />
+                                            <g>
+                                                <use xlink:href="#circlePath" fill="none" />
+                                                <text fill="#fff" style="font-size: 16px;">
+                                                    <textPath xlink:href="#circlePath">Group Account Director .Group
+                                                        Account Director</textPath>
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="garlandText">
+                                        <div class="garlandText-inner">
+                                            <p class="mb-0 mt-3">Suraj has the nicest </p>
+                                            <p class="mb-0 mt-0"> display pictures across </p>
+                                            <p class="mt-0">social media in office.</p>
+                                            <p class="garlandname"><span class="bg"><span class="t-rotate">Suraj
+                                                    </span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contentoverlay">
+                            <a href="#" target="_blank">
+                                <!-- <div class="content-overlay"></div> -->
+                                <img class="content-image" src="images/team2.jpg">
+                                <div class="content-details fadeIn-top fadeIn-left">
+                                    <div class="circles g-circles">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+                                            height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
+                                            xml:space="preserve">
+                                            <defs>
+                                                <path id="circlePath"
+                                                    d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                            </defs>
+                                            <circle cx="150" cy="100" r="75" fill="none" />
+                                            <g>
+                                                <use xlink:href="#circlePath" fill="none" />
+                                                <text fill="#fff" style="font-size: 16px;">
+                                                    <textPath xlink:href="#circlePath">Account Manager . Account
+                                                        Manager.</textPath>
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="garlandText">
+                                        <div class="garlandText-inner">
+                                            <p class="mb-0 mt-3">Khushali maintains great </p>
+                                            <p class="mb-0 mt-0">equations with everyone </p>
+                                            <p class="mt-0"> like a little politician.</p>
+                                            <p class="garlandname"><span class="bg"><span
+                                                        class="t-rotate">Khushali</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contentoverlay">
+                            <a href="#" target="_blank">
+                                <!-- <div class="content-overlay"></div> -->
+                                <img class="content-image" src="images/team3.jpg">
+                                <div class="content-details fadeIn-top fadeIn-left">
+                                    <div class="circles g-circles">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+                                            height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
+                                            xml:space="preserve">
+                                            <defs>
+                                                <path id="circlePath"
+                                                    d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
+                                            </defs>
+                                            <circle cx="150" cy="100" r="75" fill="none" />
+                                            <g>
+                                                <use xlink:href="#circlePath" fill="none" />
+                                                <text fill="#fff" style="font-size: 16px;">
+                                                    <textPath xlink:href="#circlePath">Account Executive . Account
+                                                        Executive .</textPath>
+                                                </text>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="garlandText">
+                                        <div class="garlandText-inner">
+                                            <p class="mb-0 mt-3">While Ruchita may sound </p>
+                                            <p class="mb-0 mt-0">mild mannered, there’s </p>
+                                            <p class="mt-0">nothing mild about her brand </p>
+                                            <p class="garlandname"><span class="bg"><span class="t-rotate">Ruchita
+                                                    </span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="contentoverlay">
+                            <a href="#" target="_blank">
+                                <div class="content-overlay"></div>
+                                <img class="content-image" src="images/team4.jpg">
+                                <div class="content-details fadeIn-top fadeIn-left">
+                                    <h3 class=""><img src="images/arrow-upside.png"></h3>
+                                    <a href="team.html" style="color: inherit;text-decoration: none;">
+                                        <p>Meet All</p>
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contactUs" class="animate__animated animate__fadeInRight animate__delay-5s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h2 class="hangtext">Let's hang</h2>
+                            <p>
+                                If you’re ever in the neighborhood, swing by for coffee. Or leave your details here and
+                                we’ll get in
+                                touch with you!
+                            </p>
+                            <div>
+                                <p class="addtext mb-0">Address</p>
+                                205/206 Eco house, Vishweswar<br />
+                                Nagar, Off Aarey Road, Goregaon<br />
+                                East, Mumbai, Maharashtra 400063
+                            </div>
+                            <p>Contact Us : +022 4037 9988</p>
+                            <p><a href="#" style="color: #e23cc4;">Get Directions+</a></p>
+                        </div>
+                        <div class="col-md-7">
+                            <div id="mail-status-for-enquiry"></div>
+                            <form method="post" action="" id="make-an-enquiry-forms">
+                                <div class="contactform">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control contactforminput"
+                                            placeholder="Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control contactforminput"
+                                            placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="contact" class="form-control contactforminput"
+                                            placeholder="Contact No" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="mr-2"><input type="radio" name="enquiry" placeholder="Contact No"
+                                                value="Business"> New
+                                            Business</span>
+                                        <input type="radio" name="enquiry" placeholder="Contact No" checked=""
+                                            value="Job"> Job enquiry
+                                        <!-- <button class="btn btn-primary float-right contactsubmitbtn">Submit</button> -->
+                                        <button type="submit" class="sub-button1 btn btn-primary" id="button-7">
+                                            <!-- <div id="dub-arrow"><span class="mr-1">Submit</span> <img
+                        src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"
+                        alt="" /></div> -->
+                                            <!-- <a href="#"></a> -->
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section style="display: none;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15241.89658499127!2d78.89865578889594!3d17.244281083661175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb1168df080137%3A0x1c62a212351bf5a3!2sState%20Bank%20Of%20India%20Choutuppal%20Branch!5e0!3m2!1sen!2sin!4v1601310942814!5m2!1sen!2sin"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-media">
+                        <ul>
+                            <li>Connect Us : </li>
+                            <li><a href=""><img src="images/facebook_icon.png" /></a></li>
+                            <li><a href=""><img src="images/linkedin_icon.png" /></a></li>
+                            <li><a href=""><img src="images/instagram_icon.png" /></a></li>
+                            <li><a href=""><img src="images/youtube_icon.png" /></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-right">
+                        Write to us ?
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="bordertop"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="col-md-9">
+                    <div class="shortmenu">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="work-list.html">work</a></li>
+                            <li><a href="about-us.html">about us</a></li>
+                            <li><a href="drumbeat.html">drumbeat</a></li>
+                            <li><a href="careers.html">career</a></li>
+                            <li><a href="team.html">team</a></li>
+                            <li><a href="contact-us.html">get in touch</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="copyright-text text-right">
+                        Copyright &copy; 2020 wiseape
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class="gotoactions">
+        <ul class="inner-page">
+            <li><a href="#headersection">1</a></li>
+            <li><a href="#slidersection" class="active">2</a></li>
+            <li><a href="#articlesSection">3</a></li>
+            <li><a href="#shrewdnessSection">4</a></li>
+            <li><a href="#contactUs">5</a></li>
+        </ul>
+    </div>
+
+    <div class="modal fade" id="myModalPrev" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                </div>
+
+                <div class="modal-body">
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $('.gotoactions li a').click(function () {
+            $('.gotoactions li a').removeClass('active')
+            $(this).addClass('active')
+
+        });
+        $('.navbar-nav li .activelink').click(function () {
+            $('.navbar-nav li .activelink').removeClass('active')
+            $(this).addClass('active');
+        });
+    </script>
+    <script type="text/javascript">
+        $('.carousel-control-prev').on('click', function () {
+            var id = $('.carousel-item.active').data('id');
+
+            if (id == '01') {
+                $('.slideCount').text('06');
+            } else {
+                $('.slideCount').text(parseInt('0' + id) - 1);
+            }
+
+        })
+
+        $('.carousel-control-next').on('click', function () {
+            var id = $('.carousel-item.active').data('id');
+            if (id == '06') {
+                $('.slideCount').text('01');
+            } else {
+                $('.slideCount').text(parseInt('0' + id) + 1);
+            }
+        })
+
+
+        $('#mainmenu').on('click', function () {
+
+            $("#Menulist").toggle();
+        })
+
+        $('#myModalPrev').on('show.bs.modal', function (e) {
+           
+            var idVideo = $(e.relatedTarget).data('video');
+
+            $('#myModalPrev .modal-body').html('<video controls width="100%"> <source src="' + idVideo + '" type="video/mp4"></video>');
+
+
+        });
+        //on close remove
+        $('#myModalPrev').on('hidden.bs.modal', function () {
+            $('#myModalPrev .modal-body').empty();
+        });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 620) {
+                $('#logo-img').show();
+                $('#navBar').addClass('floatingNav');
+            } else {
+                $('#navBar').removeClass('floatingNav');
+                $('#logo-img').hide()
+            }
+        });
+
+    </script>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 100) {
+                $(".clearHeader").addClass("darkHeader");
+            } else {
+                $(".clearHeader").removeClass("darkHeader");
+            }
+        });
+    </script>
+    <!-- // send email -->
+    <script>
+        // send mail for enquiry
+        $("#make-an-enquiry-forms").on('submit', function (event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            // alert(formData); 
+            $.ajax({
+                type: 'POST',
+                url: 'contact-mail.php',
+                data: formData,
+                success: function (data) {
+                    $("#make-an-enquiry-forms")[0].reset();
+                    $("#mail-status-for-enquiry").html(data);
+                    window.location.href = "thankyou.html";
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 100) {
+                $(".clearHeader").addClass("darkHeader");
+            } else {
+                $(".clearHeader").removeClass("darkHeader");
+            }
+        });
+    </script>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                document.getElementById("header").style.width = "50%";
+                document.getElementById("header").style.height = "50%";
+            } else {
+                document.getElementById("header").style.width = "100%";
+                document.getElementById("header").style.height = "100%";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+========------------how we can add collumnn in tables-=============
+
+
+php artisan make:migration add_paid_to_users_table --table=users
+plez change the name of table and collumn name
+$table->enum('user_type', array('0','1'))->nullable();
+
+
+
+ ======================== migration table in laravel===================
+php artisan make:migration create_users_table
+php artisan make:migration create_events_table
+
+php artisan migrate (php artisan migrate --force)
+
+for resset table you can use this command
+php artisan migrate:fresh (this will delete all records from tables)
+--================oR=======---------------
+php artisan migrate:reset (this will drop all table which is creating by migration)
+
+php artisan make:model Events
+
+---======================to create controller inside folder of another-============
+php artisan make:controller "Test/SampleController"
+php artisan make:controller "Test/DepartmentController"
+php artisan make:controller "API/EventsController"
+

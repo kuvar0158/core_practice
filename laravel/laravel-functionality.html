@@ -1,0 +1,12 @@
+1) how we can create our custom laravel log files 
+After some digging around I found that I could add a channel to config/logging.php like this
+
+'customlog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/custom.log'),
+            'level' => 'info',
+],
+and write to it like this
+
+use Illuminate\Support\Facades\Log;
+Log::channel('customlog')->info('Hello world!!');

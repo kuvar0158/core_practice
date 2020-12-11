@@ -2,6 +2,7 @@
 
 <?php
 $v = 1;
+$order  = $orderby != "" ? $request->input('order') : "";
 
 $r = (1 == $v) ? 'Yes' : 'No'; // $r is set to 'Yes'
 $r = (3 == $v) ? 'Yes' : 'No'; // $r is set to 'No'
@@ -39,6 +40,8 @@ $empStatus = isset($userPref['employmentStatus'][0]['levelOne']) ? $userPref['em
 bool y = (x == 42) ? true : false;
 
 <input id="contractFlag3" <?php echo $userDetail->contract_flag3 == 'y' ? "checked" : "";?> type="checkbox" name="PersonalInfo[UserDetail][contractFlag3]" class="selected_only" value='<?php echo $userDetail->contract_flag3; ?>'>
+
+
 
 
 

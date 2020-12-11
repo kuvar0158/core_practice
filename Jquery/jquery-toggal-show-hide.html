@@ -1,0 +1,18 @@
+ <script> 
+         $(document).ready(function(){  
+           $(".add-liability").click(function(){
+            var i = $(this).attr('id');
+           if($(this).hasClass('selected-liability'))  {
+               $(this).removeClass('selected-liability');
+               $('#libility-'+i).hide();
+           } else {
+               $(this).addClass('selected-liability');
+               var count = $('.selected-liability').length;
+               if(count == 1) {
+                  $('.show-liability').hide();
+               }
+               $('#libility-'+i).show();
+           }
+          });
+         }); 
+      </script> 

@@ -1,0 +1,67 @@
+1:- login are gister using auth command: laravel >=6 version (php artisan make:auth) if less then <=6 version of laravel
+
+reference-:https://www.youtube.com/watch?v=nP7yokTw_tw&t=318s
+
+step 1st: composer require laravel/ui
+step-2: php artisan ui vue --auth
+
+step 3:-npm install && npm run dev (for contain js and css and before run npm install node js and 
+
+node -v to check version of node) 
+
+
+clear cache in laravel
+
+php artisan config:cache
+php artisan cache:clear
+
+php artisan route:list
+
+3)Laravel 5.8 Tutorial in Urdu 2019: Laravel 5.8 Queue with Database | How to Use Laravel Queue
+https://www.youtube.com/watch?v=EfHgCEVSvgE
+
+link for send email in laravel
+https://www.youtube.com/watch?v=cc6czaoxe4M
+
+---------===========details for mailtrap app https://mailtrap.io/==============------
+note-: this is working for localhost server also for test
+
+user-:singhrec1@gmail.com (login into mailtrape)
+pass-:Kuvar@234 (login into mailtrape)
+:user_name => '4ed4dca2cf5177',
+  :password => '91afa24376ed5a',
+  :address => 'smtp.mailtrap.io',
+  :domain => 'smtp.mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+
+php artisan make:jobs NewRegisterJobs
+php artisan queue:work (when we enter then mail go to send using quu delay method)
+  --------==============laravel installation command 8.9-========================
+  first check composer on root directory if not thn install
+
+  composer create-project --prefer-dist laravel/laravel blog
+
+ ======================== migration table in laravel===================
+php artisan make:migration create_users_table
+
+php artisan migrate (php artisan migrate --force)
+
+for resset table you can use this command
+php artisan migrate:fresh (this will delete all records from tables)
+--================oR=======---------------
+php artisan migrate:reset (this will drop all table which is creating by migration)
+
+
+how to setup project from githb to local setup
+
+1) go to diretory using command line and enter
+git clone "website-urlof-clone";
+
+2) composer update
+
+3) cp .env.example .env or (change .env.example to .env files) and create database configeration
+
+4) php artisan key:generate
+
+5) php artisan migrate
