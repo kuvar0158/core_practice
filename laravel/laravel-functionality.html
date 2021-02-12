@@ -1,4 +1,4 @@
-1) how we can create our custom laravel log files
+1) =====================-------how we can create our custom laravel log files========------
 
 After some digging around I found that I could add a channel to config/logging.php like this
 
@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Log;
 Log::channel('customlog')->info('Hello world!!');
 
 
-=====================-------for sending mail---------------------=======
+2) =====================-------for sending mail---------------------=======
 reference link-: https://www.cloudways.com/blog/send-email-in-laravel/
 
-=========================multi where conditi..================
+3) =========================multi where conditi..================
 
- $check = Appointments::where('created_datetime_appointment', $appointments->created_datetime_appointment)->where('id', '<>', $id)->first();
+ $check = Appointments::where('created_datetime_appointment', $appointments->created_datetime_appointment)->where('id', '<>', $id)->where('id', '<>', $id)->first();
 
  ->where([
 
@@ -29,7 +29,7 @@ reference link-: https://www.cloudways.com/blog/send-email-in-laravel/
 
     ]);
 
-2-:) how to make custom artisan command
+4-:) --------------=================how to make custom artisan command-----------==============
 
 reference link-: https://www.youtube.com/watch?v=RM7vopsVLUg&list=PL8p2I9GklV45jJzLsexf2_hNNafpCXw9k&index=57&ab_channel=CodeStepByStep
 
@@ -56,14 +56,21 @@ change signature name and command description according your uses.
 
  step- 6: run command (php artisan showDB).
 
---=====================aws bucket uploaded images-------==============
+6) --=====================aws bucket uploaded images-------==============
 
 refenrence link-: https://investmentnovel.com/laravel-s3-file-upload-tutorial-with-example/
 
+step 1: install bellow command
 composer require league/flysystem-aws-s3-v3:"^1.0"
+step 2-: go to env files setup aws_client_id, secret_key and aws_url 
+
+step 3-: $filePath = 'medglow/' . $filename;
+         $path =  Storage::disk('s3')->put($filePath, file_get_contents($file));
+        $staff_images =  Storage::disk('s3')->url($filePath);
 
 
-------==========================how to create custom classes inside app-==================
+
+7) ------==========================how to create custom classes inside app-==================
 
 step 1st-: go to root drectory inside app/ create directory and create class inside it
 ex-: app/CustomClass/Common
@@ -76,5 +83,18 @@ step 2-: go to config/app and then inside aliases array you have to set class na
 
 step 3-: then you can use classes and method inside your controller by using like
 use Common;
+
+8) -----------============ how to used key(variable) from env files-----========
+
+step 1-: define key and value inside env files
+
+step 2-: go to the config/app classes lile
+AWS_URL
+check that key and define it 
+
+step 3-: used as a controller to using arrow operators. like
+Storage::disk('s3')->url($filePath);
+
+
 
 
