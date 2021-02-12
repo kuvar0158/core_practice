@@ -35,6 +35,11 @@
 
    <!-- truncate table query in mysql -->
    TRUNCATE TABLE  table_name; 
+   TRUNCATE TABLE appointments;
+   TRUNCATE TABLE pateints;
+   TRUNCATE TABLE patient_historys;
+   TRUNCATE TABLE supports;
+
 
     
 

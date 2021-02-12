@@ -1,0 +1,32 @@
+return Destination::addSelect(['last_flight' => Flight::select('name')
+    ->whereColumn('destination_id', 'destinations.id')
+    ->orderByDesc('arrived_at')
+    ->limit(1)
+])->get();
+
+reference -: https://laravel.com/docs/8.x/eloquent
+=========-------------------add custome collumn inside at the time of show ddata-------============
+
+$options =   Questions::addSelect(['options', 'okoko'])->get();
+
+$query = DB::table('users')->select('name');
+
+$users = $query->addSelect('age')->get();
+
+$name = DB::table('users')->where('name', 'John')->pluck('name');
+
+// image uploaded using laravel
+if(!empty($file)){
+               
+				$extension = $file->getClientOriginalExtension(); // getting image extension
+				$filename =time().'.'.$extension;
+				// $file->move('uplods/images/', $filename);
+                $filePath = 'medglow/' . $filename;
+                $path =  Storage::disk('s3')->put($filePath, file_get_contents($file));
+                // $staff_images = Storage::disk('s3')->url($filePath);
+                $staff_images =  Storage::disk('s3')->url($filePath);
+                
+                // print_r($staff_images); die;
+				// $staff_images = URL::to('').'/uplods/images/'.$filename;
+				$staff->images=$staff_images; 
+			}

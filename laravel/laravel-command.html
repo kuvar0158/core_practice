@@ -5,7 +5,7 @@ reference-:https://www.youtube.com/watch?v=nP7yokTw_tw&t=318s
 step 1st: composer require laravel/ui
 step-2: php artisan ui vue --auth
 
-step 3:-npm install && npm run dev (for contain js and css and before run npm install node js and 
+step 3:- npm install && npm run devnpm install && npm run dev (for contain js and css and before run npm install node js and 
 
 node -v to check version of node) 
 
@@ -14,6 +14,7 @@ clear cache in laravel
 
 php artisan config:cache
 php artisan cache:clear
+sudo chmod -R 777 storage
 
 php artisan route:list
 
@@ -34,6 +35,19 @@ pass-:Kuvar@234 (login into mailtrape)
   :domain => 'smtp.mailtrap.io',
   :port => '2525',
   :authentication => :cram_md5
+
+
+---===========================details for smtp mail ============---------------------
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=pratap.singh@techvalens.com
+MAIL_PASSWORD=Kuvar@234
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=pratap.singh@techvalens.com
+MAIL_FROM_NAME="${APP_NAME}"
+
 
 php artisan make:jobs NewRegisterJobs
 php artisan queue:work (when we enter then mail go to send using quu delay method)
@@ -65,3 +79,43 @@ git clone "website-urlof-clone";
 4) php artisan key:generate
 
 5) php artisan migrate
+
+---===================laravel version check-----------========================
+php artisan --version
+===========-------------php version check----------------------
+php -v
+
+--------================add custom tables in model----------=============
+class Flight extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'my_flights';
+}
+
+
+--------======================= fresh laravel 8 installation steps--------=============
+
+if you want install particular version you have to write at the end of them
+composer create-project --prefer-dist laravel/laravel blog "6.*"
+
+step 1-: composer create-project laravel/laravel MedGlow "8.0"
+
+you have to check on root directory and open project browser for install auth go to next step
+
+step 2-: composer require laravel/ui
+step 3-: php artisan ui vue --auth
+step 4-: npm install && npm run dev
+step 5-: create db and set on env file 
+reference link for add passport (https://www.itsolutionstuff.com/post/laravel-8-rest-api-with-passport-authentication-tutorialexample.html)
+step 6-: composer require laravel/passport
+
+step-: php artisan migrate (after install passport packages)
+
+step 7-: composer require doctrine/dbal (install this packages for change existing collumns)
+
+
+

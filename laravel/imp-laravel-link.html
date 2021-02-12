@@ -17,9 +17,11 @@ another link for exceptino hadler in laavel
 https://www.youtube.com/watch?v=RTTXZVIL6tw
 
 
-3) how to swnd email in laravel using mailer class.
+3) how to send email in laravel using mailer class.
 
 step 1-: php artisan make:mail OrderShipped --markdown=emails.orders (here create email classs with view files also)
+
+php artisan make:mail SupportMail --markdown=email.customSupportMail
 
 step-: set account of mailtrape inside env files
 
@@ -34,6 +36,12 @@ https://www.youtube.com/watch?v=9k3gqI1GU6Q
 
 
 https://www.studentstutorial.com/laravel/routing
+
+-=================installation of particular laravel version----------============
+composer create-project laravel/laravel="5.1.*" myProject
+
+
+Post::find($request->input('id'))->delete();
 
 
 

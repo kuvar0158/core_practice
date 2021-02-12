@@ -2,14 +2,22 @@
 
 
 php artisan make:migration add_paid_to_users_table --table=users
+php artisan make:migration add_appointment_date_time_to_users_table --table=appointments
 plez change the name of table and collumn name
 $table->enum('user_type', array('0','1'))->nullable();
 
-
+1234#pipsPrep
+1234#pipsPrep
+1234#pipsPrep
 
  ======================== migration table in laravel===================
 php artisan make:migration create_users_table
-php artisan make:migration create_events_table
+php artisan make:migration create_procedure_notes_table
+php artisan make:migration change_collumn_for_social_provider_data_type_users_table
+php artisan make:migration change_consoent_id_type_save_consent_table
+php artisan make:migration change_collumn_name_save_procedure_photos_table
+php artisan make:migration add_collumn_paypal_integrate_inside_users_table
+php artisan make:migration change_question_type_data_questions_table
 
 php artisan migrate (php artisan migrate --force)
 
@@ -18,10 +26,46 @@ php artisan migrate:fresh (this will delete all records from tables)
 --================oR=======---------------
 php artisan migrate:reset (this will drop all table which is creating by migration)
 
-php artisan make:model Events
+php artisan make:model Support
+php artisan make:model Procedure_note
 
 ---======================to create controller inside folder of another-============
 php artisan make:controller "Test/SampleController"
-php artisan make:controller "Test/DepartmentController"
-php artisan make:controller "API/EventsController"
+php artisan make:controller "API/TreatmentController"
 
+=--------------======laravel migration change column type=========-------------
+Schema::table('sometable', function (Blueprint $table) {
+        $table->text('text')->change();
+    });
+    Schema::table('users', function ($table) {
+    $table->string('email')->after('id')->nullable();
+});
+------==================== reference link email-----------===============
+https://sendgrid.com/docs/for-developers/sending-email/laravel/
+
+
+Mail::send('emails.welcome', $data, function ($message) {
+    $message->from('us@example.com', 'Laravel');
+
+    $message->to('foo@example.com')->cc('bar@example.com');
+});
+$message->from($address, $name = null);
+$message->sender($address, $name = null);
+$message->to($address, $name = null);
+$message->cc($address, $name = null);
+$message->bcc($address, $name = null);
+$message->replyTo($address, $name = null);
+$message->subject($subject);
+$message->priority($level);
+$message->attach($pathToFile, array $options = []);
+ $user = User::findOrFail($id);
+
+
+Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+    $m->from('hello@app.com', 'Your Application');
+
+    $m->to($user->email, $user->name)->subject('Your Reminder!');
+});
+
+php artisan make:mail SupportMail --markdown=email.customSupportMail
+php artisan make:mail ProcedureTreatmentMail --markdown=email.ProcedureTreatmentMail
