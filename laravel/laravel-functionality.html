@@ -1,5 +1,9 @@
 1) =====================-------how we can create our custom laravel log files========------
+<<<<<<< HEAD
 //storage/logs to check log files
+=======
+
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 After some digging around I found that I could add a channel to config/logging.php like this
 
 reference link-: https://www.youtube.com/watch?v=GOmiWKpwFSo&ab_channel=Codecourse
@@ -16,8 +20,11 @@ Log::channel('customlog')->info('Hello world!!');
 
 2) =====================-------for sending mail---------------------=======
 reference link-: https://www.cloudways.com/blog/send-email-in-laravel/
+<<<<<<< HEAD
 php artisan make:mail ProcedureTreatmentMail --markdown=email.ProcedureTreatmentMail
 php artisan make:mail RegisterMail --markdown=email.RegisterMail
+=======
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 3) =========================multi where conditi..================
 
@@ -31,7 +38,11 @@ php artisan make:mail RegisterMail --markdown=email.RegisterMail
 
     ]);
 
+<<<<<<< HEAD
 4-:) --------------=================how to make custom artisan command--------==============
+=======
+4-:) --------------=================how to make custom artisan command-----------==============
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 reference link-: https://www.youtube.com/watch?v=RM7vopsVLUg&list=PL8p2I9GklV45jJzLsexf2_hNNafpCXw9k&index=57&ab_channel=CodeStepByStep
 
@@ -64,9 +75,12 @@ refenrence link-: https://investmentnovel.com/laravel-s3-file-upload-tutorial-wi
 
 step 1: install bellow command
 composer require league/flysystem-aws-s3-v3:"^1.0"
+<<<<<<< HEAD
 ----------==============or======================-------------------
 composer require league/flysystem-aws-s3-v3 ~1.0 --ignore-platform-reqs
 
+=======
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 step 2-: go to env files setup aws_client_id, secret_key and aws_url 
 
 step 3-: $filePath = 'medglow/' . $filename;
@@ -75,7 +89,11 @@ step 3-: $filePath = 'medglow/' . $filename;
 
 
 
+<<<<<<< HEAD
 7) ------===========how to create custom classes inside app-==================
+=======
+7) ------==========================how to create custom classes inside app-==================
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 step 1st-: go to root drectory inside app/ create directory and create class inside it
 ex-: app/CustomClass/Common
@@ -93,14 +111,19 @@ use Common;
 
 step 1-: define key and value inside env files
 
+<<<<<<< HEAD
 step 2-: go to the services/app classes lile
 filesystems/app 
+=======
+step 2-: go to the config/app classes lile
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 AWS_URL
 check that key and define it 
 
 step 3-: used as a controller to using arrow operators. like
 Storage::disk('s3')->url($filePath);
 
+<<<<<<< HEAD
 9-) ============-----------create seeder class for create dummy data now=============------
 
 reference link-: https://laravel.com/docs/8.x/seeding
@@ -183,4 +206,8 @@ protected $casts = [
     ];
     dd($product->featured); // true
 it will convert feature as a boolean result no matter which data type to save data
+=======
+
+
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 

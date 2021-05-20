@@ -11,6 +11,7 @@ echo date("d-M-Y H:s a", strtotime("now"))."\n";
 $created_at = date("Y-m-d H:i:s");
 echo $created_at;
 ?>
+<<<<<<< HEAD
 
 {{date('d M Y h:i A', strtotime($val['event_date']))}}
 o/p
@@ -18,6 +19,8 @@ o/p
 
 cuurent date records
 $posts = Post::whereDate('created_at', Carbon::today())->get();
+=======
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 <!-- $dt = Carbon::now();
 
 // set some things
@@ -69,6 +72,7 @@ $users = Users::where('status_id', 'active')
 $users = Users::where('status_id', 'active')
            ->where( 'created_at', '>', Carbon::now()->subDays(10))
            ->get();
+<<<<<<< HEAD
 
 -------==================imp link for date filter for current and last year records=--------==
 
@@ -99,3 +103,16 @@ protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
     }
+=======
+{ 
+   "title":"lorem lipsum title "
+   "description":"consents lorem lipsum descriptioin" ,
+   "created_datetime_consent":"2020-08-21 12:10:30",
+   "cosent_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,pulvinar facilisis justo mollis,"
+}
+
+luctus lacus ut 
+vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
+Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
+faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc.
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923

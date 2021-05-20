@@ -7,6 +7,7 @@ plez change the name of table and collumn name
 $table->enum('user_type', array('0','1'))->nullable();
 
 1234#pipsPrep
+<<<<<<< HEAD
 
 http://127.0.0.1:8000/api/save-answer-feedback/43
  ======================== migration table in laravel===================
@@ -27,6 +28,20 @@ php artisan make:migration add_new_collumns_inside_password_resets_table
 php artisan make:migration create_countries_table
 
 php artisan make:migration change_collumn_name_subscription_plan_id_inside_temprory_transe_table
+=======
+1234#pipsPrep
+1234#pipsPrep
+
+ ======================== migration table in laravel===================
+php artisan make:migration create_users_table
+php artisan make:migration create_procedure_notes_table
+php artisan make:migration change_collumn_for_social_provider_data_type_users_table
+php artisan make:migration change_consoent_id_type_save_consent_table
+php artisan make:migration change_collumn_name_save_procedure_photos_table
+php artisan make:migration add_collumn_paypal_integrate_inside_users_table
+php artisan make:migration change_question_type_data_questions_table
+
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 php artisan migrate (php artisan migrate --force)
 
 for resset table you can use this command
@@ -34,6 +49,7 @@ php artisan migrate:fresh (this will delete all records from tables)
 --================oR=======---------------
 php artisan migrate:reset (this will drop all table which is creating by migration)
 
+<<<<<<< HEAD
 php artisan migrate:status (this cmd is check all the status of migration is your app)
 
 php artisan make:model Support
@@ -46,6 +62,14 @@ php artisan make:controller "API/EmergencyAPIController"
 ---====rollback 3 migration cmd in laravel ===---------------
 
 php artisan migrate:rollback --step=3
+=======
+php artisan make:model Support
+php artisan make:model Procedure_note
+
+---======================to create controller inside folder of another-============
+php artisan make:controller "Test/SampleController"
+php artisan make:controller "API/TreatmentController"
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 =--------------======laravel migration change column type=========-------------
 Schema::table('sometable', function (Blueprint $table) {
@@ -82,8 +106,12 @@ Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
 });
 
 php artisan make:mail SupportMail --markdown=email.customSupportMail
+<<<<<<< HEAD
 php artisan make:mail ProcedureTreatmentMail --markdown=email.ProcedureTreatmentMail
 
 php artisan migrate:rollback --step=1
 
 $request->query('limit') ?? 30
+=======
+php artisan make:mail ProcedureTreatmentMail --markdown=email.ProcedureTreatmentMail
+>>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
