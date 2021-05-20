@@ -1,0 +1,189 @@
+
+presentaion domain name-: 
+pentaindia.co.in, localhost
+recaptch -: 6LeAoE0aAAAAAI0apA1ragWdM1aHvElmQi51_uqB
+
+============ aws account details========
+
+date created-: 09-fab-2021 
+user-: singhrec1@gmail.com
+pass-: Kuvar@234
+
+=========git hub details for mango it solutions projects=========
+
+user-: manish@mangoitsolutions.com
+pass-: Mangoit@#$1
+
+ssh root@94.237.64.209
+
+/var/www/html/unofood
+sir, I'm in another neeting
+---===========================details for smtp mail ============---------------------
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=pratap.singh@techvalens.com
+MAIL_PASSWORD=Kuvar@234
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=pratap.singh@techvalens.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+===================cron-jobs-account-details----================
+ur-:https://cron-job.org/en/members/jobs/add/ (set live urls before cron jobs)
+user-:singhrec1@gmail.com
+pass-:Kuvar@234
+================= paypal developer account =============
+
+email-: kuvarpratapsingh90@gmail.com
+pass-: 9755246587
+
+================= paypal developer account =============
+
+email-: singhrec1@gmail.com
+pass-: Chandan0158
+
+================= paypal sandbox business account ============= reference link
+https://www.youtube.com/watch?v=5MNC1NX0gm8&t=1s
+
+name-: john doe
+email-:sb-wjzx92679530@business.example.com
+pass-: zz1!E}k1
+
+sb-syleg2678261@business.example.com
+pass-: lYpEvs1/
+
+======for medglow business accounts-----========================
+Email ID:-
+sb-47hkbv3537937@business.example.com
+
+System Generated Password:
+QaU44?Q#
+
+==========================skyep id as a vivek pateria=======================
+user-:singhrec1@gmail.com
+pass-: chandan0158
+
+==============----------------------AWS Credentials:============---------------------
+
+IAM User: 088253928779
+Username: Sourabh
+Password: Medglow@2000
+
+
+bucket name-: Medglow
+
+--------====================-------mailtrape details----------========================
+
+user-:singhrec1@gmail.com (login into mailtrape)
+pass-:Kuvar@234 (login into mailtrape)
+:user_name => '4ed4dca2cf5177',
+  :password => '91afa24376ed5a',
+  :address => 'smtp.mailtrap.io',
+  :domain => 'smtp.mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+
+personal github account:
+user-: kuvar0158
+pass-: Kuvar@123
+email-: kuvarpratapsingh90@gmail.com
+
+---================stripe account------============================
+
+user-: pratap.singh@techvalens.com
+pass-: Kuvar@2345678
+
+https://www.youtube.com/watch?v=u9B-yMUw3m4 (shayri)
+
+-----=============================mad-glow staging server details-------=============
+
+URL :  https://medglow-stage.techvalens.com/
+URL-: https://medglow-stage.techvalens.com/
+SSH details: ssh -i medglow-key-staging.pem ubuntu@54.94.158.201
+Path in Server : /var/www/stagingapi/
+cd /var/www/stagingapi/
+
+--=====================go to root directory of files inside cmd--------=================
+unzip filesname.zip
+unzip medglowapp.zip
+
+---------=====================unzip process on server ============-----------
+sudo apt-get install zip
+
+zip -r {filename.zip} {foldername}
+zip -r exm.zip exm/
+sudo zip -r medglowapp.zip medglowapp
+
+zip -r tecmint_files.zip tecmint_files 
+
+step 1st -: go to root directory on sever enter zip and name of your zip files and than name of that which want to zip
+
+for permission issue you have to add sudo at starting points.
+
+------==================database import from cmd ==========================
+ mysql -u username -p databasename < test.sql
+ mysql -u 
+ mysql -u medglowuser -p medglowapp_db_staging < medglowuser.sql
+mysql -u medglowuser -p 
+pass-: medglow*#75319!
+mysql> create database medglowapp_db_staging
+use medglowapp_db_staging
+CREATE DATABASE medglowapp_db_staging;
+
+ --=========================gitlab details-----============================
+ project-: ask frigo project url for nova
+user-: kuvar
+pass-: Kuvar@234
+--------===========online internet banking of charted account details-------==========
+
+url-: https://retail.sc.com/in/nfs/login.htm
+user-: kuvar6587
+pass-: Kuvar@234
+debit pin-: 9781
+
+Today plan (02-mar-2021)
+work on
+- work on ceate plans for payments getway
+- work on sign up for frigo ask projects
+
+
+--==============git lab details-----==============
+user-: kuvar
+pass-: Kuvar@234
+
+TRUNCATE TABLE subscription_plans 
+
+ check-out(23/03/2021)
+ Today I have work on these points.
+ ask Frigo-:
+ working on setup santnum have done
+ generate auth token have done
+ create api for docter login have done
+ 
+
+ 
+
+
+Headers
+key-: Authorization  
+
+value-: Bearer
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVhNjAxNzUzOGQwYTM5Zjc1MWRhNzA3MTJhN2I2M2U1Y2U5Zjg2MzI0ZGVkNWZlZTY2ZTkwMDlhZjkwYzE0MWQzMTNhNjE5YTNmOGE4ZGY2In0.eyJhdWQiOiIxIiwianRpIjoiNWE2MDE3NTM4ZDBhMzlmNzUxZGE3MDcxMmE3YjYzZTVjZTlmODYzMjRkZWQ1ZmVlNjZlOTAwOWFmOTBjMTQxZDMxM2E2MTlhM2Y4YThkZ
+  -----==============tawk chat system -----------==============================
+https://dashboard.tawk.to/#/chat
+preps-: account
+pip90@1234&!!!
+
+pipsprep123@gmail.com
+
+
+@sourabh sir, I have created staging server domain which is below have done
+Domain Url-: https://medglow-stage.techvalens.com/
+
+for test api like url
+ex-: https://medglow-stage.techvalens.com/api/get-book-patients-appointments
+
+
+
+composer require "paypal/rest-api-sdk-php:*"

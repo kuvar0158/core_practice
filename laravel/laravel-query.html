@@ -1,0 +1,121 @@
+
+return Destination::addSelect(['last_flight' => Flight::select('name')
+    ->whereColumn('destination_id', 'destinations.id')
+    ->orderByDesc('arrived_at')
+    ->limit(1)
+])->get();
+
+-------==================raw query=========================================
+User::select(DB::raw("(COUNT(*)) as count"),DB::raw("MONTHNAME(created_at) as monthname"))
+ ->whereYear('created_at', date('Y', strtotime('-1 year')))
+ ->groupBy('monthname')
+ ->get();
+ 
+o/p-:
+Array
+(
+    [0] => Array
+        (
+            [count] => 6
+            [monthname] => March
+        )
+ 
+)
+reference -: https://laravel.com/docs/8.x/eloquent
+=========-------------------add custome collumn inside at the time of show ddata-------============
+
+$options =   Questions::addSelect(['options', 'okoko'])->get();
+
+$query = DB::table('users')->select('name');
+
+$users = $query->addSelect('age')->get();
+
+$name = DB::table('users')->where('name', 'John')->pluck('name');
+
+// image uploaded using laravel
+if(!empty($file)){
+               
+				$extension = $file->getClientOriginalExtension(); // getting image extension
+				$filename =time().'.'.$extension;
+				// $file->move('uplods/images/', $filename);
+                $filePath = 'medglow/' . $filename;
+                $path =  Storage::disk('s3')->put($filePath, file_get_contents($file));
+                // $staff_images = Storage::disk('s3')->url($filePath);
+                $staff_images =  Storage::disk('s3')->url($filePath);
+                
+                // print_r($staff_images); die;
+				// $staff_images = URL::to('').'/uplods/images/'.$filename;
+				$staff->images=$staff_images; 
+			}
+
+------===========Laravel - How to search with comma separated values using Query Builder ?===-----
+refrence link-: https://www.itsolutionstuff.com/post/laravel-how-to-search-with-comma-separated-values-using-query-builder-example.html#:~:text=you%20can%20use%20find_in_set(),7%20and%20laravel%208%20app.&text=%22find_in_set()%22%20of%20MySql%20predefine,values%20column%20from%20mysql%20table.
+
+
+$search = 1;
+$data = \DB::table("myposts")
+    ->select("myposts.*")
+    ->whereRaw("find_in_set('".$search."',myposts.tags)")
+    ->get();
+
+    $data = \DB::table("articles")
+       ->select("title")
+       ->whereRaw("find_in_set('php',tags)")
+       ->get();
+
+$terms = explode(',',$post->meta_keywords);
+$query = Post::where('category_id','=',$post->category_id)
+                    ->where('status','=','PUBLISHED')
+                    ->where('id','!=',$post->id)
+                    ->where(function($query) use($terms) {
+                        foreach($terms as $term) {
+                            $query->orWhere('meta_keywords', 'like', "%$term%");
+                        };
+                    })
+                    ->inRandomOrder()
+                    ->take(3)
+                    ->get();
+-=====================check if array of id exist in collumns laravel-========================
+$id_list = [5,9,13]; 
+
+$data_list = DB::table('table')->whereIn('id', $id_list)->get();
+
+
+-=====check if single id exist in array of collumns inside list of id in array db---====
+
+ $categoryList = Category::whereJsonContains('country_id', $request->country)->get()->toArray();
+
+
+
+  $result = Questionnaire_sets::get()->toArray();
+               foreach($result as $val) {
+                   $record = $val;
+                   $optionVal = Questions::where('questionnaire_sets_id', $val['id'])->get()->count();
+                   $total_question = [];
+                   $record['total_question'] = $optionVal;
+                   $records[] = $record;
+                 }
+                ==================check in array================
+$ids = array();
+foreach ($query->result_array() as $id)
+    {
+        $ids[] = $id['id'];
+    }
+
+$query->whereIn('user_country', $belongCountry)
+
+$this->db->where_in('id', $ids);
+
+
+================================filter with date==========================================
+
+$q->whereDate('created_at', '=', Carbon::today()->toDateString());
+$q->whereDay('created_at', '=', date('d'));
+$q->whereMonth('created_at', '=', date('m'));
+$q->whereYear('created_at', '=', date('Y'));
+refrence link-: https://laraveldaily.com/eloquent-date-filtering-wheredate-and-other-methods/
+
+-------------============add collumn inside get method in query laravel====================
+$questionsList = $query->latest()->paginate($request->page_size);
+            // $owner = collect(['owner_name' => $user->name]);
+            // $res = $owner->merge($questionsList);

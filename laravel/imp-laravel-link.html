@@ -1,0 +1,56 @@
+
+1) if you want crud operation using ajax in laravel link reference (inside you have to learn migration and install new laravel and setup database and create migration tables)
+
+https://www.youtube.com/watch?v=7lsiXve548w
+note-: (do'nt forget to add inside route)
+ Route::resource('books', 'App\Http\Controllers\BooksController');
+ https://packagist.org/packages/yajra/laravel-datatables-oracle(for download datatables)
+for more reference
+https://itsolutionstuff.com/post/laravel-58-ajax-crud-tutorial-using-datatable-jsexample.html
+
+2)
+
+I have done create log file to print error in laravel.
+https://www.youtube.com/watch?v=zIHDOjz1SR4
+
+another link for exceptino hadler in laavel
+https://www.youtube.com/watch?v=RTTXZVIL6tw
+
+
+3) how to send email in laravel using mailer class.
+
+step 1-: php artisan make:mail OrderShipped --markdown=emails.orders (here create email classs with view files also)
+
+php artisan make:mail SupportMail --markdown=email.customSupportMail
+
+step-: set account of mailtrape inside env files
+
+step 3-: call mail function and add class in that controller
+Mail::to('kuvarpratapsingh90@gmail.com')->send(new LoginUsers());
+
+
+4) how to send message in laravel
+
+https://github.com/Nexmo/nexmo-laravel
+https://www.youtube.com/watch?v=9k3gqI1GU6Q
+
+
+https://www.studentstutorial.com/laravel/routing
+
+-=================installation of particular laravel version----------============
+composer create-project laravel/laravel="5.1.*" myProject
+
+
+Post::find($request->input('id'))->delete();
+
+
+
+======================20 Laravel Eloquent Tips and Tricks ==================================
+
+refrence link-: https://laravel-news.com/eloquent-tips-tricks
+
+
+
+===============laravel coading standared----====================
+
+https://www.laravelbestpractices.com/

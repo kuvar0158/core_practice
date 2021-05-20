@@ -1,0 +1,186 @@
+1) =====================-------how we can create our custom laravel log files========------
+//storage/logs to check log files
+After some digging around I found that I could add a channel to config/logging.php like this
+
+reference link-: https://www.youtube.com/watch?v=GOmiWKpwFSo&ab_channel=Codecourse
+'customlog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/custom.log'),
+            'level' => 'info',
+],
+and write to it like this
+
+use Illuminate\Support\Facades\Log;
+Log::channel('customlog')->info('Hello world!!');
+
+
+2) =====================-------for sending mail---------------------=======
+reference link-: https://www.cloudways.com/blog/send-email-in-laravel/
+php artisan make:mail ProcedureTreatmentMail --markdown=email.ProcedureTreatmentMail
+php artisan make:mail RegisterMail --markdown=email.RegisterMail
+
+3) =========================multi where conditi..================
+
+ $check = Appointments::where('created_datetime_appointment', $appointments->created_datetime_appointment)->where('id', '<>', $id)->where('id', '<>', $id)->first();
+
+ ->where([
+
+        ['COLUMN_NAME', 'OPERATOR', 'VALUE'],
+
+        ['COLUMN_NAME', 'OPERATOR', 'VALUE']
+
+    ]);
+
+4-:) --------------=================how to make custom artisan command--------==============
+
+reference link-: https://www.youtube.com/watch?v=RM7vopsVLUg&list=PL8p2I9GklV45jJzLsexf2_hNNafpCXw9k&index=57&ab_channel=CodeStepByStep
+
+step-1: php artisan make:command showDB
+
+step-2: go to conole/command/showDB.php
+
+change signature name and command description according your uses.
+3-: register command 
+ go to kernal and inside $command  array define
+
+ protedcted $commands = [
+ Commands\showDB::class,
+  ] 
+
+  step 4-: define function inside handle
+
+  public function handle()
+    {
+        $this->info(DB::connection()->getDatabaseName());
+    }
+
+ step 5-: check command inside php artisan like showDB
+
+ step- 6: run command (php artisan showDB).
+
+6) --=====================aws bucket uploaded images-------==============
+
+refenrence link-: https://investmentnovel.com/laravel-s3-file-upload-tutorial-with-example/
+
+step 1: install bellow command
+composer require league/flysystem-aws-s3-v3:"^1.0"
+----------==============or======================-------------------
+composer require league/flysystem-aws-s3-v3 ~1.0 --ignore-platform-reqs
+
+step 2-: go to env files setup aws_client_id, secret_key and aws_url 
+
+step 3-: $filePath = 'medglow/' . $filename;
+         $path =  Storage::disk('s3')->put($filePath, file_get_contents($file));
+        $staff_images =  Storage::disk('s3')->url($filePath);
+
+
+
+7) ------===========how to create custom classes inside app-==================
+
+step 1st-: go to root drectory inside app/ create directory and create class inside it
+ex-: app/CustomClass/Common
+
+define static method inside it
+
+step 2-: go to config/app and then inside aliases array you have to set class name like
+
+'Common' => App\CustomClasses\Common::class,
+
+step 3-: then you can use classes and method inside your controller by using like
+use Common;
+
+8) -----------============ how to used key(variable) from env files-----========
+
+step 1-: define key and value inside env files
+
+step 2-: go to the services/app classes lile
+filesystems/app 
+AWS_URL
+check that key and define it 
+
+step 3-: used as a controller to using arrow operators. like
+Storage::disk('s3')->url($filePath);
+
+9-) ============-----------create seeder class for create dummy data now=============------
+
+reference link-: https://laravel.com/docs/8.x/seeding
+
+step 1-: go to root directory and run
+php artisan db:seed --class=CountrySeeder
+
+step 2-: go to database/seeder/UserSeeder
+changes define table and fill entry according to corresponding fields
+
+step 3-: php artisan db:seed --class=UserSeeder
+
+php artisan make:seeder CountrySeeder
+php artisan make:seeder QuestionSeeder
+php artisan db:seed --class=CountrySeeder
+php artisan db:seed --class=QuestionSeeder
+
+----------------seeder is not creating in laravel---------
+
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+}
+
+--------=========generate random string ---======================
+
+function generateRandomString($length = 25) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+//usage 
+$myRandomString = generateRandomString(5);
+
+
+================= define constant in laravel inside config files========================
+
+refrence link-: https://stackoverflow.com/questions/42155536/what-is-the-best-practice-for-adding-constants-in-laravel-long-list
+
+step 1-:
+Create a new file in the config directory. Let's call it constants.php
+
+return [
+    'options' => [
+        'option_attachment' => '13',
+        'option_email' => '14',
+        'option_monetery' => '15',
+    ]
+];
+
+step 2-: And you can access them as follows
+Config::get('constants.options.option_attachment');
+
+$countryExit = Countries::where('content_id', Auth::user()->id)->get();
+$Countryname = [];
+foreach ($countryExit as $val) {
+    $Countryname[] = Country::where('id', $val->country_id)->first();
+}
+
+
+11) ===========------Attribute Casting in Laravel Eloquent Models===============------
+
+refrence link-: https://www.larashout.com/attribute-casting-in-laravel-eloquent-models
+
+protected $casts = [
+        'featured'  =>  'boolean',
+        'qty'       =>  'integer'
+    ];
+    dd($product->featured); // true
+it will convert feature as a boolean result no matter which data type to save data
+

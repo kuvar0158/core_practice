@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+        img{
+  height:600px;
+  width:600px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-left:-300px;
+  margin-top:-300px;
+}
+
+html,body{
+  min-height:calc(100vh + 30px);
+  background:black;
+  height:100%;
+  width:100%;
+  color:white;
+  max-width:100%;
+  padding:0px;
+  margin:0px;
+}
+
+.cont{
+    max-width:100%;
+    position: relative;
+    width: 100%; 
+    margin: auto;
+    min-height: 100%; 
+    height: auto !important; 
+    height: 100%; 
+    overflow: hidden !important;   
+}
+.zwei{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing:10px;
+  font-size:2em;
+
+}
+
+    </style>
+  <title>change images on scroll</title>
+</head>
+<body>
+  <div class="eins cont"><img></div>
+
+  <div class="zwei cont">HEREYOUARE</div>
+</body>
+</html>
+<script>
+    var num = 1;
+$('img').attr("src","http://sendamessage.to/dist/images/fistbump-700/1.jpg");
+
+$(window).scroll(function () { 
+  num = $(window).scrollTop() / 3;
+  
+ if( parseInt(num) === num){
+  
+      $('img').attr("src","http://sendamessage.to/dist/images/fistbump-700/"+ num +".jpg");}
+  else{}
+  
+  if (num<1){
+    $('img').attr("src","http://sendamessage.to/dist/images/fistbump-700/1.jpg");
+  }
+    if (num>30){
+    $('img').attr("src","http://sendamessage.to/dist/images/fistbump-700/30.jpg");
+      $("img").css("position","absolute");
+  }
+
+
+});
+</script>

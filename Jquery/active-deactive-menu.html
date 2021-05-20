@@ -1,0 +1,32 @@
+<script type="text/javascript">
+         jQuery(function() {
+                var pgurl = window.location.href.substr(window.location.href
+                  .lastIndexOf("/")+1); 
+                // jQuery(".nav.navbar-nav li a").each(function(){
+                jQuery("nav div.nav-tabs a.nav-item").each(function(){
+                  if(jQuery(this).attr("href") == pgurl || jQuery(this).attr("href") == '' ){ 
+                        jQuery(this).addClass("active"); 
+                    }
+                })
+              });
+      </script>
+
+<!-- // open tab using radio button -->
+<script type="text/javascript">
+$('input:radio[name=payouts-money]').click(function(){
+var id= $(this).attr('id');
+if(id =='bank-acc'){
+  if($("#"+id).is(':checked')){
+  $('#collapseTwo').addClass('show');
+  $('#collapseOne').removeClass('show');
+  } 
+}
+if(id =='money-transfer'){
+  if($("#"+id).is(':checked')){
+  $('#collapseTwo').removeClass('show');
+  $('#collapseOne').addClass('show');
+  } 
+}
+ 
+});
+</script>

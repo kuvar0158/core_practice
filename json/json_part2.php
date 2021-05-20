@@ -82,3 +82,8 @@ var gender = $("#gender").val();
     });
 });
 </script>
+<!-- <?php //else: ?>
+                      <tr>
+                        <td colspan="3">No record(s)</td>
+                      </tr>
+                    <?php// endif; ?> -->

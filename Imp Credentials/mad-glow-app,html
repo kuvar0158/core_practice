@@ -1,0 +1,436 @@
+----------==========================api-details==================-----------------------
+https://docs.google.com/spreadsheets/d/12r_Bk2QZg-IvZ_uP4EOqfAB5Ucb7c01NBXUlUg9QLmQ/edit#gid=0
+
+-----------===============med-glow app details------========================
+
+https://apimedglow.techvalens.com
+ssh -i medglow-key.pem ubuntu@54.94.158.201
+username: ubuntu
+host: 54.94.158.201
+https://apimedglow.techvalens.com/api/save-subscription
+local-path-:F:\techvalance pvt. ltd\ 
+server path-:/var/www/html/medglowapp
+/var/www/html/medglowapp/app/Http/Controllers/API
+http://54.94.158.201/api/pateints-search/ALL
+F:\techvalance pvt. ltd\medglowapp\app\Http\Controllers\API
+
+-----=============================mad-glow staging server details-------=============
+
+URL-: https://medglow-stage.techvalens.com/
+
+URL-: http://54.94.158.201:8001/
+
+SSH details: ssh -i medglow-key-staging.pem ubuntu@54.94.158.201
+Path in Server : /var/www/stagingapi/
+cd /var/www/stagingapi/
+/var/www/stagingapi/medglowapp/app/Http/Controllers/API
+F:\techvalance pvt. ltd\medglowapp-staging\app\Http\Controllers\API\
+---==================officail mail  id----------=================================
+
+user-: pratap.singh@techvalens.com
+pass-: Kuvar@234
+ --==============gitlab details-----==============
+user-: kuvar
+pass-: Kuvar@234
+----------=======================database bacup----------------======================
+
+mysqldump -u medglowuser -p medglowapp_db > medglowuser2.sql
+pass-: medglow*#75319!
+
+----==========================----- database credentials -----=======================
+
+DB_DATABASE=medglowapp_db
+DB_USERNAME=medglowuser
+DB_PASSWORD='medglow*#75319!'
+
+user-: mysql -u medglowuser -p 
+pass-: medglow*#75319!
+
+show databases;
+use medglowapp_db_staging
+
+use medglowapp_db
+
+show tables;
+
+select * from pateints;
+show columns from pateints;
+show columns from events;
+
+select * from pateints;
+
+(token needed)
+show appointmet list api 
+create Patient api
+update pateint api
+search patients api
+get all pateints api
+
+
+F:\techvalance pvt. ltd\medglowapp\app\Http\Controllers\API\ (controller)
+F:\techvalance pvt. ltd\medglowapp\routes\ (routes)
+F:\techvalance pvt. ltd\medglowapp\database\migrations\ (migration)
+F:\techvalance pvt. ltd\medglowapp\
+F:\techvalance pvt. ltd\medglowapp\resources\views\email
+-----------====================paypal developer accounts-----------============================
+vivek.virde@techvalens.com
+suru.11april@gmail.com
+select * from users where email = "sourabh.chourasiya@techvalens.com";
+select * from users where email = "suru.11april@gmail.com";
+miajain@gmail.com
+
+DELETE FROM patient_historys WHERE id = 14;
+DELETE FROM users WHERE id = 221;
+email-: singhrec1@gmail.com
+pass-: Chandan0158
+
+------======================-  postgress download account-----------=======================
+user-: kuvar97
+pass-: Kuvar@234
+
+================= paypal sandbox business account ============= reference link
+https://www.youtube.com/watch?v=5MNC1NX0gm8&t=1s
+https://www.paypal.com/businessmanage/profile/loginSecurity
+
+name-: john doe
+email-:sb-47hkbv3537937@business.example.com
+pass-: QaU44?Q#
+
+==============----------------------AWS Credentials:============---------------------
+
+IAM User: 088253928779
+Username: Sourabh
+Password: Medglow@2000
+
+
+Access key ID-:
+AKIARJDCYCVF23FF2SHC
+
+Secret access key-:
+sMJMJjidke03PysyFKcXuoE1+0eEFGY5st/xBUkK
+
+cloude front url-:
+http://d2p4b7zrc5ajoi.cloudfront.net/
+
+@sourabh sir, we need aws permission from client side 
+IAM user
+cloud front 
+
+they only provide s3 bucket permission not any others
+--======================madglow paypal SANDBOX API CREDENTIALS--------===================
+
+Sandbox account
+
+sb-7qkvx2731636@business.example.com
+Client Id-: AbPiW75_KtxYGN6iw8xNS4PooS8GVQeQ1q5AzYeKgqPe1g-YsCCeBay5_oOESmgmyJo8Y0thd5qPbeKN
+Secret-: EAX51FiMNuFY_9s-3tVkbVIEW6fg21x9yRvPLYrEjr2MUAm1Lu_qTZaVvTDJNFNFDBau2Hs-PzljO7Yy
+
+===--------------------====== anjani sir mail smtp details ===========---------------------
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=anjani.shukla@techvalens.com
+MAIL_PASSWORD=anjani@techvalens
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=anjani.shukla@techvalens.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+
+-: functionality images-:
+https://lh3.googleusercontent.com/-flCDjQJ3A6A/X9cAax0mkuI/AAAAAAAAD80/-VZP3NOm9J4vzado883NiKDot0B6mv9bQCK8BGAsYHg/s0/2020-12-13.png
+mobil/web reference api details-:
+https://docs.google.com/spreadsheets/d/1Oq1WBj-KXVeeEtLgys_Nv67s4LVml0ED/edit#gid=323375319
+
+api-list-: 
+update subscription_plans set plan_name = "Premium (R$520,00)/month)." where id = 5;
+update appointments set created_datetime_appointment = "2021-01-27 09:29:25" where id = 5;
+update pateints set email = "singhrec1@gmail.com" where id = 36;
+select * from appointments where patients_id = 3;
+select * from pateints where zipcode = "zipcode";
+
+
+update pateints set email ="singhrec1@gmail.com" where id=2;
+plan for today (25-dec-2020)
+- issue on zipcode
+- issue on update appointment api
+- working
+3) work on google login api
+
+I'm working on add notes api inside procedure detail
+
+ check-out(24/12/2020)
+ Today I have work on these points.
+ mad-glow
+ add validatin on import client api done
+ fix issue on nova when we adding custom fields inside askfrigo project
+ setup new staging server for medglow have done
+ i have deploye code on git have done
+ 
+ 
+ /var/www/html/medglowapp/database/migrations
+
+Headers
+key-: Authorization  
+
+value-: Bearer
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVhNjAxNzUzOGQwYTM5Zjc1MWRhNzA3MTJhN2I2M2U1Y2U5Zjg2MzI0ZGVkNWZlZTY2ZTkwMDlhZjkwYzE0MWQzMTNhNjE5YTNmOGE4ZGY2In0.eyJhdWQiOiIxIiwianRpIjoiNWE2MDE3NTM4ZDBhMzlmNzUxZGE3MDcxMmE3YjYzZTVjZTlmODYzMjRkZWQ1ZmVlNjZlOTAwOWFmOTBjMTQxZDMxM2E2MTlhM2Y4YThkZ
+
+
+user-: singhrec1@gmail.com
+pass-: 7654321
+
+url: '12345'
+url: 'postgres://enterprisedb:12345@localhost:5444/loopback_db',
+
+
+status code-: 200 => success, 201 => Failds!!, 400 => error message for field required, 404 => data not founds, 401=> unautherized
+
+
+=======-----------changes userwise filter data===========--------------------
+date-: 09-jan-2020
+http://54.94.158.201/api/pateints/181
+
+status 1=> for cosmetric and 2=> clinic
+Billing & shipping api
+
+http://54.94.158.201/api/save-subscription (pass token using post method)
+http://54.94.158.201/api/success-payment (pass token using post method)
+http://54.94.158.201/api/cancel-payments (pass token using get method)
+
+Maturity is when you stop expecting anything from people because that's the primary reason why you get hurt.
+
+Technical Support => TKST0
+Billing or Commercial => B0CL
+Billing or other => OT001
+
+add question on behalf of questionarrie id now
+
+{
+    "name": "last treatment day before experiance..",
+    "questions_type": "multiple",
+    "options":{"1":"good hostory","2":"bad hostory", "3":"average", "4":"none of them"}
+    "options":{"1":"good","2":"bad", "3":"average", "4":"poor"}
+}
+
+save all questionariee list after local storages
+
+{  "title":"homopathi",
+    "description":"about homopathi is here",
+    "question": [
+        {
+            "name": "have u test screen from my clinic",
+            "questions_type": "Yes/No",
+            "options":[],
+            "created_at": "2021-01-21T12:22:05.000000Z",
+            "updated_at": "2021-01-21T12:22:05.000000Z"
+        },
+        {
+            "name": "are you facing this kind of problem before",
+            "questions_type": "Yes/No",
+            "options":[],
+            "created_at": "2021-01-21T12:26:45.000000Z",
+            "updated_at": "2021-01-21T12:26:45.000000Z"
+        },
+         {
+            "name": "tell me your problem first",
+            "questions_type": "text",
+            "options":[],
+            "created_at": "2021-01-21T12:26:45.000000Z",
+            "updated_at": "2021-01-21T12:26:45.000000Z"
+        },
+        {
+            "name": "which phase are u facing right now",
+            "questions_type": "multiple",
+            "options":{"1":"good","2":"bad", "3":"average", "4":"poor"},
+            "created_at": "2021-01-21T12:26:45.000000Z",
+            "updated_at": "2021-01-21T12:26:45.000000Z"
+        }
+    ]
+}
+=================---biling & paypal integration-==============================
+
+1) sir we have created just 3 api for that payment integration.
+a) save-subscription api 
+b) success-payment api
+c) cancel-payment api
+
+2) first api call when we selcted plans and click on subscribe button
+ then we get docter details like email, subscription_plan_id, name, user_id to save data in temprory table that is temp_transection.
+
+3) then whole payment process which is manage by fron end on behalf of until payment done.
+
+4) we got the payment response. on the behalf of success we have just update the status of subscription (trial/expired/cancel/faild/subscribed) inside user table save pay payerID and paypal token inside it and next_renewal_date etc.
+
+5-: and i have save other information like last_payment, subscription_status, user_id, subscription_plan_id etc subscriptions table.
+
+6-: if tha payament is done response is success then we have delete temp_trnasation table data on behalf of email_id.
+
+7-: i have manage failure payment response also, when we get failure response then we have response get on cancePayment api (we have just update the subscription_status as a cancel).
+and save cancel_url.
+
+8-: in case of payment is done and then mobile is off if any case then response will not able to recieve by api on that case we have save detail to temp_treansection table and will check detail and get from temp_trnasection table and then data is still on that table on behalf of non success.
+
+9-: we have notify to all the user before 5 days to next_renewal_date of payment by using crone.
+
+patients and patients appointment.
+
+{
+        "id": 13,
+        "name": "which phase are u facing right now",
+        "questionnaire_sets_id": 35,
+        "questions_type": "multiple",
+        "options": {
+            "1": "good",
+            "2": "bad",
+            "3": "average",
+            "4": "poor"
+        },
+        "created_at": "2021-02-03T12:10:34.000000Z",
+        "updated_at": "2021-02-03T12:10:34.000000Z"
+    }
+
+    {
+        "id": 13,
+        "name": "which phase are u facing right now",
+        "questionnaire_sets_id": 35,
+        "questions_type": "multiple",
+        "options": [
+            {
+                "option": "good"
+            },
+            {
+                "option": "bad"
+            },
+            {
+                "option": "average"
+            },
+            {
+                "option": "poor"
+            }
+        ],
+        "created_at": "2021-02-03T12:10:34.000000Z",
+        "updated_at": "2021-02-03T12:10:34.000000Z"
+    }
+
+    {
+	"type_of_procedure":"1",
+	"procedure_title":"theremal screnning procedure",
+	"procedure_body_type":"face",
+	"appointment_id":"2,3",
+	"questionnair_id":"1,2,3",
+	"consents_id":"1,2",
+    "questionnair":[
+        {"id":1,
+        "answer":"Yes"
+        },
+        {"id":2,
+        "answer":"No"
+        },
+        {"id":3,
+        "answer":"i am fine, have facing this problem before last month"
+        },
+        {"id":4,
+        "answer":"only 6 month"
+        }
+    ],
+    "consent": [
+        {
+            "id":1,
+            "signature":"Yes"
+        },
+        {
+            "id":2,
+            "signature":"No"
+        },
+        {
+            "id":3,
+            "signature":"No"
+        }
+    ],
+    "cosmatic_image":
+ 	{
+ 		"frontal":"image-url",
+ 		"degree_right_45":"image-url",
+ 		"degree_left_45":"image-url",
+ 		"degree_right_90":"image-url",
+ 		"degree_left_90":"image-url",
+ 		"reaction_surprise":"image-url",
+ 		"reaction_bad_order":"image-url",
+ 		"reaction_hungry":"image-url",
+ 		"reaction_big_smile":"image-url",
+ 		"reaction_fear":"image-url",
+ 		"reaction_sadness":"image-url"
+ 	},
+    "clinic_type_image":"image-url1, image-url2, image-url3"
+}
+
+http://54.94.158.201/api/save-subscription (pass token using post method)
+http://54.94.158.201/api/success-payment (pass token using post method)
+http://54.94.158.201/api/cancel-payments (pass token using get method)
+api for billing payment 
+
+
+socket array integration in chat api. (socket.io)
+
+ashish project-: recaptcha v2-:
+domain-: pentaindia.co.in
+
+https://apimedglow.techvalens.com/api/create-pateints
+
+slack url-: https://app.slack.com/client/T1CAR0A9G/D01MHER4EMD
+
+what is elaastic search using mysql.
+
+pratap.singh@techvalens.com
+pass-: Kuvar@234
+
+client id -: 2
+client secret: ZnXcQannAzu2UHGmw8sTz2G3YkVgPe3c4rTLSNjL
+
+
+patient >> appointment >> medical history >> anamnesis
+Doctor >> patient >> appointment >> medical history >> anamnesis >> inventory >> clinic >> service
+
+truncate questionnaire_sets;
+truncate questions;
+truncate patient_historys;
+truncate appointments;
+truncate anamnesis;
+
+clear db on associated tables have done
+
+Name: Ayush Gupta
+Profile: Laravel
+Technical/Logical -  
+Communication -
+Status: Rejected(during call not reply after some time call go to disconnected)
+
+Name -Rahul Bhatt
+Profile - Laravel
+Technical - avg
+Communication - avg
+Status - Considerable
+
+Technical Support: TS0001,
+Billing or commercial: BC001,
+Others: OT0001
+
+Technical Support: TS000,
+Billing or commercial: BC000,
+Others: OT000
+===========================
+This prefix we are using
+
+@shashi mam, naman sir please update status code on bellow
+Technical Support: TS,
+Billing or commercial: BC,
+Others: OT
+
+'message' => "Your Ticket No. is ".$support->choose_topic."000".$support->id.". Our team will reply your message within sooner.Please don't hesitate to use MedGlow Academy or our Blog"
+
+patient >> appointment >> medical history >> anamnesis
+Doctor >> patient >> appointment >> medical history >> anamnesis >> inventory >> clinic >> service
+
+composer require "paypal/rest-api-sdk-php:*"
+https://apimedglow.techvalens.com/api/show-questionnaire-list

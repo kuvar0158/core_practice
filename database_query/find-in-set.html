@@ -24,3 +24,7 @@ $query_id = $this->db->query("SELECT * FROM tbl_tasks WHERE taskAssignedTo = '".
 
         $where = "name='Joe' AND status='boss' OR status='active'";
 $builder->where($where);
+
+$id_list = [5,9,13]; 
+
+$data_list = DB::table('table') ->whereIn('id', $id_list)->get();

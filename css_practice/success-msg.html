@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.alert-box {
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+}
+
+.failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: none;
+}
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    display: none;
+}
+	</style>
+	<title>success messages</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<p>
+	<!-- referenc e link: http://jsfiddle.net/sunnypmody/XDaEk/ -->
+    <button id="success-btn">Success</button>
+    <button id="failure-btn">Failure</button>
+    <button id="warning-btn">Warning</button>
+</p>
+<div class="alert-box success">Successful Alert !!!</div>
+<div class="alert-box failure">Failure Alert !!!</div>
+<div class="alert-box warning">Warning Alert !!!</div>
+</body>
+</html>
+<script type="text/javascript">
+$( "#success-btn" ).click(function() {
+  $( "div.success" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+});
+
+$( "#failure-btn" ).click(function() {
+  $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+});
+
+$( "#warning-btn" ).click(function() {
+  $( "div.warning" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+});
+</script>

@@ -29,3 +29,5 @@
 
 $report_start_date_mysql = date('Y-m-d', strtotime('-7 Day'));
             print_r($report_start_date_mysql); die;
+
+            get_class_methods()

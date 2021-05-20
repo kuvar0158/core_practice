@@ -1,0 +1,211 @@
+
+laravel nova translations management
+
+slack url-: https://app.slack.com/client/T1CAR0A9G/D01MHER4EMD
+
+login by official gmail of company
+
+jira software-:
+https://nitm.atlassian.net/welcome/software
+
+--------------======================jira credentials-----------======================
+
+https://nitm.atlassian.net/secure/RapidBoard.jspa?rapidView=11&selectedIssue=FIGO-49
+
+--------=======================local details----------=================================
+
+E:\xampp\htdocs\frigo-projects\askdrfigo-backend
+cd xampp\htdocs\newask_frigo\askdrfigo-backend
+cd /var/www/askdrfigo-backend
+
+-------=====================what is laravel nova------------===================
+
+reference link-: https://nova.laravel.com/docs/3.0/installation.html
+
+
+
+=======-------------installation laravel nova--------=====
+https://gitlab.com/askdrfigo/askdrfigo-backend
+
+go to root directory
+step 1-: composer update
+
+2) cp .env.example .env or (change .env.example to .env files) and create database configeration
+
+3) php artisan key:generate
+
+step -4: php artisan nova:install
+
+php artisan nova:user (for creating user for login)
+
+--================create new resorce in nova backend--------==============
+
+php artisan nova:resource Post
+
+php artisan make:model Post
+
+novapackages.com (search thired party for nova laravel)
+ 
+ --------==============================about laravel nova tutorials==============-------
+ https://www.youtube.com/watch?v=aOAN41eAbLs&t=668s&ab_channel=AndreMadarang
+
+referece link-:https://manin-tech.blogspot.com/
+you tube link-: https://www.youtube.com/watch?v=am7xJ98OOiA&ab_channel=ChievManin
+
+https://manin-tech.blogspot.com/2021/01/create-laravel-nova-resource-laravel.html
+
+------==================nova tutorials dettails --==================
+https://nova.laravel.com/docs/1.0/resources/fields.html
+part-2: https://www.youtube.com/watch?v=RaEpHTuGp04&list=RDCMUCtb40EQj2inp8zuaQlLx3iQ&start_radio=1&ab_channel=AndreMadarang
+
+php artisan nova:user
+php artisan nova:action PublishedUser
+
+
+----================== start setup nova laravel project---=============
+
+follow this link documentaion-:https://gitlab.com/askdrfigo/askdrfigo-backend
+step 1-: go to root directory 
+git clone url
+
+go to root directory of projects and enter cmd
+step 2-: composer update
+
+step 3-: copy and repalced env.example to env files file and setup db
+(please don't copy env files to other laravel project because key generated is imp. which is unique)
+
+step 4-: php artisan key:generate (please run your project after key generates)
+step 5-: php artisan session:table
+step 6-: php aritsan migrate
+step 7-: php artisan vendor:publish --provider="PragmaRX\Firewall\Vendor\Laravel\ServiceProvider"
+step 8-: php artisan telescope:install
+step 9-: php artisan passport:install
+step 10-:php artisan nova:install
+
+step 11-: setup login account credentials by using cmd-:
+php artisan nova:user
+
+step 12-: php artisan serve
+
+========================laravel 8.2 tutorial for token generate and save ===================
+
+reference link-: https://www.itsolutionstuff.com/post/laravel-8-rest-api-with-passport-authentication-tutorialexample.html
+
+
+-----------sheet of aask frigo sprint doc----------================
+https://docs.google.com/spreadsheets/d/1J9jgkDXRW4KjgVaNPNKsr5EY8txjJ6N06bcMlZvP3Gw/edit#gid=1361061890
+
+
+========-----------=========================create filter inside nova -==================
+
+reference link-: 
+https://manin-tech.blogspot.com/2021/01/nova-filters-laravel-nova-filters.html
+
+
+php artisan nova:filter UserType
+
+
+==============--------------multi lingual ------------====================
+
+reference link-: https://novapackages.com/packages/digitalcloud/multilingual-nova#top
+
+https://novapackages.com/?search=tran&tag=all
+https://novapackages.com/packages/mrmonat/nova-translatable (ye maine install kiya hai)
+============-----How to get location information from ip address in Laravel =====
+
+reference link-: https://www.itsolutionstuff.com/post/how-to-get-location-information-from-ip-address-in-laravel-example.html#:~:text=We%20can%20get%20information%20from,%2C%20metro%20Code%2C%20metro%20Code.
+
+
+Countries Management 
+Langauge management
+Translations Management
+User Management
+Questions
+Add a Questions
+Doctor's Login Logs
+Partners
+Legalese
+Profile
+
+when we login using country admin
+
+Questions
+add Questions 
+docter login logs
+partner
+Legalese
+Profile
+
+sudo systemctl start php7.4-fpm.service
+
+http://askdrfigo.admin.techvalens.com/nova/
+
+nova admin code is deployed on server
+
+
+1) deploye code on server 
+2) remove sub menu of user have done
+3) add menu generation have done
+4) remove user frmo users table have done
+5) remove content from dashboard have done
+6) changes logo from dashboard and login page have done
+7) remove image icon from users table have done 
+
+mam i'm busy to call for another project right now i will connect after when we free.
+
+php artisan nova:resource Article
+php artisan nova:resource Country
+
+php artisan make:model Article
+
+php artisan make:migration create_article_tables
+
+Schema::create('services', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('service_name');
+            $table->timestamps();
+        });
+
+
+-------------------psql database access---------==================
+user-: psql -h 127.0.0.1 -U drfigo -p 5432 -d dbaskdrfigo
+user-: psql -h 127.0.0.1 -U drfigo -p 5432 -d dbaskdrfigov1
+password -: drfigo#123!
+
+Model_has_role
+show list of tables-: \dt
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS questions;
+DROP COLUMN column_name;
+dropdb 'database name';
+
+--------==============================api create in novas-----==================
+php artisan infyom:api question 
+php artisan infyom:api Article 
+php artisan infyom:api Test 
+php artisan infyom:api Question 
+
+ php artisan infyom:model --fromTable --tableName articles Article
+
+country_id string text
+
+Key -: X-Requested-With value-: XMLHttpRequest
+
+$this->getRepository()->existsOrFail($id);
+$model = $this->getRepository()->findOrFail($id);
+
+--=========create policy in nova laravel ----------======================
+php artisan make:policy QuestionPolicy --model=Question
+
+
+
+
+-=================================Estimate time=============================
+1. setup santnum for generate token ( 2 hour)
+1. Admin and Super admin Doctor's Login Logs (5 hours)
+2. Doctor portal SignIn (2 hours)
+4-: Doctor portal List Questions - all question list according to countries ( claimed + answered + unanswered ) (4 hour)
+5-: Doctor portal My Claimed Questions - only my question list belongs to countries doctor has access. (4 hour)
+
+6. Doctor portal My Answered Questions - (3 hour)
+7. Doctor portal All Answered Questions (3 hour)

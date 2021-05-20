@@ -1,14 +1,14 @@
 <?php
 include ('config.php');
 
-$sql = "SELECT * from product";
+
 header('content-type: application/json');
 header('access-control-allow-origin: *');
 
 $data = json_decode(file_get_contents("php://input"), true); 
-
-$product_id = $data['pid'];
-$sql = "SELECT * from product WHERE product_id = {$product_id}";
+$sql = "SELECT * from product";
+$id = $data['pid'];
+$sql = "SELECT * from product WHERE id = {$id}";
 $result = mysqli_query($conn, $sql) or die('query is failed');
  
 if(mysqli_num_rows($result) > 0 ){

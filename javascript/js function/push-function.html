@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	var msType = [];
+
+            $('.type1:checked').each(function(){
+                msType.push($(this).val());
+                console.log(msType);
+            });
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div class="cb"><input class="type1" type="checkbox" name="type[]" value="payout"><label>Psychic Payout</label></div>
+<div class="cb"><input class="type1" type="checkbox" name="type[]" value="promo"><label>Promo</label></div>
+<div class="cb"><input class="type1" type="checkbox" name="type[]" value="balance_adjust"><label>Balance Adjust</label></div>
+<div class="cb"><input class="type1" type="checkbox" name="type[]" value="dpms_adjust"><label>DPMS Adjust</label></div> 
+</body>
+</html>
+<!-- recaptch validation -->
+<!-- https://artisansweb.net/validate-google-recaptcha-using-javascript/ -->
