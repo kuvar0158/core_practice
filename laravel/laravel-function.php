@@ -11,3 +11,5 @@ print_r(get_class_methods($countryExit));
 die;
 
 $flight = Flight::where('legs', '>', 3)->firstOrFail();
+
+20250

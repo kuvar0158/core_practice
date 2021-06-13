@@ -14,7 +14,6 @@ clear cache in laravel
 
 php artisan config:cache
 php artisan cache:clear
-<<<<<<< HEAD
 php artisan config:clear
 php artisan view:clear
 
@@ -38,24 +37,15 @@ composer dump-autoload
 composer remove packageauthor/packagename
 
 
-sudo chmod -R 777 vendor/vyuldashev/nova-permission/src
-
-
 php artisan app:infyom:model --fromTable --tableName articles Article
-<!-- sudo chown -R www-data:www-data /var/www -->
 sudo chown -R www-data:www-data database
 
-=======
-sudo chmod -R 777 storage
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 php artisan route:list
 
 3)Laravel 5.8 Tutorial in Urdu 2019: Laravel 5.8 Queue with Database | How to Use Laravel Queue
 https://www.youtube.com/watch?v=EfHgCEVSvgE
 
-link for send email in laravel
-https://www.youtube.com/watch?v=cc6czaoxe4M
 
 ---------===========details for mailtrap app https://mailtrap.io/==============------
 note-: this is working for localhost server also for test
@@ -100,11 +90,7 @@ php artisan migrate:fresh (this will delete all records from tables)
 php artisan migrate:reset (this will drop all table which is creating by migration)
 
 
-<<<<<<< HEAD
 ==============-----------------how to setup project from githb to local setup========------------
-=======
-how to setup project from githb to local setup
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 
 1) go to diretory using command line and enter
 git clone "website-urlof-clone";
@@ -152,11 +138,6 @@ step 6-: composer require laravel/passport
 
 step-: php artisan migrate (after install passport packages)
 
-<<<<<<< HEAD
-step 7-: composer require doctrine/dbal (install this packages for change existing collumns)
-=======
 step 7-: composer require doctrine/dbal (install this packages for change existing collumns)
 
-
-
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
+php artisan make:export PopularQuestionExport --model=Question

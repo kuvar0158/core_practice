@@ -31,3 +31,6 @@ For particular query use $name = $request->query('name', 'defaultName')
 Default name is optional parameter if name is not present then defaultName will return
 
 <button type="submit" name="publish" value="1" class="publish imgsubbutt btn btn-info">{{ isset($step) && $step==3 ? "Save" :"Next"}}</button>
+
+
+\Log::info('SQL Import Done');

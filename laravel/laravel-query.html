@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 return Destination::addSelect(['last_flight' => Flight::select('name')
     ->whereColumn('destination_id', 'destinations.id')
     ->orderByDesc('arrived_at')
     ->limit(1)
 ])->get();
 
-<<<<<<< HEAD
 -------==================raw query=========================================
 User::select(DB::raw("(COUNT(*)) as count"),DB::raw("MONTHNAME(created_at) as monthname"))
  ->whereYear('created_at', date('Y', strtotime('-1 year')))
@@ -25,8 +21,6 @@ Array
         )
  
 )
-=======
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
 reference -: https://laravel.com/docs/8.x/eloquent
 =========-------------------add custome collumn inside at the time of show ddata-------============
 
@@ -52,7 +46,6 @@ if(!empty($file)){
                 // print_r($staff_images); die;
 				// $staff_images = URL::to('').'/uplods/images/'.$filename;
 				$staff->images=$staff_images; 
-<<<<<<< HEAD
 			}
 
 ------===========Laravel - How to search with comma separated values using Query Builder ?===-----
@@ -126,6 +119,42 @@ refrence link-: https://laraveldaily.com/eloquent-date-filtering-wheredate-and-o
 $questionsList = $query->latest()->paginate($request->page_size);
             // $owner = collect(['owner_name' => $user->name]);
             // $res = $owner->merge($questionsList);
-=======
-			}
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
+
+
+$results = DB::table('table')
+             ->where(function($query) use ($starttime,$endtime){
+                 $query->where('starttime', '<=', $starttime);
+                 $query->where('endtime', '>=', $endtime);
+             })
+             ->orWhere(function($query) use ($otherStarttime,$otherEndtime){
+                 $query->where('starttime', '<=', $otherStarttime);
+                 $query->where('endtime', '>=', $otherEndtime);
+             })
+             ->orWhere(function($query) use ($anotherStarttime,$anotherEndtime){
+                 $query->where('starttime', '>=', $anotherStarttime);
+                 $query->where('endtime', '<=', $anotherEndtime);
+             })
+             ->get();
+ ====================eager loading with relation==============================
+
+ refrence link-:https://morioh.com/p/2d643ea681ec
+ $posts = Post::with('comments:id,body')->get();
+ $posts = Post::withCount('comments')->get();
+========================laravel with relations=======================================
+
+
+ $posts = Post::with([
+    'comments as active_comments' => function (Builder $query) {
+        $query->where('approved', 1);
+    }
+])->get();
+
+=========================Display Post with Eager Loading:===============
+
+$posts = Post::with('comments')->get();
+   
+foreach ($posts as $post) {
+    echo $post->name;
+   
+    $comments = $post->comments;
+    /* You can write loop again  */

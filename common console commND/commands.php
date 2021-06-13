@@ -8,3 +8,9 @@ rm -rf /config/filegroups/*/
 
 =========================laravel standard code--=============================
 refrence link-: https://www.laravelbestpractices.com/
+
+2-: =================---------------edit source code on server using terminal=====----
+go to root directory
+
+sudo nano app/config/auth.php
+

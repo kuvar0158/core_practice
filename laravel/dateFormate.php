@@ -11,17 +11,23 @@ echo date("d-M-Y H:s a", strtotime("now"))."\n";
 $created_at = date("Y-m-d H:i:s");
 echo $created_at;
 ?>
-<<<<<<< HEAD
 
 {{date('d M Y h:i A', strtotime($val['event_date']))}}
 o/p
 16 Feb 2021 20:57 PM
 
+
+date("Y-m-d H:i:s", 1388516401);
+
+
 cuurent date records
-$posts = Post::whereDate('created_at', Carbon::today())->get();
-=======
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
+$posts = Post::whereDate('created_at', Carbon::today())->get();.
+
+
+refrence link-: https://www.digitalocean.com/community/tutorials/easier-datetime-in-laravel-and-php-with-carbon
+
 <!-- $dt = Carbon::now();
+
 
 // set some things
 $dt->year   = 2015;
@@ -72,7 +78,6 @@ $users = Users::where('status_id', 'active')
 $users = Users::where('status_id', 'active')
            ->where( 'created_at', '>', Carbon::now()->subDays(10))
            ->get();
-<<<<<<< HEAD
 
 -------==================imp link for date filter for current and last year records=--------==
 
@@ -103,16 +108,21 @@ protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
     }
-=======
-{ 
-   "title":"lorem lipsum title "
-   "description":"consents lorem lipsum descriptioin" ,
-   "created_datetime_consent":"2020-08-21 12:10:30",
-   "cosent_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,pulvinar facilisis justo mollis,"
-}
+=============-------------multi where clause laravel----------------=====================
+    $results = DB::table('table')
+             ->where(function($query) use ($starttime,$endtime){
+                 $query->where('starttime', '<=', $starttime);
+                 $query->where('endtime', '>=', $endtime);
+             })
+             ->orWhere(function($query) use ($otherStarttime,$otherEndtime){
+                 $query->where('starttime', '<=', $otherStarttime);
+                 $query->where('endtime', '>=', $otherEndtime);
+             })
+             ->orWhere(function($query) use ($anotherStarttime,$anotherEndtime){
+                 $query->where('starttime', '>=', $anotherStarttime);
+                 $query->where('endtime', '<=', $anotherEndtime);
+             })
+             ->get();
 
-luctus lacus ut 
-vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat 
-faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc.
->>>>>>> 3d6051e60f34092c0c74290029f168b78b7dd923
+
+get_class_methods(class)
