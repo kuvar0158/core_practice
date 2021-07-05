@@ -1,5 +1,10 @@
 <!-- An other way for controls is the ternary operator (see Comparison Operators) that can be used as follows: -->
 
+function multiply(a, b) {
+  b = (typeof b !== 'undefined') ?  b : 1
+  return a * b
+}
+
 <?php
 $v = 1;
 $order  = $orderby != "" ? $request->input('order') : "";

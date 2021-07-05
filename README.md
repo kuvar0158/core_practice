@@ -1,5 +1,5 @@
 # core_practice
-hello guys my self kuvar pratap singh I'm php and js developer, actually my moto to create this project to learn and practice the technical things. which can help to become better programmer
+hello guys my self kuvar pratap singh I'm php and node js developer, actually my moto to create this project to learn and practice the technical things. which can help to become better programmer
 
 this project have all the usefull content which is related to the
 JS
@@ -11,6 +11,8 @@ PSQL
 CSS
 HTML
 JQUERY
+NODE JS
+VUE JS
 that can help you to learn something new which can definitely to grow up
 
 thanks regarding 

@@ -93,3 +93,64 @@ dd($comments);
 $comment = Comment::find(1);
 $post = $comment->post;
 dd($post);
+
+======================many to many relatinships===================================
+
+refrence link-: https://www.itsolutionstuff.com/post/laravel-many-to-many-eloquent-relationship-tutorialexample.html
+
+Many to many relationship is a little bit complicated than one to one and one to many relationships. An example of such a relationship is a user with may have multiple roles, where the role are also connected with multiple users.
+
+Table-:users     Table-: roles     Table-: role_user 
+id  (Pk)         id                 user_id (FK)
+name             name               role_id (FK)
+email
+password      
+
+class User extends Authenticatable
+{
+    use Notifiable;
+ 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
+}
+class Role extends Model
+{
+    /**
+     * The users that belong to the role.
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'role_user');
+    }
+}
+
+class UserRole extends Model
+{
+     
+}
+
+$user = User::find(1);  
+ 
+dd($user->roles);
+
+$role = Role::find(1);  
+ 
+dd($role->users);
+
+create records-:
+
+$user = User::find(2);  
+ 
+$roleIds = [1, 2];
+$user->roles()->attach($roleIds);

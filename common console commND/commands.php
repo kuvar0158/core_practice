@@ -5,6 +5,15 @@ rm -rf  magento2-2.2.11/
 
 rm -rf /config/filegroups/*/
 
+=================create make directory======================
+go to root directory
+
+mkdir <dir name>
+ex-: mkdir config
+==========create file name================
+type nul > filename.txt
+ex-: nul > confg.js 
+
 
 =========================laravel standard code--=============================
 refrence link-: https://www.laravelbestpractices.com/
@@ -13,4 +22,9 @@ refrence link-: https://www.laravelbestpractices.com/
 go to root directory
 
 sudo nano app/config/auth.php
+
+==============================nano shorcut commands==============================
+
+https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html
+
 

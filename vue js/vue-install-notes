@@ -1,0 +1,25 @@
+refrence link-: https://www.youtube.com/watch?v=s_7LPrBRCaY
+
+=========================install vue js========================
+npm install -g @vue/cli
+
+vue --version(check vue version)
+npm cache clean --force
+
+===============create vue project============================
+
+vue create blog
+run project-:
+
+cd blog
+npn run serve
+
+=======================================fetch data with api==========================
+npm i axios vue-axios
+
+==============add bootstrape vue======================================
+vue add bootstrap-vue
+
+================add routing in vue js=================================
+
+npm install vue-router
