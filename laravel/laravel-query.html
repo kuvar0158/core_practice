@@ -32,6 +32,16 @@ $users = $query->addSelect('age')->get();
 
 $name = DB::table('users')->where('name', 'John')->pluck('name');
 
+
+$channellist = Chat::orWhere(function ($query) use ($id, $request) {
+    $query->where('chatWith', $id)
+        ->where('createdBy', $request->chatWith);
+})->orWhere(function ($query) use ($id, $request) {
+    $query->where('chatWith', $request->chatWith)
+        ->where('createdBy', $id);
+});->first();
+
+
 // image uploaded using laravel
 if(!empty($file)){
                
@@ -158,3 +168,4 @@ foreach ($posts as $post) {
    
     $comments = $post->comments;
     /* You can write loop again  */
+

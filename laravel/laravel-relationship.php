@@ -31,7 +31,7 @@ App Models
 class User extends model{  
 	public function phone()
     {
-        return $this->hasOne('App\Phone');
+        $this->hasOne('App\Phone')->where('status', config('offlod.invoice.due'))->latest();
     }
 } 
 
@@ -154,3 +154,50 @@ $user = User::find(2);
  
 $roleIds = [1, 2];
 $user->roles()->attach($roleIds);
+
+
+==============================Eloquent ORM==================================
+refrence link-: https://laravel.com/docs/5.0/eloquent#query-scopes
+
+Query Scopes
+Defining A Query Scope
+
+class User extends Model {
+
+    public function scopePopular($query)
+    {
+        return $query->where('votes', '>', 100);
+    }
+
+    public function scopeWomen($query)
+    {
+        return $query->whereGender('W');
+    }
+
+}
+
+Utilizing A Query Scope
+$users = User::popular()->women()->orderBy('created_at')->get();
+
+====================Accessors & Mutators =================
+Note-: here first_name is your collumn name (snake_case)
+class User extends Model {
+
+    public function getFirstNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+}
+
+
+==============================Attribute Casting========================================
+If you have some attributes that you want to always convert to another data-type, you may add the attribute to the casts property of your model
+
+protected $casts = [
+    'is_admin' => 'boolean',
+];
+
+=======================Converting A Model To JSON========================================
+Ex-:
+return User::find(1)->toJson();

@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+	let obj = {
+	test: undefined
+	};
+
+	//alert( obj.test ); // it's undefined, so - no such property?
+
+	//alert( "test" in obj ); // true, the property does exist!
+
+
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // keys
+  console.log(key)
+  //alert( key );  // name, age, isAdmin
+  // values for the keys
+  console.log(user[key])
+  // John, 30, true
+  console.log( "\u{1F60D}" );
+}
+</script>

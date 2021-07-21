@@ -1,0 +1,12 @@
+tutorials link-: https://javascript.info/
+
+Examples with Unicode:
+
+alert( "\u00A9" ); // ©
+alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long Unicode)
+alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long Unicode)
+
+JavaScript provides methods:
+
+JSON.stringify to convert objects into JSON.
+JSON.parse to convert JSON back into an object.
