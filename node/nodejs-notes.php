@@ -24,4 +24,6 @@ node <file-name>
 =======================to run node using npm start===============
 npm install nodemon
 
+
+nodemon [your node app]
 type script (to used import and export like react js)

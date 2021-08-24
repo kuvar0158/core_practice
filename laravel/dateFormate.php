@@ -2,6 +2,10 @@
 // PHP program to demonstrate the strtotime() 
 // function when the english text is a date 
 
+\DB::table('myTable')
+    ->where('created_at', '>', 
+        Carbon::now()->subHours(3)->toDateTimeString()
+    );
 // prints the converted english text in second 
 echo strtotime("12th february 2017"), "\n"; 
 
@@ -16,11 +20,12 @@ echo $created_at;
 o/p
 16 Feb 2021 20:57 PM
 
+diffforhumans();
 
 date("Y-m-d H:i:s", 1388516401);
 
 
-cuurent date records
+current date records
 $posts = Post::whereDate('created_at', Carbon::today())->get();.
 
 
@@ -126,3 +131,32 @@ protected function serializeDate(DateTimeInterface $date)
 
 
 get_class_methods(class)
+================================Eloquent fetch records within recent 3 hours==========
+\DB::table('myTable')
+    ->where('created_at', '>', 
+        Carbon::now()->subHours(3)->toDateTimeString()
+    );
+
+public function scopeRecent($query)
+{
+    return $query-> whereDate('created_at ' , '=',Carbon::today())
+        ->whereTime('created_at' , '>',Carbon::now()->subHours(3));
+
+}questionLists
+claimedQuestion (question is claimed by doctors)
+unclaimedQuestion (question is unclaimed by doctors)
+
+answerQuestion (question is answer by doctors)
+categoriesList (list of categoies)
+forgotPassword (forgot password)
+validateToken (to check the valid token)
+resetPassword (set the passwords)
+getProfile (get the detail of doctor profiles)
+updateProfile (update the detail of doctor profiles)
+uploadMedia (upload doctor profile picture)
+getQuestionDetail (get the question details).
+profileReload (reload the doctor profile)
+flag (update the status of flag)
+logout (logout doctor portal)
+saveCurrentLanguage (change langauges by doctor)
+
