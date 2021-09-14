@@ -20,7 +20,7 @@ refrence link-:https://www.youtube.com/watch?v=ksYCNuctkmQ
 2) Talk daily with native (app like italki or cambly)
 3) set a daily word goal (looking things to convert meaning in english sourrounded your)
 4) write a daily journal with a diffrence
-5) thing in english
+5) think in english
 
 ======================use of let in english phrases-------===========================
 

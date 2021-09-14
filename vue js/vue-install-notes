@@ -12,7 +12,7 @@ vue create blog
 run project-:
 
 cd blog
-npn run serve
+npm run serve
 
 =======================================fetch data with api==========================
 npm i axios vue-axios
@@ -23,3 +23,35 @@ vue add bootstrap-vue
 ================add routing in vue js=================================
 
 npm install vue-router
+
+===========================live project on vue js======================================
+refrence link-: https://www.youtube.com/watch?v=aVC5GEQArOg&list=PL8p2I9GklV47H6mjIXRd414oZ7Ys3Px5h&index=5&ab_channel=CodeStepByStep
+
+install JSON server
+
+npm install -g json-server
+
+refrence link-: https://www.npmjs.com/package/json-server
+
+server-json(check server json install or not)
+
+json-server --watch db.json
+
+====================================uninstall package==========================================
+npm un <package_name>
+
+npm un bootstrap-vue
+
+===========refrence link for toast notifications=============================
+ refrence link-: https://github.com/Maronato/vue-toastification 
+
+1) setup a new projects that is resto-project
+2) create header component and add menu link home , add restaurent and logout
+3) design sign up form without sign up you have not open dashboards page
+4) after sign up you not able to go sign up page without logout
+5) setup json server for save users detail using api
+6) design login page and call api to check user exist or not
+7) after login the list of restaurent are show on home page
+8) call api for get list of all restaurent details
+9) add restaurent and update and delete restaurent
+10) setup routes for that

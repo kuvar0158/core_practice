@@ -4,7 +4,7 @@ refrence link-: https://www.pinterest.com.mx/feggs/hindi/
 
 2) may god bless you! (khudha aoko barkat dey)
 
-3) How dare you
+3) How dare you (himmat kaise hur tumhari)
 
 4) How sweet (kya khub)
 
@@ -47,3 +47,21 @@ note-: Put “yet” at the end of a sentence to describe something that hasn't 
 22) I used to be (main kiya karata tha)
 
 23) beared kind of circumstances (परिस्थितियों का सामना करना पड़ा)
+
+24) because that's what i did as well and i also believe that in life, no matter what you do.
+
+25) I am so blessed right now to have you.
+
+26) yeah go on (हाँ आगे बढ़ो)
+
+27) I spelled it (मैंने इसे लिखा है)
+
+28) r u getting my points 
+
+29) I am gonna get this oppurtunity (मुझे यह अवसर मिलने वाला है)
+
+30) we don't have to be (हमें होने की ज़रूरत नहीं है)
+
+31) i am not bragging (मैं डींग नहीं मार रहा हूँ)
+
+32) Has Dhoni ever scolded you (kya apko dhoni ney kabi apko hadkaya)
