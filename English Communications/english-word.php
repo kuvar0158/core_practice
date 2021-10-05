@@ -71,3 +71,8 @@ refrence link-: https://hindimediumhelp.blogspot.com/2020/05/daily-use-vocabular
 68) perception (अनुभूति)
 69) conquered (विजय प्राप्त की)
 70) often (अक्सर)
+71) pretend (बहाना करना)
+72) miserable (दुखी)
+73) humality (विनम्रता)
+74) devote (समर्पित)
+75) healing (घाव भरने वाला)
