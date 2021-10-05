@@ -1,32 +1,31 @@
 
-presentaion domain name-: 
-pentaindia.co.in, localhost
-recaptch -: 6LeAoE0aAAAAAI0apA1ragWdM1aHvElmQi51_uqB
-
 ============ aws account details========
 
 date created-: 09-fab-2021 
 user-: singhrec1@gmail.com
 pass-: Kuvar@234
 
-=========git hub details for mango it solutions projects=========
 
-user-: manish@mangoitsolutions.com
-pass-: Mangoit@#$1
-
-ssh root@94.237.64.209
-
-/var/www/html/unofood
-sir, I'm in another neeting
 ---===========================details for smtp mail ============---------------------
 
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.googlemail.com
 MAIL_PORT=465
 MAIL_USERNAME=pratap.singh@techvalens.com
-MAIL_PASSWORD=Kuvar@234
+MAIL_PASSWORD=Kuvar@2345
 MAIL_ENCRYPTION=ssl
 MAIL_FROM_ADDRESS=pratap.singh@techvalens.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+---===========================personal details for smtp mail ============---------------------
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=singhrec1@gmail.com
+MAIL_PASSWORD=chandan0158
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=singhrec1@gmail.com
 MAIL_FROM_NAME="${APP_NAME}"
 
 ===================cron-jobs-account-details----================
@@ -76,7 +75,7 @@ bucket name-: Medglow
 --------====================-------mailtrape details----------========================
 
 user-:singhrec1@gmail.com (login into mailtrape)
-pass-:Kuvar@234 (login into mailtrape)
+pass-:Kuvar@2345 (login into mailtrape)
 :user_name => '4ed4dca2cf5177',
   :password => '91afa24376ed5a',
   :address => 'smtp.mailtrap.io',
@@ -84,9 +83,10 @@ pass-:Kuvar@234 (login into mailtrape)
   :port => '2525',
   :authentication => :cram_md5
 
-personal github account:
+========================personal github account====================================:
 user-: kuvar0158
-pass-: Kuvar@123
+pass-: Kuvar@123 (use token instead of passwords)
+Token -: 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
 email-: kuvarpratapsingh90@gmail.com
 
 ---================stripe account------============================
@@ -114,8 +114,7 @@ sudo apt-get install zip
 zip -r {filename.zip} {foldername}
 zip -r exm.zip exm/
 sudo zip -r medglowapp.zip medglowapp
-
-zip -r tecmint_files.zip tecmint_files 
+zip -r askdrfigo-backend.zip askdrfigo-backend/
 
 step 1st -: go to root directory on sever enter zip and name of your zip files and than name of that which want to zip
 
@@ -131,7 +130,7 @@ mysql> create database medglowapp_db_staging
 use medglowapp_db_staging
 CREATE DATABASE medglowapp_db_staging;
 
- --=========================gitlab details-----============================
+ --=========================techvalence gitlab details-----============================
  project-: ask frigo project url for nova
 user-: kuvar
 pass-: Kuvar@234
@@ -142,11 +141,17 @@ user-: kuvar6587
 pass-: Kuvar@234
 debit pin-: 9781
 
-Today plan (02-mar-2021)
-work on
-- work on ceate plans for payments getway
-- work on sign up for frigo ask projects
+Today plan (07-06-2021)
+Linkme:
+-work on calcualate stripe fees and application fees uisng stripe
+-work on changes booking cancel api have done
 
+I have done changes on partners  
+and also changes on passcode by using numbers
+
+===============-------------gmail account for dsk group===========--------
+user-:dsk.group798@gmail.com
+pass-: Dsk@9644
 
 --==============git lab details-----==============
 user-: kuvar
@@ -154,22 +159,12 @@ pass-: Kuvar@234
 
 TRUNCATE TABLE subscription_plans 
 
- check-out(23/03/2021)
- Today I have work on these points.
- ask Frigo-:
- working on setup santnum have done
- generate auth token have done
- create api for docter login have done
- 
-
- 
-
-
 Headers
 key-: Authorization  
 
 value-: Bearer
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVhNjAxNzUzOGQwYTM5Zjc1MWRhNzA3MTJhN2I2M2U1Y2U5Zjg2MzI0ZGVkNWZlZTY2ZTkwMDlhZjkwYzE0MWQzMTNhNjE5YTNmOGE4ZGY2In0.eyJhdWQiOiIxIiwianRpIjoiNWE2MDE3NTM4ZDBhMzlmNzUxZGE3MDcxMmE3YjYzZTVjZTlmODYzMjRkZWQ1ZmVlNjZlOTAwOWFmOTBjMTQxZDMxM2E2MTlhM2Y4YThkZ
+ 
   -----==============tawk chat system -----------==============================
 https://dashboard.tawk.to/#/chat
 preps-: account
@@ -177,13 +172,46 @@ pip90@1234&!!!
 
 pipsprep123@gmail.com
 
+============================github account in techvalance=========================
+user-: kuvarsingh12
+email-: pratap.singh@techvalens.com
+pass-: Kuvar@234
+new pass-: Kuvar@2345
 
-@sourabh sir, I have created staging server domain which is below have done
-Domain Url-: https://medglow-stage.techvalens.com/
+======================techvalance email/pass===================================================
+email-:pratap.singh@techvalens.com
+pass-: Kuvar@2345
+==============================pgsql password =================================
+pass: 123456
 
-for test api like url
-ex-: https://medglow-stage.techvalens.com/api/get-book-patients-appointments
+=============================skype account=============================
 
-
+email-: kuvarpratapsingh90@gmail.com
+pass-: Kuvar@234
 
 composer require "paypal/rest-api-sdk-php:*"
+
+php artisan nova:partition ActiveCountryList
+
+
+php artisan nova:card acme/department-metric
+
+php artisan infyom:model --fromTable --tableName={{table}} {{ModelName}}
+
+php artisan infyom:scaffold Service --tableName=services
+
+
+checkout (04/10/2021)   
+-add forgot api in vue js
+-check user login or not
+-add storage session for logout
+
+laptop link-: https://www.flipkart.com/dell-vostro-core-i3-10th-gen-4-gb-256-gb-ssd-windows-10-home-3401-thin-light-laptop/p/itmc642d8d7baaf4?pid=COMGYCG8HYX7CGQE&lid=LSTCOMGYCG8HYX7CGQEB6FI6Y&marketplace=FLIPKART&q=laptop&store=6bo%2Fb5g&srno=s_1_11&otracker=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&fm=SEARCH&iid=c4bcec9d-3c3c-4e7f-9453-cfbc7ca1d84e.COMGYCG8HYX7CGQE.SEARCH&ppt=sp&ppn=sp&ssid=ze7ngu7uio0000001632804984682&qH=312f91285e048e09
+
+================Use a code editor such as Visual Studio code with supported plugins for PHP and Laravel===========
+
+https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-extension-pack
+https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client
+https://marketplace.visualstudio.com/items?itemName=getpsalm.psalm-vscode-plugin
+https://marketplace.visualstudio.com/items?itemName=mubaidr.vuejs-extension-pack
+https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-pack
