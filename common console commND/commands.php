@@ -27,4 +27,14 @@ sudo nano app/config/auth.php
 
 https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html
 
+--================================windows commands for take screenshot================================================
+press the Windows key + PrtScn.
+
+
+====================================multiple comment in visual studio===============================================
+shift + alt + A
+
+==================================proper intend in vs code using plugin laravel========================
+shift + alt + F
+
 

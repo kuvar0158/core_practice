@@ -160,3 +160,4 @@ flag (update the status of flag)
 logout (logout doctor portal)
 saveCurrentLanguage (change langauges by doctor)
 
+http://15.207.86.109/api/available-bookings?start_date=2021-10-12&end_date=2021-10-14&number_of_person=40&number_of_houre=8

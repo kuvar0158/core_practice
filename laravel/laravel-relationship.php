@@ -73,6 +73,9 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+
+        add foreign key if you want 
+        <!-- return $this->hasMany(Property::class, 'venues_id'); -->
     }
 }
 

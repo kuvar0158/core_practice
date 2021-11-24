@@ -149,7 +149,7 @@ function generateRandomString($length = 25) {
 $myRandomString = generateRandomString(5);
 
 
-================= define constant in laravel inside config files========================
+=================== define constant in laravel inside config files========================
 
 refrence link-: https://stackoverflow.com/questions/42155536/what-is-the-best-practice-for-adding-constants-in-laravel-long-list
 
@@ -201,3 +201,16 @@ ex-: composer require "doctrine/dbal":"3.0"
 
 to check more details about package install in your composer json files
 ex-: composer show "doctrine/dbal"
+
+
+
+
+
+15)==================================remove foreign key constraint and truncate tables==================
+
+DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+DB::table('datapoints')->truncate();
+DB::table('sensors')->truncate();
+DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+refrence link-: https://stackoverflow.com/questions/29119272/laravel-eloquent-truncate-foreign-key-constraint/52007664

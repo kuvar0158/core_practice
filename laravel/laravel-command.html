@@ -34,6 +34,8 @@ sudo chmod -R 777 ./composer.json
 sudo chmod -R 777 ./composer.lock
  
 sudo chmod -R 777 storage/app/public
+
+sudo chmod -R 777 storage/logs/laravel.log
 composer dump-autoload
 composer remove packageauthor/packagename
 
@@ -142,3 +144,4 @@ step-: php artisan migrate (after install passport packages)
 step 7-: composer require doctrine/dbal (install this packages for change existing collumns)
 
 php artisan make:export PopularQuestionExport --model=Question
+

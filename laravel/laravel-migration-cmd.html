@@ -9,6 +9,12 @@ http://127.0.0.1:8000/api/save-answer-feedback/43
  ======================== migration table in laravel===================
 php artisan make:migration create_new_users_table
 
+php artisan make:migration create_contacts_table
+php artisan make:migration create_menus_table
+
+php artisan make:migration add_paid_to_users_table --table=users
+php artisan make:migration add_assign_by_to_user_roles_table --table=user_roles
+
 php artisan make:migration create_answer_feedbacks_table
 php artisan make:migration change_collumn_for_social_provider_data_type_users_table
 
@@ -29,7 +35,8 @@ php artisan make:model CategoryFlag
 
 ---======================to create controller inside folder of another-============
 php artisan make:controller "Test/SampleController"
-php artisan make:controller "API/EmergencyAPIController"
+php artisan make:controller "API/UserAPIController"
+php artisan make:controller "API/EventAPIController"
 
 ---====rollback 3 migration cmd in laravel ===---------------
 
@@ -76,11 +83,6 @@ php artisan migrate:rollback --step=1
 
 $request->query('limit') ?? 30
 
-Schema::create('doctor_suggested_questions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('question_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('CASCADE');
-            $table->timestamps();
-        });
+
+
+INSERT INTO `time_slots` (`id`, `property_id`, `start_time`, `end_time`, `slot_type`, `created_at`, `updated_at`) VALUES (NULL, '1', '12:00:00', '15:00:00', '0', '', NULL), (NULL, '1', '15:00:00', '18:00:00', '0', NULL, NULL), (NULL, '1', '', '', '1', NULL, NULL);

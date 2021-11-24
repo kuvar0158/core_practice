@@ -76,3 +76,6 @@ refrence link-: https://hindimediumhelp.blogspot.com/2020/05/daily-use-vocabular
 73) humality (विनम्रता)
 74) devote (समर्पित)
 75) healing (घाव भरने वाला)
+76) Faith (aastha)
+77) perceive (समझना)
+78) grab (लपकना)
