@@ -35,6 +35,10 @@ sudo chmod -R 777 ./composer.lock
  
 sudo chmod -R 777 storage/app/public
 
+php artisan optimize
+
+php artisan route:cache
+
 sudo chmod -R 777 storage/logs/laravel.log
 composer dump-autoload
 composer remove packageauthor/packagename
@@ -128,11 +132,11 @@ class Flight extends Model
 if you want install particular version you have to write at the end of them
 composer create-project --prefer-dist laravel/laravel blog "6.*"
 
-step 1-: composer create-project laravel/laravel MedGlow "8.0"
+step 1-: composer create-project laravel/laravel CodientApp "8.0"
 
 you have to check on root directory and open project browser for install auth go to next step
 
-step 2-: composer require laravel/ui
+step 2-: composer require laravel/ui (fix issue with )-: composer install --ignore-platform-reqs
 step 3-: php artisan ui vue --auth
 step 4-: npm install && npm run dev
 step 5-: create db and set on env file 
@@ -145,3 +149,21 @@ step 7-: composer require doctrine/dbal (install this packages for change existi
 
 php artisan make:export PopularQuestionExport --model=Question
 
+
+task-
+
+users table
+
+admin role
+
+user fname, lname, email, pass-: password123
+
+master_skills = php , node, laravel, anguler, (add multiple skills)
+
+add filter on basis of skills (select skills exact records we have get)
+
+ run:
+  npm audit fix --force
+
+
+  

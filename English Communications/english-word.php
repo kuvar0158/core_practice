@@ -79,3 +79,5 @@ refrence link-: https://hindimediumhelp.blogspot.com/2020/05/daily-use-vocabular
 76) Faith (aastha)
 77) perceive (समझना)
 78) grab (लपकना)
+79) being (हो रहा)
+80) often (bar bar)

@@ -19,3 +19,8 @@ ex-: steduentId
 
 3) snake case
 ex-: user_id
+===================laravel installation lower version issue=================
+refrence link-: https://exerror.com/solved-root-composer-json-requires-php-7-3-but-your-php-version-8-0-0-does-not-satisfy-that-requirement-in-laravel/
+
+
+composer install --ignore-platform-reqs

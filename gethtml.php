@@ -21,7 +21,34 @@ $body = "<div class='set'><h2>this is the html inside php </h2><p>
 
 echo $body;
 
-echo phpinfo();
+$data = ['i','n', 'd', 'i','a'];
+               $i = 1;
+               for($i=0; $i < count($data); $i++){
+               	
+               	if($i == 0)
+               	{
+               		echo $data[0].'<br>';
+               		// continue;
+               	}
+               	if($i == 1)
+               	{
+               		echo $data[0].$data[1].'<br>';
+               		// continue;
+               	}
+               	if($i == 2)
+               	{
+               		echo $data[0].$data[1].$data[2].'<br>';
+               	}
+               	if($i == 3)
+               	{
+               		echo $data[0].$data[1].$data[2].$data[3].'<br>';
+               	}
+               	if($i == 4)
+               	{
+               		echo $data[0].$data[1].$data[2].$data[3].$data[4].'<br>';
+               	}
+               }
+// echo phpinfo();
 ?>
 </body>
 </html>
