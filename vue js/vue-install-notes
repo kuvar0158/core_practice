@@ -42,6 +42,8 @@ npm un <package_name>
 
 npm un bootstrap-vue
 
+npm uninstall <module_name>  
+
 ===========refrence link for toast notifications=============================
  refrence link-: https://github.com/Maronato/vue-toastification 
 
@@ -55,3 +57,5 @@ npm un bootstrap-vue
 8) call api for get list of all restaurent details
 9) add restaurent and update and delete restaurent
 10) setup routes for that
+
+6) add customers and filter customers with saarch box.

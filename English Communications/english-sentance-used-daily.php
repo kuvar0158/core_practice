@@ -65,3 +65,7 @@ note-: Put “yet” at the end of a sentence to describe something that hasn't 
 31) i am not bragging (मैं डींग नहीं मार रहा हूँ)
 
 32) Has Dhoni ever scolded you (kya apko dhoni ney kabi apko hadkaya)
+
+33) i think so (mujhe bhee aisa hee lagata hai)
+
+34) victory is beyond fear (dar ke aage jeet hai)
