@@ -44,6 +44,8 @@ npm un bootstrap-vue
 
 npm uninstall <module_name>  
 
+npm uninstall webpack 
+
 ===========refrence link for toast notifications=============================
  refrence link-: https://github.com/Maronato/vue-toastification 
 

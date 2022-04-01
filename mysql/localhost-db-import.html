@@ -1,0 +1,47 @@
+refrence link-: https://stackoverflow.com/questions/15833536/fatal-error-execution-time-of-30-seconds-exceeded-in-phpmyadmin
+
+========================increase limit size for import large size of db=============================================
+go to  Go to xampp -> mysql -> bin -> my.ini
+
+post_max_size = 750M
+upload_max_filesize = 750M
+max_execution_time = 5000
+max_input_time = 5000
+memory_limit = 1000M
+
+
+go to  Go to xampp -> mysql -> bin -> my.ini
+
+max_allowed_packet = 500M
+
+innodb_log_file_size = 128M
+
+
+go to xampp\phpMyAdmin\libraries\config.default.php
+
+ $cfg['ExecTimeLimit'] = 6000;
+
+refrence link-: https://stackoverflow.com/questions/1263680/maximum-execution-time-in-phpmyadmin
+
+and restart xampp 
+
+
+
+
+===================import mysql database vie cmd =============================
+
+refrence link-:https://www.youtube.com/watch?v=gvcBDA2wJJ4
+
+1) go to folder where install your xampp suppose you have install on E directory
+
+cd ..
+
+cd E:
+you have to enter and then you have to move e directory vie cmd
+
+E:\xampp\mysql\bin
+mysql -u root spiritpackdbnew < E:\xampp\htdocs\spiritpackdbnew.sql (you have to copy path where you are save db)
+
+
+
+
