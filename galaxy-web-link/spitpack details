@@ -1,0 +1,218 @@
+========================================ask doubtfeatures points===================================================
+1) status is not working properlly
+2) here what is permissions
+3) add user with role is not workings
+
+
+
+=======================================imprintCity/spitpack projects details==============================================
+
+admin section-: 
+superadmin@admin.com
+password
+
+fields-: id, name, submodule_json (json) 
+[{"submodule_name":["Company info", "Form Builder", "operational area", "customization setting
+"]}]
+
+	[{
+	"Id":2,
+	"Name":"size",
+	"Permission":[
+		{"Full":false,
+			 "view":false,
+			 "create/edit":false,
+			 "delete":false,
+			 "none":false}
+	 ]}, {
+	 "Id":3,
+	 "Name":"Fabric/Material",
+	 "Permission":[
+		 {"Full":false, 
+		 "view":false,
+		 "create/edit":false,
+		 "delete":false,
+		 "none":false}
+	 ]
+	 }]
+	
+how we can manage table structure-:
+
+radio button is required for that
+
+======================Admin Module================================
+
+Company info         none         view 		   create/edit 		full
+Form Builder 
+operational area 
+permission groups 
+user accounts 
+customization setting
+
+
+status rhega ya nhi
+
+
+ALTER TABLE permissions
+RENAME TO module_permissions;
+
+[{
+	"id":2,
+	"name":"size",
+	"permission":[
+		{"full":false,
+			 "view":false,
+			 "create/edit":false,
+			 "delete":false,
+			 "none":false}
+	 ]}, {
+	 "id":3,
+	 "name":"Fabric/Material",
+	 "permission":[
+		 {"full":false, 
+		 "view":false,
+		 "create/edit":false,
+		 "delete":false,
+		 "none":false}
+	 ]
+	 }]
+
+
+
+tables-: role_permissions
+
+
+@Dilip  Sir,
+spitpack projects
+a) fix issue on import latest database 
+b) check issue on add class when we click on cart page
+c) fix issue on show order id on thankyou page
+d) but still working on issue redirection of product details page
+
+hello sir,
+
+I have resolve the single selections of checkbox 
+the data binding inside vue has successfully done
+changes inside the listing of roles have done
+remove unwanted data and methods and
+follow the rules as you explained to me 
+
+
+
+ALTER TABLE `roles` ADD `description` TEXT NULL AFTER `name`;
+
+
+CREATE TABLE `role_permissions` (
+    `id` int NOT NULL PRIMARY KEY,
+    `role_id` int(11),
+    `permission_id` text NULL,
+    `created_at` timestamp NULL,
+    `updated_at` timestamp NULL,
+    `deleted_at` timestamp NULL
+);
+
+CREATE TABLE `module_permissions` (
+    `id` int NOT NULL PRIMARY KEY,
+    `name` varchar(255) NOT NULL,
+    `submodule_json` longtext NULL,
+    `created_at` timestamp NULL,
+    `updated_at` timestamp NULL,
+    `deleted_at` timestamp NULL
+);
+
+
+mailto:tanvi.rajadhyaksha@galaxyweblinks.in
+
+first_name, last_name, email, status, phone_number, mobile, address_one, address_two, role, city, state, zip_code, password, 
+
+ ALTER TABLE `users`ADD `phone_number` TEXT NULL AFTER `mobile`, 
+ ADD `address_one` TEXT NULL AFTER `last_login_ip`,
+ ADD `address_two` TEXT NULL AFTER `address_one`,
+ ADD `city` varchar(191) NULL AFTER `last_name`,
+ ADD  `state` varchar(191) NULL AFTER `city`,
+ ADD `zip_code` varchar(191) NULL AFTER `state`;
+
+[{"id":1,"name":"Redemption and Discount","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":2,"name":"Cities","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":3,"name":"Territories","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":4,"name":"Users","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":5,"name":"Roles","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}]
+
+
+
+7 hr
+==========================color updation ===========================
+
+@Dilip  Sir,
+spitpack projects
+a) review existing source code
+b) fixed issue on color updation
+c) fix issue on validation on color shade field
+d) perform unit testing
+e) push code and deploye code on server
+
+==================8 hr================
+learning on vue js
+a) review the vue js instances
+b) review the transition vie html elements
+c) create a demo components for Transition
+d) review to use filter
+e) review reactive interfaces
+f) review Watch property 
+
+
+===========================points for discuss of city and terr....================
+1) what is the means of R and F
+2) edit and delete is not workings
+3) what is the role of radio stations
+4) here can we add multiple radio station for individual
+
+
+=====================points for discuss of territories============================
+1) 	what is Customer Service Admins
+2) 
+
+
+
+=================================
+table_responside cart_tbl_mobile
+
+
+=======================deploye for user module and role modules db designs=====================
+ALTER TABLE `roles` ADD `description` TEXT NULL AFTER `name`;
+
+CREATE TABLE `role_permissions` (
+    `id` int NOT NULL PRIMARY KEY,
+    `role_id` int(11),
+    `permission_id` text NULL,
+    `created_at` timestamp NULL,
+    `updated_at` timestamp NULL,
+    `deleted_at` timestamp NULL
+);
+
+(give the tables of full data)
+CREATE TABLE `module_permissions` (
+    `id` int NOT NULL PRIMARY KEY,
+    `name` varchar(255) NOT NULL,
+    `submodule_json` longtext NULL,
+    `created_at` timestamp NULL,
+    `updated_at` timestamp NULL,
+    `deleted_at` timestamp NULL
+);
+
+=======================front login credentails===========
+user-: vishakha.vyas@galaxyweblinks.in
+pass-: vishakha19
+sir this is working on developmente but not working on productions
+
+
+sir product admin 
+ username : superadmin@imprintcity.com 
+ password : password
+ 
+      OrderItems.bulkCreate(order_items).then(orderData => {
+                console.log('orderData11------',orderData[orderData.length-1]['dataValues'].id);
+            });
+
+
+a) fix issue on import latest database 
+b) check issue on add class when we click on cart page
+c) fix issue on show order id on thankyou page
+d) but still working on issue redirection of product details page
+
