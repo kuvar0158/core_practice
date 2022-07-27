@@ -2,4 +2,32 @@ OrderItems.bulkCreate(order_items).then(orderData => {
                 console.log('orderData11------',orderData[orderData.length-1]['dataValues'].id);
             });
 
-            
+             // $(document).on('click', '.downloadItem', function() {
+    //   $(this).addClass('production_order_table_custom');
+    // });
+    // $(document).on('click', 'body', function(e) {
+    //   if (!$(e.target).is('.production_order_table_custom'))
+    //     $('.production_order_table_custom').removeClass('production_order_table_custom');
+    // })
+
+    =========================It’s Time to Handle Errors Properly by using exception handling ==============
+    refrence url-: https://www.toptal.com/nodejs/node-js-error-handling
+
+    Using promises or async/await is a good replacement for callbacks. The typical code flow of async/await looks like the following:
+
+    const doAsyncJobs = async () => {
+     try {
+       const result1 = await job1();
+       const result2 = await job2(result1);
+       const result3 = await job3(result2);
+       return await job4(result3);
+     } catch (error) {
+       console.error(error);
+     } finally {
+       await anywayDoThisJob();
+     }
+    }
+
+    can you provide me the resion name like  AWS_DEFAULT_REGION from aws account
+
+    AWS_DEFAULT_REGION=eu-west-2

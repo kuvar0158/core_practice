@@ -1,0 +1,6 @@
+ 
+=====================functino for filter array of data from selected id only=============================
+ let selectedColor = _this.color_list.map((element) => element.id);
+                _this.brand_post.selected_colors = _this.brand_post.selected_colors.filter(
+                  (element) => selectedColor.includes(element)
+                );

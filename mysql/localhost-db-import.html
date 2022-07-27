@@ -1,7 +1,9 @@
 refrence link-: https://stackoverflow.com/questions/15833536/fatal-error-execution-time-of-30-seconds-exceeded-in-phpmyadmin
 
 ========================increase limit size for import large size of db=============================================
-go to  Go to xampp -> mysql -> bin -> my.ini
+<!-- go to  Go to xampp -> mysql -> bin -> my.ini -->
+
+xampp\php\php.ini to or==================go to xampp right click config of apache and open php.ini files
 
 post_max_size = 750M
 upload_max_filesize = 750M
@@ -42,6 +44,14 @@ you have to enter and then you have to move e directory vie cmd
 E:\xampp\mysql\bin
 mysql -u root spiritpackdbnew < E:\xampp\htdocs\spiritpackdbnew.sql (you have to copy path where you are save db)
 
+====================How to Fix the XAMPP Error "MySQL Shutdown Unexpectedly"=======================================
+
+IMPORTANT: do NOT delete ibdata1 file. You could destroy all your databases.
+
+Rename the folder mysql/data to mysql/data_old_bacup (you can use any name)
+Create a new folder mysql/data Copy the content that available in mysql/backup to the new mysql/data folder
+Finally copy the ibdata1 file from mysql/data_old_bacup and replace it inside the mysql/data folder
+Start MySQL from the XAMPP control panel
 
 
 

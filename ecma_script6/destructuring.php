@@ -8,5 +8,5 @@
 	 // after you used destructring methode
 
 	 const {name, age} =  boidatas;
-	 console.log(age);
+	 console.log(name);
 </script>
