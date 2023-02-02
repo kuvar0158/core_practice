@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.0.5/pixi.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <button id="download-btn">Download</button>
+      <canvas id="app-canvas"></canvas>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  const app = new PIXI.Application(window.innerWidth, window.innerHeight, {
+  antialias: true,
+  resolution: 1,
+  backgroundColor: "gray",
+  view: document.getElementById("app-canvas")
+});
+
+const texture = PIXI.Texture.from("public/picture.png");
+const sprite = new PIXI.Sprite(texture);
+app.stage.addChild(sprite);
+
+const sampleTexture = PIXI.Texture.from("public/picture.png");
+const sample = new PIXI.Sprite(sampleTexture);
+sample.x = 100;
+sample.y = 100;
+sample.width = 300;
+sample.height = 300;
+let textStyle = new PIXI.TextStyle({
+                fill: '#DD3366',
+                fontFamily: 'Open Sans',
+                fontWeight: 500,
+                fontSize: 90,
+            });
+let myText = new PIXI.Text('Evening Coffee!', textStyle) // <-
+myText.anchor.set(0.5);
+myText.x = 340;
+myText.y = 120;
+app.stage.addChild(myText);
+
+const mask = new PIXI.Graphics();
+mask.beginFill(0xffffff);
+mask.drawCircle(window.innerWidth / 2, window.innerWidth / 2, 100);
+mask.endFill();
+
+sample.mask = mask;
+
+app.stage.addChild(sample);
+
+// download canvas
+const downloadBtn = document.getElementById("download-btn");
+downloadBtn.addEventListener("click", e => {
+  app.render();
+  const imageUrl = app.renderer.extract.base64();
+  let link = document.createElement("a");
+  link.href = imageUrl;
+  link.download = "picture.png";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  link.parentNode.removeChild(link);
+});
+
+</script>

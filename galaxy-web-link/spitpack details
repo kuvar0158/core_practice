@@ -1,115 +1,7 @@
-========================================ask doubtfeatures points===================================================
-1) status is not working properlly
-2) here what is permissions
-3) add user with role is not workings
-
-
 
 =======================================imprintCity/spitpack projects details==============================================
 
-admin section-: 
-superadmin@admin.com
-password
-
-fields-: id, name, submodule_json (json) 
-[{"submodule_name":["Company info", "Form Builder", "operational area", "customization setting
-"]}]
-
-	[{
-	"Id":2,
-	"Name":"size",
-	"Permission":[
-		{"Full":false,
-			 "view":false,
-			 "create/edit":false,
-			 "delete":false,
-			 "none":false}
-	 ]}, {
-	 "Id":3,
-	 "Name":"Fabric/Material",
-	 "Permission":[
-		 {"Full":false, 
-		 "view":false,
-		 "create/edit":false,
-		 "delete":false,
-		 "none":false}
-	 ]
-	 }]
-	
-how we can manage table structure-:
-
-radio button is required for that
-
-======================Admin Module================================
-
-Company info         none         view 		   create/edit 		full
-Form Builder 
-operational area 
-permission groups 
-user accounts 
-customization setting
-
-
-status rhega ya nhi
-
-
-ALTER TABLE permissions
-RENAME TO module_permissions;
-
-[{
-	"id":2,
-	"name":"size",
-	"permission":[
-		{"full":false,
-			 "view":false,
-			 "create/edit":false,
-			 "delete":false,
-			 "none":false}
-	 ]}, {
-	 "id":3,
-	 "name":"Fabric/Material",
-	 "permission":[
-		 {"full":false, 
-		 "view":false,
-		 "create/edit":false,
-		 "delete":false,
-		 "none":false}
-	 ]
-	 }]
-
-
-
-tables-: role_permissions
-
-
-@Dilip  Sir,
-spitpack projects
-a) fix issue on import latest database 
-b) check issue on add class when we click on cart page
-c) fix issue on show order id on thankyou page
-d) but still working on issue redirection of product details page
-
-hello sir,
-
-I have resolve the single selections of checkbox 
-the data binding inside vue has successfully done
-changes inside the listing of roles have done
-remove unwanted data and methods and
-follow the rules as you explained to me 
-
-
-
 ALTER TABLE `roles` ADD `description` TEXT NULL AFTER `name`;
-
-
-CREATE TABLE `role_permissions` (
-    `id` int NOT NULL PRIMARY KEY,
-    `role_id` int(11),
-    `permission_id` text NULL,
-    `created_at` timestamp NULL,
-    `updated_at` timestamp NULL,
-    `deleted_at` timestamp NULL
-);
 
 CREATE TABLE `module_permissions` (
     `id` int NOT NULL PRIMARY KEY,
@@ -120,10 +12,7 @@ CREATE TABLE `module_permissions` (
     `deleted_at` timestamp NULL
 );
 
-
-mailto:tanvi.rajadhyaksha@galaxyweblinks.in
-
-first_name, last_name, email, status, phone_number, mobile, address_one, address_two, role, city, state, zip_code, password, 
+ 
 
  ALTER TABLE `users`ADD `phone_number` TEXT NULL AFTER `mobile`, 
  ADD `address_one` TEXT NULL AFTER `last_login_ip`,
@@ -132,69 +21,9 @@ first_name, last_name, email, status, phone_number, mobile, address_one, address
  ADD  `state` varchar(191) NULL AFTER `city`,
  ADD `zip_code` varchar(191) NULL AFTER `state`;
 
-[{"id":1,"name":"Redemption and Discount","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":2,"name":"Cities","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":3,"name":"Territories","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":4,"name":"Users","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":5,"name":"Roles","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}]
+ ALTER TABLE `shapes`ADD `created_by` varchar(255) NULL AFTER `created_at`, 
+ ADD `updated_by` varchar(255) NULL AFTER `updated_at`,
 
-
-
-7 hr
-==========================color updation ===========================
-
-@Dilip  Sir,
-spitpack projects
-a) review existing source code
-b) fixed issue on color updation
-c) fix issue on validation on color shade field
-d) perform unit testing
-e) push code and deploye code on server
-
-==================8 hr================
-learning on vue js
-a) review the vue js instances
-b) review the transition vie html elements
-c) create a demo components for Transition
-d) review to use filter
-e) review reactive interfaces
-f) review Watch property 
-
-
-===========================points for discuss of city and terr....================
-1) what is the means of R and F
-2) edit and delete is not workings
-3) what is the role of radio stations
-4) here can we add multiple radio station for individual
-
-
-=====================points for discuss of territories============================
-1) 	what is Customer Service Admins
-2) 
-
-
-
-=================================
-table_responside cart_tbl_mobile
-
-
-=======================deploye for user module and role modules db designs=====================
-ALTER TABLE `roles` ADD `description` TEXT NULL AFTER `name`;
-
-CREATE TABLE `role_permissions` (
-    `id` int NOT NULL PRIMARY KEY,
-    `role_id` int(11),
-    `permission_id` text NULL,
-    `created_at` timestamp NULL,
-    `updated_at` timestamp NULL,
-    `deleted_at` timestamp NULL
-);
-
-(give the tables of full data)
-CREATE TABLE `module_permissions` (
-    `id` int NOT NULL PRIMARY KEY,
-    `name` varchar(255) NOT NULL,
-    `submodule_json` longtext NULL,
-    `created_at` timestamp NULL,
-    `updated_at` timestamp NULL,
-    `deleted_at` timestamp NULL
-);
 
 =======================front login credentails===========
 user-: vishakha.vyas@galaxyweblinks.in
@@ -203,16 +32,334 @@ sir this is working on developmente but not working on productions
 
 
 sir product admin 
- username : superadmin@imprintcity.com 
- password : password
- 
+User - superadmin@admin.com
+Password - password@imprint
+
       OrderItems.bulkCreate(order_items).then(orderData => {
                 console.log('orderData11------',orderData[orderData.length-1]['dataValues'].id);
             });
 
+gaurav.malviya@galaxyweblinks.in
 
-a) fix issue on import latest database 
-b) check issue on add class when we click on cart page
-c) fix issue on show order id on thankyou page
-d) but still working on issue redirection of product details page
+=====================some imp url for galaxy web links==============================================
+https://www.manageprojects.us/projects
+
+https://galaxywebapps.com/web
+
+https://spiritpack.galaxyweblinks.com/admin/finance/roles
+
+https://web.galaxyweblinks.in/#1
+
+https://gitlab.galaxyweblinks.in/root/spiritpack/commits/developer_kuvar
+
+https://jsonformatter.org/
+
+
+https://gitlab.galaxyweblinks.in/root/spiritpack/tree/development
+
+v12.22.1
+
+nvm install v12.22.1
+
+http://localhost:8081/admin/finance/1/roles
+
+Subject-: Daily report of 01-Feb-2023 
+
+    Hello sir, today I have worked on these points.
+
+    Today Task 
+
+    Task-: work on canvas demo clone projects.
+    Time-: 9:00 hr 
+    
+    a) add buldge text shape using fabric have done.
+    c) discuss with @chetan regarding curve text.
+    d) working on other curve shape using fabric js.
+
+    check in time-: 10:29
+    check out time-: 08:31
+
+Today i forgot to check in and checkout on Odoo. 
+please consider my time.
+date-: 27-07-2022 (Wednesday)
+check in time 10:25 AM
+check out time 08:28 PM
+
+
+payel.aich@galaxyweblinks.in
+leavemanagement@galaxyweblinks.in
+gwladmin@galaxyweblinks.in
+
+Forget to check in check out on 27 july 2022
+
+Today i forgot to check in and checkout on Odoo. 
+please consider my time.
+date-: 27-07-2022 (Wednesday)
+check in time 10:25 AM
+check out time 08:42 PM
+
+
+========================convert 500x500 pixel online=========================
+
+https://safeimagekit.com/resize-image-to-500x500#
+
+===================List of api for unit testings========================================
+
+1) Api url-: https://spiritpack.galaxyweblinks.com/api/v1/get-roles
+
+console.log("check index also first");
+  StNum = ["kp", "sumit", "chinmay", "arun", "ankit", "mohan", "nikita"];
+  StNum.forEach((element, index) => {
+    //
+    //   SetTime = 5000;
+    console.log(index * 5000, "jijijiji");
+    setTimeout(function () {
+      console.log(index + element + "check timer heres");
+    }, index * 5000);
+  });
+    @dev @v sir
+    a) add buldge text shape using fabric have done.
+    c) discuss with @chetan regarding curve text.
+    d) working on other curve shape using fabric js.
+    
+    Leaving of the day
+    Thank you
+
+npm install --save vue-recaptcha
+npm install @vue/composition-api
+
+My grandfather is in the hospital due to serious enjury so I want to take care of him for today.
+that is the reason, today i will not abale to join office. 
+
+
+@vue/composition-api - npm
+ses email varification
+
+@dilip sir i have found api but after 100 request it has required is purchase plans
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+
+send grid and ses details you have to test it (TOC)
+https://sendgrid.com/pricing/
+
+api key-:
+url for post man-: https://docs.sendgrid.com/api-reference/mail-send/mail-send
+
+============================Sendgrid Account and ==============================
+email-: singhrec1@gmail.com
+pass-: Galaxy1!@#%$1122
+
+============apne ko krna ye hai=========================
+
+APP_URL=http://localhost
+
+process.env.APP_URL
+
+dimension 32x32 (max 1 mb)
+
+let user = req.user;
+    let err, categories;
+    let sortBy = ['title', 'ASC'];
+    let whereStatement = {};
+    if (req.params['prod_type']) {
+        whereStatement = { prod_type_id: prod_type_id };
+    }
+    [err, categories] = await to(Category.findAll({
+        where: whereStatement,
+        include: [{ model: Genderagesize },
+        ],
+        order: [
+            sortBy
+        ],
+        distinct: true,
+    }));
+    if (err) {
+        return ReE(res, err);
+    }
+
++ (selected_color.hash == '#ffffff' ? ' checkmark_black' : '')
+
+
+========================= FabricJS Delete multiple object in V.2 ======================================
+refrence link-: https://stackoverflow.com/questions/47529804/fabricjs-delete-multiple-object-in-v-2
+
+refrence link-: https://stackoverflow.com/questions/61340776/align-object-to-canvas-in-fabricjs
+
+@dev @vi sir
+
+My Todo list
+1) work on diffrent text shape text using fabric js. https://www.manageprojects.us/my-work?modal=Task-252849-1612
+2) upload background images. 
+
+
+1) Design Studio- Cross icon and degree icon should be visible and both the icons should be close https://www.manageprojects.us/projects/1200?modal=Task-249152-1200
+2) On continue clicking the zoom out icon design Area is getting affected in admin https://www.manageprojects.us/projects/1200?modal=Task-250756-1200
+3) In email colors are not displaying correctly for multicolor https://www.manageprojects.us/projects/1200?modal=Task-250139-1200
+4) While clicking on the reset button or selecting any new canvas area active fields is displaying https://www.manageprojects.us/projects/1200?modal=Task-249835-1200
+5) Blank fields is generating in the design studio https://www.manageprojects.us/projects/1200?modal=Task-250354-1200
+5) Product Types:- Design areas is mandatory when we add and edit product type https://www.manageprojects.us/projects/1200?modal=Task-245927-1200
+6) Design Studio- Add Loader in the design Studio until the page load https://www.manageprojects.us/projects/1200?modal=Task-250648-1200
+7) 2 edit fields is displaying in the design studio https://www.manageprojects.us/projects/1200?modal=Task-250377-1200
+
+
+Induslnd Bank Ltd
+
+this.$forceUpdate();
+
+removeColorProfileImage (1548)
+
+/new-products (3122)
+
+:class="`tab-pane fade ${(color_index == 0) ? 'show active' : ''}`"
+
+0_img0_front
+
+ALTER TABLE `new_product_images` ADD `design_area_type` text NULL AFTER `medium`;
+
+9322777056 sb 
+
+/new-products/upload_image/ (2783)
+
+
+  let  selectedProd = _this.product_type_list.find((element) => prod_id == element.id);
+
+message for tooltip-:
+
+front-: images add for front
+back-:  images add for back
+          setActiveColor(index) { (3411)
+
+
+ALTER TABLE `new_products` CHANGE `product_type_id` `product_type_id` VARCHAR(255) NULL DEFAULT NULL;
+
+5:22
+ALTER TABLE `new_product_images` ADD `type` VARCHAR(50) NULL DEFAULT NULL AFTER `medium`;
+
+kp singh 90@gmail.com
+
+a) show only default images on canvas design area.
+b) disable button while click on front as well as back. 
+c) show only one front hightlighted icon while choose default images.
+d) show only one back hightlighted icon while choose default images.
+
+https://development.imprintboise.com/admin/store/edit/product/40
+
+
+a) we need to put image in our local when we assign front and back images
+b) url of front and back we need to save in database 
+c) we need to unchanged design area urls of the design area popup update
+
+user_selected_values[active_gender_key].color_hash
+
+_this.user_selected_values[_this.active_gender_key].color_hash
+
+localStorage.setItem("active_tshirt_color", this.user_selected_values[key].color_hash);
+
+setActive
+
+this.user_selected_values[0].color_hash
+
+swatches
+
+a) showing images according to choose design area   
+b) swatched images are showing if not available for color
+c) changes tshirt color while choose sliders
+
+
+  var url = "https://www.jsowl.com/remove-an-item-from-an-array-in-javascript/";
+  console.log("5.AnchorTag:  " +isValidUrl(url)); 
+
+  validURL(str) {
+      var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+      return !!pattern.test(str);
+    },
+
+    admin-:
+    user-: superadmin@admin.com
+    pass-: password
+
+    front
+    user-: singhrec1@gmail.com
+    pass-: 123456
+
+
+    git status
+
+Design Area43 (552)
+
+-: https://www.tutorialspoint.com/how-to-create-the-instance-of-fabric-image-from-a-url-string-using-fabricjs
+
+-img url=: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe224KfO-FPa17_k5XAj425B0Y1See1Lefog&usqp=CAU
+=====================testing site of cors error=================================
+url-: https://jsfiddle.net/natchiketa/xHYjz/
+
+=====================================test cors error online site===================================================
+a) https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe224KfO-FPa17_k5XAj425B0Y1See1Lefog&usqp=CAU
+
+ xval = 160;
+ yval = 90 + 100 + 30 + 40;  = 260
+
+git revert fb046724e2e96f08850d091d934dee25494cee23
+
+
+testing url for multicolor=:
+
+1) https://development.imprintboise.com/product-details/54 (working issue with image loading)
+a) still not loading images for sometimes
+
+2) https://development.imprintboise.com/product-details/35 (working fine)
+3) https://development.imprintboise.com/product-details/5 (working fine for full tshirt sleeve)  
+4) https://development.imprintboise.com/product-details/3 (working finr for half tshirt)
+
+
+https://development.imprintboise.com/product-details/54
+
+addDesignTypeImages (1533)
+
+Today i am on leave due to not feeling well.
+
+
+============================list of point=============================
+
+ Need to check if we can use swatch image for text fabric color @Kuvar 
+Note-: 
+ a) while we choosing swatches instead of color in slider then we need to added default color in fabric icon
+
+
+airtel wireless brodband
+
+_this.$toast.error(data.error, { position: "top-right" });
+
+
+addDesignTypeImages (2900)
+
+this.setActiveColor(this.active_color_index);
+
+Team, please consider my login time for today (02 Jan 2023) at 10:22 AM
+
+1800 233 3555
+
+vill-: Belhari Kerakat jaunpur (Uttar pradesh)-222142, kerakat belahri gate 
+
+Recommended Size 500 X 500px
+
+=========================task for add distress filter===================
+
+a) rename to distree image to distress filter
+b) add one more field distress image on top of
+c) show distress images on list backend as well as front.
+
+
+
+
+Hello this is new curve in pixi text 
+
+=================================loom video of canvas demo==================================
+url-: https://www.loom.com/share/e957855c71bc451c901a0a2593eb9fe5
 

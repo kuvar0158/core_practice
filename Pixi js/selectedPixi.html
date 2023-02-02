@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+  </head>
+  <body>
+    <h1>Hello PixiJS</h1>
+    <canvas id="pixi-canvas2"></canvas>
+    
+  </body>
+</html>
+<script>
+  var canvas = document.getElementById("pixi-canvas2");
+  let app = new PIXI.Application({ width: 740, height: 560, view: canvas, });
+  // document.body.appendChild(app.view);
+
+  // const app = new PIXI.Application({autoResize: true, resolution: devicePixelRatio});
+    document.body.appendChild(app.view);
+
+var square = new PIXI.Graphics();
+square.beginFill(0xffffff, 0.11);
+square.lineStyle(1, 0xFFFFFF, 1, 0.5, false);
+square.drawRect(0, 0, 50, 50);
+square.endFill();
+square.x = 100;
+square.y = 100;
+square.interactive = true;
+square.dragging = false;
+app.stage.addChild(square);
+square.buttonMode = true;
+
+let textStyle = new PIXI.TextStyle({
+                fill: '#DD3366',
+                fontFamily: 'Open Sans',
+                fontWeight: 500,
+                fontSize: 90,
+            });
+let myText = new PIXI.Text('Evening Coffee!', textStyle) // <-
+myText.anchor.set(0.5);
+myText.x = 340;
+myText.y = 120;
+myText.vy = 0;
+myText.vx = 0;
+// myText.angle = 50;
+// myText.Rectangle(0, 0, 50, 50);
+// myText.interactive = true;
+app.stage.addChild(myText);
+
+
+
+// square.on('mousedown', function (e) {
+//   console.log('Picked up');
+  
+//   square.x = e.data.global.x;
+//   square.y = e.data.global.y;
+//   square.dragging = true;
+// });
+
+square.on('mousedown', function (e) {
+  console.log('Picked up texr');
+  
+  square.x = e.data.global.x;
+  square.y = e.data.global.y;
+  square.dragging = true;
+});
+
+square.on('mousemove', function (e) {
+  console.log('Dragging');
+  
+  if (square.dragging) {
+    square.x = e.data.global.x;
+    square.y = e.data.global.y;
+  }
+});
+
+square.on('mouseup', function (e) {
+  console.log('Moving');
+  
+  square.x = e.data.global.x;
+  square.y = e.data.global.y;
+  square.dragging = false;
+});
+
+</script>
+

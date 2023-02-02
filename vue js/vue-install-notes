@@ -14,6 +14,15 @@ run project-:
 cd blog
 npm run serve
 
+======================install vue js in windows========================
+Open a command line (ie. Windows Command Prompt or PowerShell).
+
+Create a new project folder: mkdir VueProjects and enter that directory: cd VueProjects.
+
+Install Vue.js using Node Package Manager
+
+npm i vue@2.6.11
+
 =======================================fetch data with api==========================
 npm i axios vue-axios
 
@@ -61,3 +70,9 @@ npm uninstall webpack
 10) setup routes for that
 
 6) add customers and filter customers with saarch box.
+
+vue create canvasdemoclone
+
+canvasdemoclone
+
+npm i vue@2.6.11

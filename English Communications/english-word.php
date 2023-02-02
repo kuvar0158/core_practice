@@ -81,3 +81,8 @@ refrence link-: https://hindimediumhelp.blogspot.com/2020/05/daily-use-vocabular
 78) grab (लपकना)
 79) being (हो रहा)
 80) often (bar bar)
+81) further (आगे)
+82) seem  (प्रतीत होना)
+83) frightened  (भयभीत)
+84) manipulate (हेरफेर करना)
+85)consolidate (मजबूत)

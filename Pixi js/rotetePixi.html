@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src="https://raw.githack.com/davidfig/pixi-viewport/v4/dist/viewport.js"></script>
+  </head>
+  <body>
+    <h1>Hello PixiJS</h1>
+    <canvas id="pixi-canvas2"></canvas>
+    
+  </body>
+</html>
+<script>
+  var canvas = document.getElementById("pixi-canvas2");
+  // let app = new PIXI.Application({ width: 740, height: 560, view: canvas, });
+  // document.body.appendChild(app.view);
+
+  const app = new PIXI.Application({autoResize: true, resolution: devicePixelRatio});
+    document.body.appendChild(app.view);
+
+    const viewport = new Viewport.Viewport({ 
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight,
+        screenworldWidth: 10,
+        screenworldHeight: 10,
+    }); 
+     
+    // add the viewport to the stage   
+    app.stage.addChild(viewport); 
+
+ // add a red box
+    const sprite = viewport.addChild(new PIXI.Sprite(PIXI.Texture.WHITE));
+    sprite.tint = 0xff0000;
+    sprite.width = sprite.height = 100; 
+    sprite.position.set(500, 100);
+    sprite.vy = 0;
+    sprite.vx = 0;  
+
+    // const sprite1 = viewport.addChild(new PIXI.Sprite(PIXI.Texture.WHITE))
+    // sprite1.tint = 0xff0000
+    // sprite1.width = sprite.height = 100
+    
+    // sprite1.position.set(3000, 100)
+    // sprite1.vy = 0;
+    // sprite1.vx = 0;
+let textStyle = new PIXI.TextStyle({
+                fill: '#DD3366',
+                fontFamily: 'Open Sans',
+                fontWeight: 500,
+                fontSize: 90,
+            });
+let myText = new PIXI.Text('Evening Coffee!', textStyle) // <-
+myText.anchor.set(0.5);
+myText.x = 340;
+myText.y = 120;
+myText.vy = 0;
+myText.vx = 0;
+viewport.addChild(myText);
+    // here we are applied text
+   viewport.drag().pinch().wheel().decelerate()
+
+// function keyboard(value) {
+//         let key = {};
+//         key.value = value;
+//         key.isDown = false;
+//         key.isUp = true;
+//         key.press = undefined;
+//         key.release = undefined;
+//         //The `downHandler`
+//         key.downHandler = event => {
+//           if (event.key === key.value) {
+//             if (key.isUp && key.press) key.press();
+//             key.isDown = true;
+//             key.isUp = false;
+//             event.preventDefault();
+//           }
+//         };
+      
+//         //The `upHandler`
+//         key.upHandler = event => {
+//           if (event.key === key.value) {
+//             if (key.isDown && key.release) key.release();
+//             key.isDown = false;
+//             key.isUp = true;
+//             event.preventDefault();
+//           }
+//         };
+      
+//         //Attach event listeners
+//         const downListener = key.downHandler.bind(key);
+//         const upListener = key.upHandler.bind(key);
+        
+//         window.addEventListener(
+//           "keydown", downListener, false
+//         );
+//         window.addEventListener(
+//           "keyup", upListener, false
+//         );
+        
+//         // Detach event listeners
+//         key.unsubscribe = () => {
+//           window.removeEventListener("keydown", downListener);
+//           window.removeEventListener("keyup", upListener);
+//         };
+        
+//         return key;
+//       }
+
+      // let left = keyboard("ArrowLeft");
+      // let up = keyboard("ArrowUp");
+      // let right = keyboard("ArrowRight");
+      // let down = keyboard("ArrowDown");
+
+      // left.press = () => {
+      //   sprite.vx = -5;
+      //   sprite.vy = 0;
+      // };
+      
+      // left.release = () => {
+      //   if (!right.isDown && sprite.vy === 0) {
+      //     sprite.vx = 0;
+      //   }
+      // };
+    
+      // up.press = () => {
+      //   sprite.vy = -5;
+      //   sprite.vx = 0;
+      // };
+      // up.release = () => {
+      //   if (!down.isDown && sprite.vx === 0) {
+      //     sprite.vy = 0;
+      //   }
+      // };
+    
+      // right.press = () => {
+      //   sprite.vx = 5;
+      //   sprite.vy = 0;
+      // };
+      // right.release = () => {
+      //   if (!left.isDown && sprite.vy === 0) {
+      //     sprite.vx = 0;
+      //   }
+      // };
+    
+      // down.press = () => {
+      //   sprite.vy = 5;
+      //   sprite.vx = 0;
+      // };
+
+      // down.release = () => {
+      //   if (!up.isDown && sprite.vx === 0) {
+      //     sprite.vy = 0;
+      //   }
+      // };
+
+    animate();
+    function animate() {
+        requestAnimationFrame(animate);     
+        sprite.position.x += sprite.vx;
+        sprite.position.y += sprite.vy;
+        sprite.anchor.set(0.2);
+        
+        sprite.rotation = 0;
+        const p = sprite.toLocal(app.renderer.plugins.interaction.mouse.global);
+        sprite.rotation = Math.atan2(p.y, p.x);
+        
+        //viewport.moveCenter(sprite.position.x, sprite.position.y);
+        viewport.addChild(sprite);
+        app.renderer.resize(window.innerWidth, window.innerHeight);
+    }
+
+    // animate1();
+    // function animate1() {
+    //     requestAnimationFrame(animate1);     
+    //     myText.position.x += myText.vx;
+    //     myText.position.y += myText.vy;
+    //     myText.anchor.set(0.2);
+        
+    //     myText.rotation = 0;
+    //     const p = myText.toLocal(app.renderer.plugins.interaction.mouse.global);
+    //     myText.rotation = Math.atan2(p.y, p.x);
+        
+    //     //viewport.moveCenter(sprite.position.x, sprite.position.y);
+    //     viewport.addChild(myText);
+    //     app.renderer.resize(window.innerWidth, window.innerHeight);
+    // }
+
+  
+</script>
+

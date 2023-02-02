@@ -4,3 +4,85 @@
                 _this.brand_post.selected_colors = _this.brand_post.selected_colors.filter(
                   (element) => selectedColor.includes(element)
                 );
+
+                localStorage.setItem('YourItem', response.data)
+                localStorage.getItem('YourItem')
+                localStorage.removeItem('YourItem')
+
+1) ========================split url using 2nd last slash in java script============================================
+ _this.queryString = window.location.href;
+  var last = _this.queryString.split('/');
+  console.log('check all detaild mail url,', last[last.length-2]);
+
+  ===================checking object blank or not====================
+  var activeObject = 'assign some object data like [klass]'
+  Object.entries(activeObject).length
+====================function for filter array using id==========================================
+
+this.product_data.design_areas.forEach(design_area => {
+                design_area.select_area = false;
+             })
+this.product_data.design_areas = this.product_data.design_areas.filter(design_area => design_area.selected);
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var result = numbers.filter(number => number > 5);
+console.log(result);
+
+===================================after data get dom updated methods==============================================
+this.$forceUpdate();
+
+===========================convert json string into js objects==================================
+
+$k = '{"name":"John", "age":30, "car":null}'
+JavaScript has a built in function for converting JSON strings into JavaScript objects:
+JSON.parse($k)
+
+JavaScript also has a built in function for converting an object into a JSON string:
+JSON.stringify()
+
+@click="$emit('closeMenu', 'nameAndNumber')"
+
+this.$refs.nameAndNumberRef.addInputName.filter(nn => nn.name != "" || nn.number);
+
+
+==========================================array and add key and value in objects=================
+order_item['name_and_number_json'].forEach(nameandnumber => {
+  nameandnumber.product_id = order_item.id;
+  nameandnumber.product_number = order_item.product_number;
+})
+
+
+var num = this.order_detail.items.filter(design_area => design_area.color.hex == colorCode);
+      console.log('check after filter dat=====================', num);
+
+      =============================iterate onject in java script========================================
+      for (var key in p) {
+        if (p.hasOwnProperty(key)) {
+            console.log(key + " -> " + p[key]);
+        }
+      }
+
+      
+      function addDesignType(color_index, image_index, type) {
+    colors[color_index]['images'].forEach(image => {
+        if (image.type == type) {
+            image.type = null;
+        }
+    })
+    
+     colors[color_index]['images'][color_index].type = type;
+}
+
+let all_color = localStorage.getItem("product_items");
+
+JSON.parse(get_product).product_type_id == 0
+
+dakshiyta.indurkar@galaxyweblinks.in
+
+==============================how to add dynamic class in vue js==========================================================
+
+ :class="'marign_color' + (selectedColor==color.swatch_file?' selected_color ':'')"
+
+ class="checkbox_custom check-active"
+
+ :class="'checkbox_custom' + (gender.selected_color.id==gendercolors.id?' check-active ':'')"   

@@ -6,3 +6,66 @@ _this.$router.push({ name: "thankyou", params: { order_id: '32' } });
       ===================================how to remove cache from vue site ====================================================
       1) go to the inspect element ----> Application ----------->
       2) go to storage  ----------> right click on storage and clear and then same as it is session storage
+
+      ======================how to check data type in java script-==========================================
+      // console.log(typeof 'kp');
+
+
+      location: Location {ancestorOrigins: DOMStringList, href: 'http://localhost:8081/design-studio#', origin: 'http://localhost:8081', protocol: 'http:', host: 'localhost:8081', …}
+
+      =========================How do you compare two object values in two separate arrays using Javascript (JS)?================
+
+            var array1 = [
+        {name: "Jim", city: 'Toronto', id:'1281732'},
+        {name: "Alex", city: 'New York', id:'32423'},
+        {name: "Simon", city: 'San Francisco', id:'234234'},
+        {name: "Jake", city: 'Milwaukee', id:'1282342341732'}
+      ]
+
+      var array2 = [
+        {name: "Joey", city: 'Raleigh'},
+        {name: "Alex", city: 'New York'},
+        {name: "Lee", city: 'San Diego'},
+        {name: "Jake", city: 'Milwaukee'}
+      ]
+
+      var result = array1.filter(({name, city}) =>
+        array2.some(o => o.name == name && o.city == city)
+      );
+
+console.log(result);
+
+======================================How to check if a value exists in an object using JavaScript==============
+
+var obj = {
+   "a": "test1",
+   "b": "test2"
+};
+
+Object.keys(obj).forEach(function(key) {
+  if (obj[key] == 'test1') {
+    alert('exists');
+  }
+});
+
+var obj = {
+   "a": "test1",
+   "b": "test2"
+};
+
+if (Object.values(obj).includes('test1')) {
+  alert('exists');
+}
+
+
+var obj = {
+      "a": "test3",
+      "b": "test2"
+    };
+
+    Object.keys(obj).forEach(function (key) {
+      if (obj[key] == 'test1') {
+        // alert('exists');
+        console.log('check logo here');
+      }
+    });

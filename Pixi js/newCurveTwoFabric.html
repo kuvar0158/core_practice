@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://unpkg.com/fabric@latest/dist/fabric.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <style>
+     
+  </style>
+  <body>
+     <div id="main" style="width:800px; height:800px">
+<canvas id="c" width="800" height="800" style="border: 1px solid"></canvas>
+</div>
+  </body>
+</html>
+<script>
+   var canvas = new fabric.Canvas('c')
+
+var text= "Happy Birthday"
+var headingText = [];
+var startAngle = -58;
+var textLength = text.length;
+
+var r = getTranslationDistance(text);
+var j=-1;
+var angleInterval = 116/textLength;
+for(var iterator=(-textLength/2), i=textLength-1; iterator<textLength/2;iterator++,i--) {
+  
+    var rotation = 90-(startAngle+(i)*angleInterval) ;
+   
+    headingText.push(new fabric.IText(text[i], {
+      
+        angle : j*((startAngle)+(i*angleInterval)),
+      shadow: 'rgba(0,0,0,0.5) 5px 5px 5px',
+     fontSize:28,
+        left: (r)*Math.cos((Math.PI/180)*rotation),
+        top: (r)*Math.sin((Math.PI/180)*rotation)
+       
+    }));
+      
+}
+
+var group2 = new fabric.Group(headingText, { left: 0, top: canvas.height/2 , fontFamily: 'Arial',  strokeWidth: 1,
+        
+        strokeStyle:"#fff"});
+canvas.add(group2);
+console.log(group2)
+
+function getTranslationDistance(text){
+    var boundingRectangle = $("<div id='tempdiv' style='display:table-cell;font-family:Arial; font-size:28px;'>"+text+"</div>").appendTo("#main");
+    
+    var translationDistance = $(boundingRectangle).width();
+    $(boundingRectangle).remove();
+    return translationDistance;
+}
+</script>
+

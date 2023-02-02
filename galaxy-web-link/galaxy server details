@@ -26,12 +26,22 @@ pass-: Kuvar@234
 
 ================================gitlab credentials for galaxy web links======================================
 Git User: Kuvarpratap.Singh
-new pass-: Galaxy1!@#%$
+git pass-: Galaxy1!@#%$
+  
 
+  =====================spritpack credential used git ===============================================
+  user-: Jeyshree-at-292492124434
+  pass-: 
 
 ==================================================vpn account details=======================================
 VPN User: kuvarpratap.Singh
 pass-: Ksingh@1@#
+
+@all I changed password for the superadmin for our development server new password is 
+url-: https://development.imprintboise.com/admin/login
+
+  user-: superadmin@admin.com
+  pass- password@imprint
 
 
 shubham.kawdker@galaxyweblinks.in
@@ -51,6 +61,10 @@ Time-: 4 hr
 spitpack projects
 a) work on add field inside product brands
 
+@all I changed password for the superadmin for our development server new password is 
+url-: https://development.imprintboise.com/admin/login
+user-: superadmin@admin.com
+pass- password@imprint
 
 ==================================================galaxy web link project credentails====================
 
@@ -67,48 +81,13 @@ a) review the flow of client section======================================spitpa
 url-: https://spiritpack.galaxyweblinks.com/admin/edit/brand/30
 
 
-
-ALTER TABLE `brand_colors` ADD `color_shade` VARCHAR(150) NULL AFTER `swatches`;
-
-
 Bank Name-: HDFC
 Account Holder Name-: Kuvar pratap singh
 Account-: 50100469217141
 IFSC Code: HDFC0000404
 Branch Name: Vijay Nagar Indore
 
-Good Morning all
-work on 
-
-
-@Dilip  Sir,
-spitpack projects
-a) fix issue on image validation is not showing
-b) add tables in existing database
-c) work on change issue on existing database.
-d) work on change text in thankyou page is going on
-
-
-
-learning 4 hr
-a) review about Custom Directives
-b) Hook Functions
-c) Directive Hook Arguments and Function Shorthand
-d) create a new component to use Function Shorthand
-
-3 hr 
-a) add class when we click on popup inside cart page
-b) push code on master and deploye on staging
-
 roles and permission
-
-2 hr-
-
-a) create a sql structure for permission_module table 
-b) design a tables for deploye stagings
-c) check data in existing database of the tables
-
-
 
 
 ===================================isms trainings==============================================================
@@ -116,24 +95,196 @@ url-: https://ismstraining.galaxyweblinks.com/login/signup.php?
 user-: kuvarsingh
 pass-: Kuvar@234
 
+=====================================details credentials of admin on productions===========================
+url-: https://staging.imprintboise.com/admin/login
+https://development.imprintboise.com/admin/login
+
+sir product admin 
+ username : superadmin@imprintcity.com 
+ password : password
+
+===========================creadentials for frontend on productions/development==================================
+user-: kuvarpratap.singh@galaxyweblinks.in
+pass-: Kuvar@234
+
+singhrec1@gmail.com
+pass-: 123456
+
+==================================update imprint api sheet===============================================
+
+url-: https://docs.google.com/spreadsheets/d/1ezuA7faGZHVxmwFQCxdqkCYpo4Ebtd5B13lxFDSLZFk/edit#gid=0
+
+@sha you can check done from my side 
+
+=====================captch google=======================
+secretKey -: 6LcQb00gAAAAAPm-PKgtq9F6kD_loYw9XKeaGMJ6
+
+domain url-: spiritpack.galaxyweblinks.com
+
+================for localhost and spiritpack.galaxyweblinks.com domain and i am robot =======================
+copy site key-: 6Lf92U8gAAAAAGwS7f97QZt2XRWSltcDivoG8nXs
+copy secret key-: 6Lf92U8gAAAAAKo2oaIBGUN3b_sc-WvkXZP7ADqI
+
+=============for localhost and spiritpack.galaxyweblinks.com and staging.imprintboise.com and  development.imprintboise.com  and i am robot =======
+copy site key-: 6Ld8A1IgAAAAAC5RTdjFW82Y_RYAbVrNVltIaoLe
+copy secret key-: 6Ld8A1IgAAAAAIXk1t3btOJ-3LotJS-FMghEk6KT
+
+url for update other keys-: https://www.google.com/recaptcha/admin/site/542245756/settings
+
+
+https://development.imprintboise.com/
+@de can we conenct
+
+key account for
+
+user-: kuvarpratap.singh@galaxyweblinks.in
+pass-: Galaxy1!@#%$
+
+siteurl-: https://app.abstractapi.com/api/email-validation/tester
+
+curl url-:https://emailvalidation.abstractapi.com/v1/?api_key=0842dbf52e844d9cbfdbcad1be3b1148&email=kuvarpratap.singh@galaxyweblinks.in
+
+const axios = require('axios');
+axios.get('https://emailvalidation.abstractapi.com/v1/?api_key=0842dbf52e844d9cbfdbcad1be3b1148&email=kuvarpratap.singh@galaxyweblinks.in')
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+============================credentails for new changes----------======================
+You both will use same credentials, below are the details
+Repo URL: https://git-codecommit.us-east-1.amazonaws.com/v1/repos/spiritpackdev
+Username - Jeyshree-at-292492124434
+Password - pdq16gcm7dXWjteFOpxs30ACFYK8ddd/zGEhSFo5s90=
+
+
+git config --global user.name "Jeyshree-at-292492124434"
+
+git config --global user.email "pdq16gcm7dXWjteFOpxs30ACFYK8ddd/zGEhSFo5s90="
+
+git config --global user.email "kuvarpratap.singh@galaxyweblinks.in"
+
+
+Create your separate branches and use same credentials.
+
+developer_kuvar
+
+
+SELECT * FROM `new_products` ORDER BY `price_base`  DESC, `price_color_category_dark` DESC
+
+SELECT name,product_number, short_description, price_base, price_color_category_dark,  SUM(price_base * price_color_category_dark) AS 
+         SUM(oi.quantity * p.price) AS total_retail_price,
+    FROM `new_products`
+GROUP BY total_retail_price
+
+SELECT name,product_number, short_description, price_base, price_color_category_dark, SUM(price_base + price_color_category_dark) AS total_retail_price FROM `new_products` GROUP BY id ORDER BY total_retail_price DESC
+
+user-: vishakha.vyas@galaxyweblinks.in
+pass-: vishakha
+
+@je i have push code on my branch please deploy admin and server part
+
+APP_URL=http://localhost:8081
+
+APP_URL=http://localhost:8081
+
+APP_URL=https://development.imprintboise.com
+
+@je please add this url in env files as it is 
 
 
 
-  [{"id":2,"name":"size","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}, {"id":3,"name":"Fabric/Material","permissions":{"full":false, "view":false,"create_edit":false,"delete":false,"none":false}}]
-a) add fields inside users module have done
-b) changes design in users module have done
-c) changes in create api have done
-d) save users data inside tables have done
+@naga not for 8 product here next button is showing  after 15 product because currentPage is 
+=================================validate address by google api=======================================
+url-https://platform.here.com/sign-up?step=verify-identity
+user-: singhrec1@gmail.com
+pass-: Kuvar@234
+
+project id-: spiritpack-pro
+Name-: Spiritpack
+App id-: I9wpaOlirJqXrq1SeQoR
 
 
-sir i have done user modules
+========================user pass for client in imprint city===================================
 
-1) country
-2) payment methods
-transection_details
-user_address_book
+user-: kuvarpratap.singh@galaxyweblinks.in
+pass-: Kuvar@234
+
+CONFIG.API_BASE_URL = "https://development.imprintboise.com/";
+
+Task #1660:#1660: Work on add search filter for group sizes
+
+https://staging.imprintboise.com/
+
+APP_URL=http://localhost:8081/
+
+@je please add APP_URL inside env files (server/.env )
+APP_URL=https://development.imprintboise.com/
+
+let url = req.protocol + "://" + req.get("host");
+
+https://development.imprintboise.com/
+
+My todo list:
+1) add color list options in name and number modules.
 
 
-message: 'Order Placed Successfully.'
+ git pull origin master_development
+ALTER TABLE save_design DROP Column distress_json;
+
+ALTER TABLE `save_design` ADD `image` text NULL AFTER `canvas_json`;
 
 
+ this.tshirtImage = _this.background_image;
+
+ {{baseUrl}}/v1/delete-template-design/15
+
+===============back light on=======================
+a) fn key + f5 (two times)
+
+Module name  key points for possibilty  , cenario
+1) Manage Clipart-
+
+ possibility-:
+a) we can provide option for bulk upload near to Add new clipart buttons.
+here we can pick category id and sub category id from system and create a componet for bulk upload
+and provide options for download 
+sample CSV for clipart and import clipart as a required field.
+
+b) We can provide option for bulk upload to the category and sub category and listing page of clipart .
+Here we can create a component for bulk upload and provide option for download two csv file one for adding the name of
+category and subcategory and another download csv for upload svg images.
+
+c) We have to save images in upload folder from url using js function.
+
+d) Api have some restriction so we need to add limited size of data has to be added at once while import. 
+
+e) we need to check duplacate name for images also.
+
+2) Manage Shape-:
+
+a) We can provide options for bulk upload near to the Add New Shape button which is showing on listing page of shapes.
+here we can create a component for bulk upload and provide option for download csv files for shapes and that csv files needed two
+field that is name and another is images url. that we need to import.
+
+b) We have to save images in upload folder from url using js function.
+
+c) Api have some restriction so we need to add limited size of data has to be added at once while import. 
+
+d) we need to check duplacate name for images also.
+
+3) Manage Patch -: 
+a) We can provide options for bulk upload near to the Add New Patch button which is showing on listing page of patch.
+  While using component for bulk upload. provide option for download csv files for patch images and import required
+  filed accordingly.
+
+
+===============================================MP task update====================================
+1) Upload image section in custom templates on admin.
+
+
+===================================amazon account details==============================
+phone-: 9691139359
+pass-: kuvar@234
