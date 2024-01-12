@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fabric.js Curved Text</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="200"></canvas>
+
+</body>
+</html>
+<script>
+      const canvas = new fabric.Canvas('canvas', { backgroundColor: 'lightgray' });
+      var arc1 = new fabric.Path("M 455 235 A 50 50 0 0 1 200 110", {
+                stroke: 'black',
+                fill: "white"
+            });
+      canvas.add(arc1);
+      canvas.renderAll();
+      
+    </script>
+
+   

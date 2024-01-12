@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+</body>
+</html>
+<script>
+  // Initialize Fabric.js canvas
+const canvas = new fabric.Canvas('canvas');
+
+// Function to create a small arc with dynamic text
+function createSmallArcWithDynamicText(text, centerX, centerY, radius, startAngle, endAngle, fontSize, fill) {
+    const angleIncrement = (endAngle - startAngle) / (text.length - 1);
+
+    for (let i = 0; i < text.length; i++) {
+        const character = text.charAt(i);
+        const radians = fabric.util.degreesToRadians(endAngle - i * angleIncrement);
+
+        // Calculate the character's position
+        const x = centerX + radius * Math.cos(radians);
+        const y = centerY + radius * Math.sin(radians);
+
+        // Create a Fabric.js text object for each character
+        const charText = new fabric.Text(character, {
+            left: x,
+            top: y,
+            fontSize: fontSize,
+            fill: fill,
+        });
+
+        canvas.add(charText);
+    }
+
+    canvas.renderAll();
+}
+
+// Call the function to create a small arc with dynamic text
+const textToDisplay = "Dynamic Text";
+createSmallArcWithDynamicText(textToDisplay, 200, 200, 80, 45, 135, 16, 'black'); // Adjust parameters as needed
+
+</script>

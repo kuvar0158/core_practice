@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://unpkg.com/fabric@latest/dist/fabric.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <style>
+      body, input, button {
+  font: 12pt Arial, Helvetica;
+}
+
+#canvasContainer {
+  background-image: url(data:image/gif;base64,R0lGODlhCgAKAIAAAOLi4v///yH5BAAHAP8ALAAAAAAKAAoAAAIRhB2ZhxoM3GMSykqd1VltzxQAOw==);
+  border: 2px solid #ccc;
+  display: inline-block;
+}
+canvas {border:solid 1px #000}
+input[type=range], input[type=text] {
+  width: 200px;
+}
+  </style>
+  <body>
+
+<div id="canvasContainer">
+  <canvas id="c" width="400" height="400"></canvas>
+    <a href="javascript:undo();">undo</a>
+    <a href="javascript:redo();">redo</a>
+</div>
+  </body>
+</html>
+<script>
+   var canvas = new fabric.Canvas('c');
+
+   // Create a new Text instance
+        var text = new fabric.Text('HELLO WORLD?', {
+            fill: 'red',
+            left: 130,
+            top: 150,
+            width: 200,
+            height: 100,
+            objectCaching: false,
+            strokeWidth: 3,
+            fontSize:35,
+        });
+
+        // Render the Text on Canvas
+        this.canvas.add(text);
+        this.canvas.setActiveObject(text);
+canvas.isDrawingMode = true;
+// canvas.on('object:added',function(){
+//   if(!isRedoing){
+//     h = [];
+//   }
+//   isRedoing = false;
+// });
+
+var isRedoing = false;
+var h = [];
+function undo(){
+  if(canvas._objects.length>0){
+   h.push(canvas._objects.pop());
+   canvas.renderAll();
+  }
+}
+function redo(){
+  
+  if(h.length>0){
+    isRedoing = true;
+   canvas.add(h.pop());
+  }
+}
+</script>
+

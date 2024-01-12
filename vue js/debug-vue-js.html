@@ -69,3 +69,50 @@ var obj = {
         console.log('check logo here');
       }
     });
+
+
+    ===================if object is undefined ===========================
+    objScaling(e, canvas_design_area)
+    if (typeof(e) == "undefined") {
+              return;
+          }
+
+          576995736
+
+          <div class="col-md-8 col-lg-8 col-xl-4 mb_20">
+                        <label class="label-control2">Select Design area</label>
+                        <fieldset class="form-group">
+                          <v-select
+                            label="product"
+                            :reduce="(name) => name.id"
+                            :options="product_type_list"
+                            :name="'product_type'"
+                            v-model="product_data.product_type_id"
+                            @input="getCanvasType"
+                            data-vv-as="Product Type"
+                            :placeholder="'Product Type'"
+                          >
+                          </v-select>
+                          <small
+                            class="form-text text-error text-left"
+                            v-show="errors.has('addproductform.product_type')"
+                          >
+                            {{ errors.first("addproductform.product_type") }}
+                          </small>
+                        </fieldset>
+                      </div>
+
+                      getProductTypes() {
+              var _this = this;
+             return new Promise((resolve, reject) => {
+                  ApiService.get("/product-types").then(({ data }) => {
+                      _this.product_type_list = data.product_types;
+                      _this.product_type_list.unshift({ id: 0, product: 'Product Image'  });
+                      resolve(data);
+                  }).catch((response) => {
+                      console.log(response);
+                      this.isLoader = false;
+                      reject(response);
+                  });
+              });
+          },

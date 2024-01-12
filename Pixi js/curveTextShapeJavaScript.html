@@ -1,68 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.4.0/fabric.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <head>
+    <script src="https://unpkg.com/fabric@latest/dist/fabric.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+  </head>
   <style>
-    body, input, button {
-      font: 12pt Arial, Helvetica;
-    }
-
-    .canvasContainer {
+    #canvasContainer {
       background-image: url(data:image/gif;base64,R0lGODlhCgAKAIAAAOLi4v///yH5BAAHAP8ALAAAAAAKAAoAAAIRhB2ZhxoM3GMSykqd1VltzxQAOw==);
       border: 2px solid #ccc;
       display: inline-block;
     }
-
-    input[type=range], input[type=text] {
-      width: 200px;
-    }
   </style>
-</head>
-<body>
-  <div class="row">
-    <div class="column">Text</div>
-    <div class="column"><input type="text" id="text" value="Lorem ipsum di samet"></div>
-</div>
-
-<div class="row">
-    <div class="column">Diameter</div>
-    <div class="column"><input type="range" id="diameter" min="100" max="2500" value="250" step="1"></div>
-</div>
-    
-<div class="row">
-    <div class="column">Font size</div>
-    <div class="column"><input type="range" id="fontSize" min="8" max="100" value="24" step="1"></div>
-</div>
-
-<div class="row">
-    <div class="column">Kerning</div>
-    <div class="column"><input type="range" id="kerning" min="-10" max="10" value="0" step="1"></div>
-</div>
-
-<div class="row">
-    <div class="column">Flip</div>
-    <div class="column"><input type="checkbox" id="flip" value="1"></div>
-</div>
-
-<div class="row"><div class="column"><button class="button" type="button" id="newObject">Add to Canvas</button></div></div>
-
-<hr>
-<div class="row">
-   <div class="column small-6">
-      <div class="canvasContainer">
-         <canvas id="canvas1" width="450" height="450"></canvas>
-      </div>
-   </div>
-   <!-- <div class="column small-6">
-      <div class="canvasContainer">
-         <canvas id="canvas2" width="450" height="450"></canvas>
-      </div>
-   </div> -->
-</div>
-<!-- google search-: fabric.CurveText plugin -->
-<!-- refrence url-: https://codepen.io/mrIee/pen/JzMqNw -->
-  <script>
+  <body> 
+  <div id="canvasContainer">
+    <canvas id="c" width="600" height="600"></canvas>
+  </div>
+  </body>
+</html>
+<script>
+  //<!-- refrence search keywords-: https://github.com/fabricjs/fabric.js/issues/729
+  //refrence url-: https://jsfiddle.net/av01d/5vcmx9pt/
+   //-->
   (function(fabric) {
 
 /*
@@ -70,6 +28,8 @@
  * @author Arjan Haverkamp (av01d)
  * @date January 2018
  */
+
+ fabric.Object.prototype.objectCaching = false;
 
 fabric.CurvedText = fabric.util.createClass(fabric.Object, {
   type: 'curved-text',
@@ -85,6 +45,7 @@ fabric.CurvedText = fabric.util.createClass(fabric.Object, {
   cacheProperties: fabric.Object.prototype.cacheProperties.concat('diameter', 'kerning', 'flipped', 'fill', 'fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'strokeStyle', 'strokeWidth'),
   strokeStyle: null,
   strokeWidth: 0,
+  zoomFactor: 1,
 
   initialize: function(text, options) {
     options || (options = {});
@@ -106,7 +67,7 @@ fabric.CurvedText = fabric.util.createClass(fabric.Object, {
       // node-canvas needs "weight style", while browsers need "style weight"
       (fabric.isLikelyNode ? this.fontWeight : this.fontStyle),
       (fabric.isLikelyNode ? this.fontStyle : this.fontWeight),
-      this.fontSize + 'px',
+      (this.fontSize*this.zoomFactor) + 'px',
       (fabric.isLikelyNode ? ('"' + this.fontFamily + '"') : this.fontFamily)
     ].join(' ');
   },
@@ -145,9 +106,9 @@ fabric.CurvedText = fabric.util.createClass(fabric.Object, {
   getCircularText: function()
   {
     var text = this.text,
-      diameter = this.diameter,
+      diameter = this.diameter*this.zoomFactor,
       flipped = this.flipped,
-      kerning = this.kerning,
+      kerning = this.kerning*this.zoomFactor,
       fill = this.fill,
       inwardFacing = true,
       startAngle = 0,
@@ -164,11 +125,11 @@ fabric.CurvedText = fabric.util.createClass(fabric.Object, {
 
     startAngle *= Math.PI / 180; // convert to radians
 
-    // Calc heigt of text in selected font:
+    // Calc height of text in selected font:
     var d = document.createElement('div');
     d.style.fontFamily = this.fontFamily;
     d.style.whiteSpace = 'nowrap';
-    d.style.fontSize = this.fontSize + 'px';
+    d.style.fontSize = (this.fontSize*this.zoomFactor) + 'px';
     d.style.fontWeight = this.fontWeight;
     d.style.fontStyle = this.fontStyle;
     d.textContent = text;
@@ -249,8 +210,10 @@ fabric.CurvedText = fabric.util.createClass(fabric.Object, {
     var canvas = this.getCircularText();
     this._trimCanvas(canvas);
 
-    this.set('width', canvas.width);
-    this.set('height', canvas.height);
+    console.log('render w/h', canvas.width, canvas.height);
+
+    this.set('width', canvas.width/this.zoomFactor);
+    this.set('height', canvas.height/this.zoomFactor);
 
     ctx.drawImage(canvas, -this.width / 2, -this.height / 2, this.width, this.height);
 
@@ -269,96 +232,30 @@ fabric.CurvedText.fromObject = function(object, callback, forceAsync) {
 })(typeof fabric !== 'undefined' ? fabric : require('fabric').fabric);
 
 $(function() {
-  function editObject()
-  {
-    var text = $('#text').val();
-    var fName = 'Arial';
-    var fSize = +$('#fontSize').val();
-    var diameter = +$('#diameter').val();
-    var kerning = +$('#kerning').val();
-    var flipped = $('#flip').is(':checked');
-    var obj = fcanvas.getActiveObject();
-
-    if (obj) {
-      obj.set({
-        text: text,
-        diameter: +$('#diameter').val(),
-        fontSize: fSize,
-        fontFamily: fName,
-        kerning: kerning,
-        flipped: flipped
-      });
-      fcanvas.renderAll();
-    }
-    else {
-      obj = new fabric.CurvedText(text, {
-        diameter: +$('#diameter').val(),
-        fontSize: fSize,
-        fontFamily: fName,
-        kerning: kerning,
-        flipped: flipped,
-        left: 50,
-        top: 50
-      });
-    fcanvas.add(obj);
-    }
-  }
-
   // Create fabric canvas
-  fabric.Object.prototype.objectCaching = false;
-  var fcanvas = new fabric.Canvas('canvas1');
+  var fcanvas = new fabric.Canvas('c');
 
-   const curvedText = new fabric.CurvedText('It feels so nice to be able to draw', {
-    diameter: 360,
-    fontSize: 32,
-    fontFamily: 'Arial',
-    left: 50,
-    top: 50,
-    fill: 'red'
-  });
-   
   // Add a circular text
-  fcanvas.add(curvedText);
+  fcanvas.add(new fabric.CurvedText('Hello bb', {
+    diameter: 720,
+    fontSize: 40,
+    fontFamily: 'Times New Roman',
+    left: 80,
+    top: 50,
+    fill: 'black',
+    scaleX: 2,
+    scaleY: 2,
+    zoomFactor: 2 /* Change this to make text sharper */
+  }));
 
-  // And another one
-  // fcanvas.add(new fabric.CurvedText('any text around a circular path', {
-  //   diameter: 360,
-  //   fontSize: 32,
-  //   fontFamily: 'Arial',
-  //   left: 395,
-  //   top: 405,
-  //   fill: 'black',
-  //   angle: -180
-  //   //flipped: true
-  // }));
-
-  const JSON = fcanvas.toJSON();
-   console.log('json:', JSON);
-
-
-  // Update controls
-  function update(e) {
-    var obj = e.target;
-    $('#diameter').val(obj.diameter);
-    // $('#text').val(obj.text);
-    $('#fontSize').val(obj.fontSize);
-    $('#kerning').val(obj.kerning);
-    $('#flip').prop('checked', obj.flipped);
-  }
-
-  fcanvas.on({
-    'object:selected': function(e) {
-      update(e);
-    },
-    'selection:updated': function(e) {
-      update(e);
-    }
-  })
-
-  $('#diameter,#fontSize,#kerning').on('input', editObject);
-  $('#text').on('keyup', editObject);
-  $('#flip,#newObject').on('click', editObject);
+  fcanvas.add(new fabric.Text('Hello World', {
+    fontSize: 40,
+    fontFamily: 'Times New Roman',
+    left: 90,
+    top: 180,
+    scaleX: 2,
+    scaleY: 2
+  }));
 });
-  </script>
-</body>
-</html>
+</script>
+

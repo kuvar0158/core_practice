@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+  canvas {
+    border:1px solid #000;
+  }
+  </style>
+</head>
+<body>
+<!-- refrence url-:https://stackoverflow.com/questions/61084654/add-style-to-clippath-fabric-js-object
+refrence search-: Fabricjs clipPath demo
+ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0-beta.5/fabric.min.js"></script>
+  <script src="http://code.jquery.com/jquery-git.js"></script>
+  
+  <canvas id="myCanvas" width="800" height="600"></canvas>
+  <button id="generateImage">Generate Image URL</button>
+  
+  <script>
+   var canvas = new fabric.Canvas('myCanvas');
+
+// Load background image as shown in previous steps
+
+// Add text to the canvas
+var text = new fabric.Text('Hello, Fabric!', {
+  left: 100,
+  top: 100,
+  fontSize: 24,
+  fill: 'black'
+});
+canvas.add(text);
+
+// Render the canvas content
+canvas.renderAll();
+
+// Generate an image URL from the canvas
+var imageUrl = canvas.toDataURL({
+  format: 'jpeg', // You can use 'jpeg', 'png', or other formats
+  quality: 0.8    // Adjust the image quality if needed
+});
+
+console.log(imageUrl); // Log the generated image URL
+
+// Display the generated image URL in an HTML image element
+var imageElement = document.getElementById('outputImage');
+// imageElement.src = imageUrl;
+
+
+  </script>
+
+</body>
+</html>

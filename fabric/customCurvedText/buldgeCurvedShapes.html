@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Adding the Fabric JS Library-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div id="main" style="width:800px; height:800px">
+         <canvas id="c" width="800" height="800" style="border: 1px solid"></canvas>
+      </div>
+      <!-- refrence urls-:https://jsfiddle.net/swesh/c7s9x2fh/199/ -->
+      <script>
+         var canvas = new fabric.Canvas('c')
+         
+         var text= "curved text"
+         var headingText = [];
+         var startAngle = 130;
+         var textLength = text.length;
+         var staticAngle = [];
+         
+         // start implemtaion for smallToLarge shapes
+      
+
+         
+         // this.letters.item(i).set('padding', 0);
+         // this.letters.item(i).set('selectable', false);
+         // this.letters.item(i).set('top', -1*this.letters.item(i).get('fontSize')+i);
+
+
+         // headingText.push(new fabric.IText(text[i], {
+         //   // angle : j*((start)+(i*angleInterval)) + (130 + i*5),
+         //  // shadow: 'rgba(0,0,0,0.5) 5px 5px 5px',
+         //  fontSize:(newfont),
+         //    left: (width),
+         //    top:  -1*text[i].get('fontSize')+i,
+         //    padding: 0,
+         // }));
+
+         var r = getTranslationDistance(text) -16;
+         var j=-1;
+         var angleInterval = 95/textLength ;
+         // const angleBetweenChars = (2 * Math.PI) / 20;
+         for(var iterator=(-textLength/2), i=textLength-1; iterator<textLength/2;iterator++,i--) {
+         
+         // let start = startAngle - i;
+         // // let start = startAngle;
+         // var rotation = 80+(start+(i)*angleInterval) ;
+         // var rom = r - i*3;
+         // // console.log('check angle is here---==================', j*((start)+(i*angleInterval)))
+         // var lefts = (rom)*Math.cos((Math.PI/185)*rotation) + i*4;
+         // var tops = (rom)*Math.sin((Math.PI/185)*rotation)+ i*4 ;
+         // console.log('check left and right angles lefts', lefts, 'top', tops, 'characters', text[i]);
+
+         var small=18;
+         var large=50;
+         var width=0;
+         var difference=large-small;
+         var center=Math.ceil(textLength/2);
+         var step=difference/(textLength - center);
+         if(i<center)
+            var newfont=small+(i*step);
+         else
+         var newfont=large-((i-center+1)*step);
+
+
+         // this.letters.item(i).set('fontSize', (newfont));
+         // this.letters.item(i).set('left', (width));
+         width+=getTranslationDistance(text);
+           headingText.push(new fabric.IText(text[i], {
+              angle : -90,
+             // shadow: 'rgba(0,0,0,0.5) 5px 5px 5px',
+             fontSize:(newfont) + 10,
+               left: (width) + 20,
+               top:  -1.2*20*i+i,
+               padding: 0,
+            }));
+         }
+         console.log('check data value for here==============', headingText);
+         var group2 = new fabric.Group(headingText, { left: 490, top: canvas.height/2 , fontFamily: 'Arial',  strokeWidth: 1,strokeStyle:"#fff", angle:90});
+         canvas.add(group2);
+
+         function getTranslationDistance(text){
+         var boundingRectangle = $("<div id='tempdiv' style='display:table-cell;font-family:Arial; font-size:28px;'>"+text+"</div>").appendTo("#main");
+         
+         var translationDistance = $(boundingRectangle).width() ;
+         $(boundingRectangle).remove();
+         return translationDistance;
+         }
+      </script>
+   </body>
+</html>
+<!-- function addCurvedText(text, radius, centerX, centerY) -->
+<!-- const charObject -->
+<!-- Hello can anyone create a hill shape formula from the given reference link-:  https://jsfiddle.net/swesh/c7s9x2fh/199/ In this link arc shape formaula is already implemented in fabric js. so can any one help to implement formula for hill shape. Thanks in advance -->

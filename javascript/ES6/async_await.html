@@ -1,0 +1,21 @@
+
+============what is async and wwait in java script============================
+notes-:
+
+async makes a function return a Promise
+await makes a function wait for a Promise
+
+Ex-:
+async function myFunction() {
+  return "Hello";
+}
+
+
+function myNewFunction() {
+  await myFunction();
+  $k = 12;
+}
+
+// here myNewFunction is waiting until compplete process of myfunction() then assign $K value in new myNewFunction 
+you can use await only when functiion is async.
+

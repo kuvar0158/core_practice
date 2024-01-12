@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://unpkg.com/fabric@latest/dist/fabric.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+  </head>
+  <style>
+      body, input, button {
+  font: 12pt Arial, Helvetica;
+}
+
+canvas {
+    border:1px solid #000;
+}
+.controles {
+    margin:50px 0;
+}
+  </style>
+  <body>
+<canvas id="c" width="400" height="200"></canvas>
+<br>
+<br>
+<input type="button" onclick="addtext()" value="Add Text" />
+<input type="button" onclick="undo()" value="Undo" />
+<input type="button" onclick="redo()" value="redo" />
+<input type="button" onclick="clear()" value="Clear Canvas" />
+  </body>
+</html>
+<!-- refrence urls-: http://jsfiddle.net/SpgGV/27/ -->
+<script>
+   var canvas = new fabric.Canvas('c');
+
+var current;
+var list = [];
+var state = [];
+var index = 0;
+var index2 = 0;
+var action = false;
+var refresh = true;
+state[0] = JSON.stringify(canvas.toDatalessJSON());
+console.log(JSON.stringify(canvas.toDatalessJSON()));
+function clear(){
+    canvas.clear();
+    index=0;
+  }
+ function addtext(){
+   ++index;
+   action=true;  
+var text = new fabric.Text('Sample', {
+   fontFamily: 'Hoefler Text',
+    left: 100,
+    top: 100,
+    //textAlign: 'center',
+    fill: 'navy',
+
+});
+canvas.add(text);   
+} 
+canvas.on("object:added", function (e) {
+    
+    if(action===true){
+
+        var object = e.target;
+    console.log(JSON.stringify(canvas.toDatalessJSON()));
+    state[index] = JSON.stringify(canvas.toDatalessJSON());
+    refresh = true;
+        action=false;
+        canvas.renderAll();
+    }
+});
+function undo() {
+    index--
+    if (index < 0) {
+        index = 0;
+        canvas.loadFromJSON(state[index]);
+        canvas.renderAll();
+        return;
+    }
+
+
+    console.log('undo');
+
+    canvas.loadFromJSON(state[index]);
+    
+    console.log(JSON.stringify(canvas.toDatalessJSON()));
+    canvas.renderAll();
+    action = false;
+}
+
+function redo() {
+      index++;
+    action = false;
+    if (index >= state.length - 1) {
+        canvas.loadFromJSON(state[index]);
+        canvas.renderAll();
+        return;
+    }
+
+    console.log('redo');
+
+    canvas.loadFromJSON(state[index]);
+    
+    console.log(JSON.stringify(canvas.toDatalessJSON()));
+    canvas.renderAll();
+    
+    canvas.renderAll();
+    
+}
+
+canvas.on("object:modified", function (e) {
+    var object = e.target;
+    console.log('object:modified');
+    console.log(JSON.stringify(canvas.toDatalessJSON()));
+    state[++index] = JSON.stringify(canvas.toDatalessJSON());
+    action=false;
+});
+
+// function undo(){
+//     // index--;
+//     undo();
+// };
+// function redo(){
+//     // index++;
+//     redo();
+// };
+</script>
+

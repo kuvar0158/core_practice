@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric.js Multiple Clipping Areas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.4.0/fabric.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        alert()
+        const canvas = new fabric.Canvas('canvas');
+
+        // Create a group for the first design area
+        const group1 = new fabric.Group();
+
+        // Create objects for the first design area
+        const rect1 = new fabric.Rect({ left: 50, top: 50, width: 100, height: 100, fill: 'red' });
+        const circle1 = new fabric.Circle({ left: 150, top: 100, radius: 50, fill: 'blue' });
+
+        // Add objects to the group
+        group1.add(rect1, circle1);
+
+        // Set the clipping region for the first design area
+        group1.clipTo = function (ctx) {
+            ctx.rect(0, 0, 200, 200);
+        };
+
+        // Create a group for the second design area
+        const group2 = new fabric.Group();
+
+        // Create objects for the second design area
+        const rect2 = new fabric.Rect({ left: 200, top: 200, width: 100, height: 100, fill: 'green' });
+        const circle2 = new fabric.Circle({ left: 300, top: 250, radius: 50, fill: 'yellow' });
+
+        // Add objects to the group
+        group2.add(rect2, circle2);
+
+        // Set the clipping region for the second design area
+        group2.clipTo = function (ctx) {
+            ctx.rect(200, 200, 200, 200);
+        };
+
+        // Add the groups to the canvas
+        canvas.add(group1, group2);
+    </script>
+</body>
+</html>

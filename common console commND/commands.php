@@ -30,6 +30,8 @@ https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html
 --================================windows commands for take screenshot================================================
 press the Windows key + PrtScn.
 
+press the fn key + windows key + PrtScn.
+
 
 ====================================multiple comment in visual studio===============================================
 shift + alt + A

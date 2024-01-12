@@ -44,6 +44,9 @@ input[type=range], input[type=text] {
     <td></td>
     <td><button type="button" id="newObject">Add to Canvas</button></td>
   </tr>
+  <tr>
+    <td><button type="button" id="newCanvas">back canvas</button></td>
+  </tr>
 </table>
 
 <hr>
@@ -261,6 +264,9 @@ fabric.TextCurved.fromObject = function(object, callback, forceAsync) {
 
 })(typeof fabric !== 'undefined' ? fabric : require('fabric').fabric);
 
+
+fabric.Object.prototype.objectCaching = false;
+  var fcanvas = new fabric.Canvas('c');
 $(function() {
 
   function editObject()
@@ -299,8 +305,7 @@ $(function() {
   }
 
   // Create fabric canvas
-  fabric.Object.prototype.objectCaching = false;
-  var fcanvas = new fabric.Canvas('c');
+  
 
   // Add a circular text
   fcanvas.add(new fabric.TextCurved('It feels so nice to be able to draw', {
@@ -347,5 +352,55 @@ $(function() {
   $('#text').on('keyup', editObject);
   $('#flip,#newObject').on('click', editObject);
 });
+$('#newCanvas').on('click', flipTshirt);
+function flipTshirt() {
+            let _this = this;
+            let canvasObject = JSON.stringify(fcanvas);
+            if (_this.canvasList == null) {
+                _this.canvasList = { front: "", back: "" };
+            }
+
+            _this.active_flip = 'front';
+            _this.canvasList[_this.active_flip] = canvasObject;
+            localStorage.setItem(
+                "new_canvas_elements",
+                JSON.stringify(_this.canvasList)
+            );
+            fcanvas.discardActiveObject();
+            // _this.onSelectedCleared();
+            fcanvas.clear();
+            _this.canvasList = { front: "", back: ""};
+            let type = 'front';
+            _this.active_flip = type;
+            _this.canvasList = JSON.parse(localStorage.getItem("new_canvas_elements"));
+            if (_this.canvasList[_this.active_flip]) {
+                fabric.util.enlivenObjects(
+                    JSON.parse(_this.canvasList[_this.active_flip]).objects,
+                    function (objects) {
+                        var origRenderOnAddRemove = fcanvas.renderOnAddRemove;
+                        fcanvas.renderOnAddRemove = false;
+                        objects.forEach(function (o) {
+                            let type1 = o.ctype;
+                            let onjType1 = o.objType;
+                            o.toObject = (function (toObject) {
+                                return function () {
+                                    return fabric.util.object.extend(toObject.call(this), {
+                                        ctype: type1,
+                                        image_name: o.image_name,
+                                        image_path: o.image_path,
+                                        objType: onjType1,
+                                    });
+                                };
+                            })(o.toObject);
+                            if (o.type !== "rect") {
+                                fcanvas.add(o);
+                            }
+                        });
+                        fcanvas.renderOnAddRemove = origRenderOnAddRemove;
+                        fcanvas.renderAll();
+                    }
+                ); //end enlivenObjects
+            }
+        }
 </script>
 

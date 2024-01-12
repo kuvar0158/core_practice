@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Adding the Fabric JS Library-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div id="main" style="width:800px; height:800px">
+         <canvas id="c" width="800" height="800" style="border: 1px solid"></canvas>
+      </div>
+      <!-- refrence urls-:https://jsfiddle.net/swesh/c7s9x2fh/199/ -->
+      <script>
+         var canvas = new fabric.Canvas('c')
+         
+         var text= "curved shapes";
+         // const str = "Geeks for Geeks";
+         let reversedString = text.split("").reduce((acc, char) => char + acc, "");
+         var text= reversedString;
+         // console.log(reversedString);
+         var headingText = [];
+         var startAngle = 130;
+         var textLength = text.length;
+         var staticAngle = [];
+
+         var r = getTranslationDistance(text) -16;
+         var j=-1;
+         var angleInterval = 95/textLength ;
+         // const angleBetweenChars = (2 * Math.PI) / 20;
+         for(var iterator=(-textLength/2), i=textLength-1; iterator<textLength/2;iterator++,i--) {
+      
+
+         var small=10;
+         var large=30;
+         var width=0;
+
+         var difference=large-small;
+         var center=Math.ceil(textLength/2);
+         var step=difference/(textLength);
+         var newfont=small+(i*step) ;
+
+         var curAngle = 1;
+         var multiplier=1;
+         var radius = 100;
+         var space = 1;
+         fixedLetterAngle=((20+space)/radius)/(Math.PI/180); 
+         curAngle=multiplier*((multiplier*curAngle)+fixedLetterAngle);
+                     angleRadians=curAngle*(Math.PI/180);
+
+         // this.letters.item(i).set('top', multiplier*-1*(Math.cos(angleRadians)*this.radius));
+         //          this.letters.item(i).set('left', multiplier*(Math.sin(angleRadians)*this.radius));
+         width+=getTranslationDistance(text);
+           headingText.push(new fabric.IText(text[i], {
+              angle : -90,
+             // shadow: 'rgba(0,0,0,0.5) 5px 5px 5px',
+             fontSize:newfont + 20,
+               left: multiplier*(Math.sin(angleRadians)*radius) - i*2,
+               top:  multiplier*-1*(Math.cos(angleRadians)*radius) +i*24,
+               padding: 0,
+            }));
+         }
+
+         // -1*this.letters.item(i).get('fontSize')+(i/this.text.length)
+         // -1*this.letters.item(i).get('fontSize')+(i/this.text.length)
+         
+         console.log('check data value for here==============', headingText);
+         var group2 = new fabric.Group(headingText, { left: 420, top: canvas.height/2 , fontFamily: 'Arial',  strokeWidth: 1,strokeStyle:"#fff", angle : 90} );
+         canvas.add(group2);
+
+         function getTranslationDistance(text){
+         var boundingRectangle = $("<div id='tempdiv' style='display:table-cell;font-family:Arial; font-size:28px;'>"+text+"</div>").appendTo("#main");
+         var translationDistance = $(boundingRectangle).width() ;
+         $(boundingRectangle).remove();
+         return translationDistance;
+         }
+      </script>
+   </body>
+</html>
+<!-- largeToSmallTop == TopSlopeShapes-->

@@ -86,7 +86,8 @@ pass-:Kuvar@2345 (login into mailtrape)
 ========================personal github account====================================:
 user-: kuvar0158
 pass-: Kuvar@123 (use token instead of passwords)
-Token -: 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
+Token -: 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
+
 email-: kuvarpratapsingh90@gmail.com
 
 ---================stripe account------============================

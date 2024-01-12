@@ -1,0 +1,57 @@
+<!-- <svg id="mySvg" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <circle cx="50" cy="50" r="40" fill="blue" />
+</svg> -->
+<!DOCTYPE html>
+<html>
+   <head>
+   
+    <style>
+    #facebook-logo {
+       fill: red;
+    }
+    svg:hover path {
+      fill: red;
+    }
+    .social-link:hover path {
+        fill: red;
+    }
+     
+     .logo-img {
+  fill: yellow;
+}
+    </style>
+      <!-- Adding the Fabric JS Library-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+       
+   </head>
+   <body>
+    <!--  <img id="facebook-logo" class="svg social-link" src="https://spiritpack-dev.s3.amazonaws.com/distress/worn-filter_1684833513.svg"/> -->
+
+    <img onload="ImgToSvg(this)" class="logo-img" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjI5NiIgc3R5bGU9InN0cm9rZTojNTU1NTU1O3N0cm9rZS13aWR0aDoyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBmb250LWZhbWlseT0ibW9ub3NwYWNlLCBzYW5zLXNlcmlmIiBmaWxsPSIjNTU1NTU1Ij4zMDAmIzIxNTszMDA8L3RleHQ+PC9zdmc+" />
+      
+   </body>
+</html>
+
+<script>
+  function changeColor() {
+    alert()
+    // Get the SVG element by its ID
+    const svg = document.getElementById('mySvg');
+
+    // Get the circle element within the SVG
+    const circle = svg.querySelector('.newImg');
+
+    // Change the fill color of the circle
+    // circle.setAttribute('fill', 'red');
+    svg.style.fill = 'white';
+}
+
+
+const ImgToSvg= async (img) => {
+  const s = document.createElement('div');
+  s.innerHTML = await (await fetch(img.src)).text();
+  s.firstChild.classList = img.classList;
+  img.replaceWith(s.firstChild)
+}
+      </script>
