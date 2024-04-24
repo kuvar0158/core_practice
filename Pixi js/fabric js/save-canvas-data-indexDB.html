@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tool</title>
+</head>
+<body>
+    <canvas id="designCanvas" width="800" height="600"></canvas>
+    <button id="saveButton">Save Design</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
+<script>
+    
+    // app.js
+
+const DB_NAME = 'DesignDB';
+const DB_VERSION = 22;
+const OBJECT_STORE_NAME = 'designs';
+
+var db;
+
+function initializeDB() {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+    request.onerror = (event) => {
+        console.error('Error opening IndexedDB:', event.target.error);
+    };
+
+    request.onsuccess = (event) => {
+        db = event.target.result;
+        console.log('IndexedDB opened successfully');
+    };
+
+    request.onupgradeneeded = (event) => {
+        const db = event.target.result;
+
+        // Create an object store to store designs
+        const objectStore = db.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id', autoIncrement: true });
+
+        console.log('IndexedDB upgrade completed');
+    };
+}
+
+initializeDB();
+
+
+//save design data
+// app.js
+
+function saveDesign(data) {
+    const transaction = db.transaction([OBJECT_STORE_NAME], 'readwrite');
+    const objectStore = transaction.objectStore(OBJECT_STORE_NAME);
+    // alert(data);
+    console.log('check data ios her========', data);
+    const design = {
+        data: data,
+        timestamp: new Date().getTime()
+    };
+
+    const request = objectStore.add(design);
+
+    request.onsuccess = () => {
+        console.log('Design saved successfully');
+    };
+
+    request.onerror = (event) => {
+        console.error('Error saving design:', event.target.error);
+    };
+    displayDesigns();
+}
+
+document.getElementById('saveButton').addEventListener('click', () => {
+    // Get the design data (replace with your own data retrieval logic)
+    const canvasData = getCanvasData();
+
+    // Save the design data to IndexedDB
+    saveDesign(canvasData);
+});
+
+function getCanvasData() {
+    // Replace this with your logic to get the canvas data
+    return { /* Your canvas data here */ };
+}
+
+
+// app.js
+// Retrieve and Display Designs:
+function displayDesigns() {
+     console.log('check all obj of db display=========', db);
+    const transaction = db.transaction([OBJECT_STORE_NAME], 'readonly');
+    const objectStore = transaction.objectStore(OBJECT_STORE_NAME);
+
+    const request = objectStore.openCursor();
+    
+    console.log('check request value is here==========', request);
+    request.onsuccess = (event) => {
+        const cursor = event.target.result;
+
+        if (cursor) {
+            // Process each design (e.g., display it)
+            console.log('Design:', cursor.value, 'new cursor values=======', cursor.value.timestamp);
+            cursor.continue();
+        } else {
+            console.log('All designs processed');
+        }
+    };
+
+    request.onerror = (event) => {
+        console.error('Error reading designs:', event.target.error);
+    };
+}
+
+// Call displayDesigns when needed
+
+
+</script>

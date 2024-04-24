@@ -1,52 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <style>
-  canvas {
-    border:1px solid #000;
-  }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0-beta.12/fabric.min.js"></script>
+  <title>Fabric.js Text with Image Symbols</title>
 </head>
 <body>
-<!-- refrence url-:https://stackoverflow.com/questions/61084654/add-style-to-clippath-fabric-js-object
-refrence search-: Fabricjs clipPath demo
- -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0-beta.5/fabric.min.js"></script>
-  <script src="http://code.jquery.com/jquery-git.js"></script>
-  
-  <canvas id="myCanvas" width="800" height="600"></canvas>
-  <button id="generateImage">Generate Image URL</button>
-  
+
+  <canvas id="canvas" width="600" height="400" style="border: 1px solid #ccc;"></canvas>
+  <input type="file" id="imageInput" accept="image/*">
+  <button onclick="addImageSymbol()">Add Image Symbol</button>
+
   <script>
-   var canvas = new fabric.Canvas('myCanvas');
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = new fabric.Canvas('canvas');
+      const imageInput = document.getElementById('imageInput');
 
-// Load background image as shown in previous steps
+      // Function to add image symbol to the canvas
+      function addImageSymbol() {
+        const imageUrl = prompt('Enter Image URL:');
+        if (imageUrl) {
+          fabric.Image.fromURL(imageUrl, function(image) {
+            // Position the image at the cursor location
+            const cursorPos = canvas.getPointer(event.e);
+            image.set({
+              left: cursorPos.x,
+              top: cursorPos.y,
+              width: 50,
+              height: 50,
+            });
 
-// Add text to the canvas
-var text = new fabric.Text('Hello, Fabric!', {
-  left: 100,
-  top: 100,
-  fontSize: 24,
-  fill: 'black'
-});
-canvas.add(text);
+            // Add the image to the canvas
+            canvas.add(image);
+          });
+        }
+      }
 
-// Render the canvas content
-canvas.renderAll();
+      // Event listener for file input change
+      imageInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
 
-// Generate an image URL from the canvas
-var imageUrl = canvas.toDataURL({
-  format: 'jpeg', // You can use 'jpeg', 'png', or other formats
-  quality: 0.8    // Adjust the image quality if needed
-});
+        reader.onload = function(e) {
+          const imageUrl = e.target.result;
+          addImageSymbol();
+        };
 
-console.log(imageUrl); // Log the generated image URL
+        reader.readAsDataURL(file);
+      });
 
-// Display the generated image URL in an HTML image element
-var imageElement = document.getElementById('outputImage');
-// imageElement.src = imageUrl;
+      // Custom function to handle text input with image symbols
+      fabric.Canvas.prototype.addTextWithSymbols = function(text, options) {
+        const objects = [];
+        let left = options.left || 0;
+        const top = options.top || 0;
 
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          if (char === ' ') {
+            left += 10; // Space between symbols
+            continue;
+          }
 
+          const symbol = new fabric.Text(char, {
+            left: left,
+            top: top,
+            fontSize: 20,
+          });
+          objects.push(symbol);
+          left += 20; // Adjust spacing based on your needs
+        }
+
+        this.add.apply(this, objects);
+      };
+
+      // Example: Add text with image symbols to the canvas
+      canvas.addTextWithSymbols('A B C', { left: 50, top: 50 });
+    });
   </script>
 
 </body>

@@ -1,0 +1,110 @@
+===========Focus on these points like (Single file component, Composition API and 
+multiple v-model)
+Ans-: 
+
+Single File Component:
+
+A Single File Component (SFC) is a Vue component defined in a single file, typically with the .vue extension. It encapsulates the template, script, and styles for a component in a single file, making it easy to manage and maintain.
+
+
+<!-- HelloWorld.vue -->
+<template>
+  <div>
+    <h1>{{ greeting }}</h1>
+    <button @click="changeGreeting">Change Greeting</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      greeting: 'Hello, World!'
+    };
+  },
+  methods: {
+    changeGreeting() {
+      this.greeting = 'Bonjour, le monde!';
+    }
+  }
+};
+</script>
+
+<style scoped>
+h1 {
+  color: blue;
+}
+</style>
+
+
+Composition API:
+
+The Composition API is an alternative way of defining Vue components that provides more flexibility and organization compared to the Options API. It allows logic to be organized into reusable functions called "composition functions" that can be composed together within a component.
+
+<template>
+  <div>
+    <h1>{{ greeting }}</h1>
+    <button @click="changeGreeting">Change Greeting</button>
+  </div>
+</template>
+
+<script>
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      greeting: 'Hello, World!'
+    });
+
+    const changeGreeting = () => {
+      state.greeting = 'Bonjour, le monde!';
+    };
+
+    return {
+      greeting: state.greeting,
+      changeGreeting
+    };
+  }
+};
+</script>
+
+
+Multiple v-model:
+
+
+In Vue.js, v-model is a directive used for two-way data binding between form input elements and Vue instance data. It can also be used with custom components. When dealing with multiple form inputs, each input can have its own v-model directive, allowing multiple data properties to be bound to different inputs.
+
+
+<template>
+  <div>
+    <input type="text" v-model="firstName" placeholder="First Name">
+    <input type="text" v-model="lastName" placeholder="Last Name">
+    <button @click="submitForm">Submit</button>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const firstName = ref('');
+    const lastName = ref('');
+
+    const submitForm = () => {
+      console.log('Submitted:', { firstName: firstName.value, lastName: lastName.value });
+      // Perform form submission logic here
+    };
+
+    return {
+      firstName,
+      lastName,
+      submitForm
+    };
+  }
+};
+</script>
+
+
+<!-- refrence link-:https://vuejs.org/guide/extras/composition-api-faq.html#what-is-composition-api -->

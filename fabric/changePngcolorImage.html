@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  canvas{
+      border:1px solid black;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Image Selection Radio Input - Bootstrap 5</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.4/fabric.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <input type="file" id="file">
+        <input type="color" value="blue" id="fill" />
+        <input type="checkbox" id=tint />
+        Tint:
+          <input type="color" value="blue" id="fillimage" />
+        <select id="font">
+            <option>arial</option>
+            <option>tahoma</option>
+            <option>times new roman</option>
+        </select>
+        <button onclick="addText(); return false;">Add Custom Text</button>
+             <input type="button" value="Clear Canvas" id="clear" />
+          <input type="button" value="Reset" id="Reset" />
+         <input type="button" id="saveImg" value="Save Image"/>
+        <br />
+        <canvas id="canvas" width="600" height="400"></canvas>
+        <br />
+         
+
+        <a href='' id='txt' target="_blank">Preview Image</a>
+        <br />
+        <img id="preview" />
+  </div>
+</body>
+</html>
+<script>
+var canvas = new fabric.Canvas('canvas');
+var clearEl = document.getElementById('clear');
+var reset = document.getElementById('Reset');
+clearEl.onclick = function ()
+{
+    canvas.clear();
+};
+reset.onclick = function () {
+    window.location.reload();
+};
+document.getElementById('file').addEventListener("change", function (e) {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    console.log("reader   " + reader);
+    reader.onload = function (f) {
+        var data = f.target.result;
+        fabric.Image.fromURL(data, function (img) {
+            var oImg = img.set({ left: 70, top: 100, width: 250, height: 200, angle: 0 }).scale(0.9);
+            canvas.add(oImg).renderAll();
+            canvas.setActiveObject(oImg);
+        });
+    };
+    reader.readAsDataURL(file);
+});
+
+$('#fill').change(function () {
+    var obj = canvas.getActiveObject();
+    if (obj) {
+        obj.setFill($(this).val());
+    }
+    canvas.renderAll();
+});
+
+$('#font').change(function () {
+    var obj = canvas.getActiveObject();
+    if (obj) {
+        obj.setFontFamily($(this).val());
+    }
+    canvas.renderAll();
+});
+
+// Listen for changes in UI
+$('#tint').change(function() {
+    // Get the selected colour
+    var tintHex = $('#fillimage').val();
+
+    if ($(this).is(':checked') === true) {
+        applyTint(tintHex);
+    } else {
+        removeTint();
+    }
+});
+
+// Apply Tint filter
+function applyTint (tintHex) {
+    // Get active object
+    var object = canvas.getActiveObject();
+
+    if (!object) {
+        console.error('No image selected');
+        return false;
+        // Could prompt the user to select an image, or programmatically do it for them
+    }
+
+    // Apply the tint. Based on docs at: http://fabricjs.com/docs/fabric.Image.filters.Tint.html#initialize
+    var tintFilter = new fabric.Image.filters.Tint({
+        color: tintHex,
+        //opacity: 0.5 // Could also pass in an opacity value
+    });
+    object.filters.push(tintFilter);
+    object.applyFilters(canvas.renderAll.bind(canvas));
+}
+
+// Remove Tint filter
+function removeTint () {
+    // Get active object
+    var object = canvas.getActiveObject();
+
+    if (!object) {
+        console.error('No image selected');
+        return false;
+        // Could prompt the user to select an image, or programmatically do it for them
+    }
+
+    object.filters = []; // Empty filters array
+    object.applyFilters(canvas.renderAll.bind(canvas));
+}
+
+function addText() {
+    var oText = new fabric.IText('Tap and Type', {
+        left: 100,
+        top: 100,
+    });
+
+    canvas.add(oText);
+    canvas.setActiveObject(oText);
+    $('#fill, #font').trigger('change');
+    oText.bringToFront();
+}
+
+document.querySelector('#txt').onclick = function (e) {
+    e.preventDefault();
+    canvas.deactivateAll().renderAll();
+    document.querySelector('#preview').src = canvas.toDataURL();
+};
+$("#saveImg").click(function(){
+    $("#canvas").get(0).toBlob(function(blob){ 
+        saveAs(blob, uuidv4());
+       
+});
+});
+</script>

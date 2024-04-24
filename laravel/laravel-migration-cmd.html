@@ -9,9 +9,6 @@ http://127.0.0.1:8000/api/save-answer-feedback/43
  ======================== migration table in laravel===================
 php artisan make:migration create_new_users_table
 
-php artisan make:migration create_contacts_table
-php artisan make:migration create_menus_table
-
 php artisan make:migration add_paid_to_users_table --table=users
 php artisan make:migration add_assign_by_to_user_roles_table --table=user_roles
 
@@ -37,6 +34,10 @@ php artisan make:model CategoryFlag
 php artisan make:controller "Test/SampleController"
 php artisan make:controller "API/UserAPIController"
 php artisan make:controller "API/EventAPIController"
+
+====================for create seeder files in laravel 10=======================================
+
+
 
 ---====rollback 3 migration cmd in laravel ===---------------
 

@@ -1,0 +1,290 @@
+==================setup laravel 10 projects==========================
+
+composer create-project --prefer-dist laravel/laravel tackback_project
+
+php artisan serve
+
+
+composer require laravel/ui 
+
+php artisan ui bootstrap
+
+php artisan ui bootstrap --auth
+
+npm install
+
+npm run dev
+
+npm install bootstrap-icons -save-dev
+
+============add role and permission =================
+
+search keyword in google bard-: add role and permission in bootstrape auth login in laravel 8 step by step.
+
+composer require spatie/laravel-permission
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+php artisan make:model User -m
+php artisan make:model Role -m
+
+php artisan migrate
+
+php artisan make:seeder RolesAndPermissionsSeeder
+
+php artisan db:seed --class=RolesAndPermissionsSeeder
+
+
+php artisan make:middleware RoleMiddleware
+
+
+
+=====================laravel imp command=============
+
+php artisan make:controller AdminController
+
+php artisan make:controller BrandController
+
+write a short email for Taking two day leave for terahvin death
+
+
+<img src="{{ asset('storage/logos/' . $logoName) }}" alt="Logo">
+create.blade.php
+
+7:20 to 8:10
+
+for run laravel 10 project
+
+1) npm run dev (here load for css and js)
+2) php artisan serve
+
+========================run existing laravel app=====================
+
+search on chat gpt-: how to run existing laravel app projects
+composer install
+cp .env.example .env
+
+php artisan key:generate
+php artisan migrate
+
+npm run dev
+php artisan serve
+
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+logo_image TEXT NULL,
+name VARCHAR(255) NOT NULL,
+contact_person VARCHAR(255) NULL,
+email VARCHAR(255) NULL
+phone_number VARCHAR(20) NULL,
+address VARCHAR(255) NULL,
+city VARCHAR(100) NULL,
+state VARCHAR(100) NULL,
+takeback_type TEXT NULL,
+preferred_shipping TEXT NULL,
+have_sub_brands BOOLEAN NOT NULL DEFAULT FALSE,
+parent_categories TEXT NULL
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, create a schema for laravel using migration step by step
+
+php artisan make:model Brand
+Brand
+
+Task status
+1) save all brands data in database.
+2) add success messgae after save with remove automaticlly.
+3) upload images in public folder and save path in database.
+4) show dynamic brnads in track back product page.
+5) work on create migration and schema for track products.
+
+can we connect?
+4:01 to 4:15
+
+save product, weight, quantity, gender, active status while clicking plus add button to generate mutiple product for save in single colloumn in laravel 8
+
+
+
+tables-: trackback_products
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+trackback_product_type VARCHAR(100) NULL,
+asn BOOLEAN NOT NULL DEFAULT FALSE,
+brand_id int(11) NOT NULL,
+shipment_id TEXT NULL,
+quantity int(12) NOT NULL DEFAULT 0,
+total_weight VARCHAR(100) NULL,
+products json NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+create a schema for laravel using migration step by step
+
+
+rahul@gmail.com
+12345678
+
+id='canvas'
+
+
+tables-: tackkback_stores
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+trackback_product_store_type VARCHAR(100) NULL,
+asn BOOLEAN NOT NULL DEFAULT FALSE,
+brand_id int(11) NOT NULL,
+shipment_id TEXT NULL,
+shipping_origin_zipcode VARCHAR(150) NULL,
+shipping_carrier VARCHAR(200) NULL,
+shipping_carrier_name VARCHAR(200) NULL,
+type VARCHAR(200) NULL,	
+quantity int(12) NOT NULL DEFAULT 0,
+total_weight VARCHAR(100) NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+create a schema for laravel using migration step by step
+
+
+type (pallet box)
+
+palet quantity
+
+total weight
+
+php artisan make:migration create_trackback_stores_table
+
+
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+create a schema for laravel using migration step by step
+
+
+php artisan make:migration add_column_for_created_store_time_in_tackkback_stores_tables --table=tackkback_stores
+
+
+CREATE TABLE tackkback_stores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    trackback_product_store_type VARCHAR(100) NULL,
+    asn BOOLEAN NOT NULL DEFAULT FALSE,
+    brand_id INT NOT NULL,
+    shipment_id TEXT NULL,
+    shipping_origin_zipcode VARCHAR(150) NULL,
+    shipping_carrier VARCHAR(200) NULL,
+    shipping_carrier_name VARCHAR(200) NULL,
+    type VARCHAR(200) NULL,    
+    quantity INT NOT NULL DEFAULT 0,
+    total_weight VARCHAR(100) NULL,
+    pallet_unique_id  VARCHAR(255) UNIQUE,
+    created_store_date_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    store_sub_brand VARCHAR(200) NULL, 
+    pallet_weight VARCHAR(100) NULL,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+);
+
+create a schema for laravel using migration step by step
+
+$table->string('store_sub_brand', 200)->nullable();
+$table->string('pallet_weight', 100)->nullable();
+
+
+CREATE TABLE tackkback_stores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    trackback_product_store_type VARCHAR(100) NULL,
+    asn BOOLEAN NOT NULL DEFAULT FALSE,
+    brand_id INT NOT NULL,
+    shipment_id TEXT NULL,
+    shipping_origin_zipcode VARCHAR(150) NULL,
+    shipping_carrier VARCHAR(200) NULL,
+    shipping_carrier_name VARCHAR(200) NULL,
+    type VARCHAR(200) NULL,    
+    quantity INT NOT NULL DEFAULT 0,
+    total_weight VARCHAR(150) NULL,
+    created_store_date_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+);
+
+create a schema for laravel using migration step by step
+
+table name-: store_pallets
+
+id 
+
+CREATE TABLE store_pallets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pallet_unique_id VARCHAR(255) UNIQUE,
+    store_sub_brand VARCHAR(200) NULL, 
+    pallet_weight VARCHAR(150) NULL,
+    shipment_id TEXT NULL,
+    created_store_shipment_date_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+);
+create a schema for laravel using migration step by step and add foreign key as id of tackkback_stores tables
+
+table name-: store_boxes
+
+CREATE TABLE store_boxes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    box_unique_id VARCHAR(255) UNIQUE,
+    pallet_unique_id VARCHAR(255) UNIQUE
+    shipment_id TEXT NULL,
+    box_weight VARCHAR(150) NULL,
+    product_category VARCHAR(150) NULL,
+    pre_consumer BOOLEAN NOT NULL DEFAULT FALSE,
+    created_store_box_date_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+);
+
+create a schema for laravel using migration step by step and add foreign key as id of store_pallets tables
+
+
+pallet_packaging_material add in json
+
+ if (!Schema::hasTable('tackback_stores')) {
+
+ }
+
+
+ php artisan make:migration add_pallet_packaging_material_to_store_pallets --table=store_pallets
+
+
+5 65f4356de37a4 75345
+
+
+
+table name-: box_products
+
+CREATE TABLE store_boxes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pallet_boxe_id VARCHAR(255) UNIQUE,
+    pallet_unique_id VARCHAR(255) NULL,
+    shipment_id TEXT NULL,
+    product_name VARCHAR(255) NULL,
+    product_weight VARCHAR(150) NULL,
+    product_quantity INT NOT NULL DEFAULT FALSE,
+    gender VARCHAR(100) NULL,
+    good_resale_condition VARCHAR(100) NULL
+    created_box_product_date_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+);
+
+
+
+create a schema for laravel using migration step by step and add foreign key as id of store_boxes tables
+
+store_boxe_id as forign key
+
+
+
+store_pallet_id 
+
+BoxProduct
+
+661671db849f8
